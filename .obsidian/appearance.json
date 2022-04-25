@@ -1,3 +1,5 @@
 {
-  "theme": "moonstone"
+  "theme": "obsidian",
+  "translucency": true,
+  "cssTheme": "Obsidian Nord"
 }
