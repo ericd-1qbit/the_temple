@@ -1,6 +1,20 @@
 # Exploratory Data Analysis
 https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf
-## Typical Cookbook
+
+In a nutshell:
+>>Typical data mining steps: 
+>> 	Involves data collection, preprocessing, analysis, and evaluation. 
+>> Example-feature representation and categorical/numerical features. 
+>> 	Transforming non-vector examples to vector representations. 
+>> Feature transformations:
+>> 	To address coupon collecting or simplify relationships between variables. 
+>> Exploring data: 
+>> 	Summary statistics and data visualization.
+>> Supervised learning:
+>> 	Using data to write a program based on input/output examples.
+
+
+## Typical Data Mining Cookbook
 
 1. Learn about the application.
 2. Identify data mining task.
@@ -111,6 +125,8 @@ Summary statistics between features:
 - **Edit distance**: distance between strings 
 
 ### Visualisation
+⚠️ Can be misleading. Check in particular axes and feature that is plotted.
+
 2d plots of data can reveal many characteristics of a dataset:
 - patterns, trends, outliers, weird shapes
 **Examples**:
