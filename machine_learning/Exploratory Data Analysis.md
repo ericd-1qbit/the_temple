@@ -70,4 +70,7 @@ https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf
 - **quantiles** : categories that occur more than t times
 
 #### Continuous Data
-
+- single descriptive metrics:
+	- mean: average value
+	- median: half-point - 50% of data are smaller/larger
+	- quantiles: a fraction k of points
