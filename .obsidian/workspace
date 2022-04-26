@@ -9,7 +9,19 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/glossary.md",
+            "file": "machine_learning/overview.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "1052f50f11c336aa",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "machine_learning/Common Problems.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/glossary.md",
+                "file": "machine_learning/Common Problems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,11 +108,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7611031e335e02d2",
+  "active": "1052f50f11c336aa",
   "lastOpenFiles": [
+    "machine_learning/Common Problems.md",
+    "machine_learning/overview.md",
     "machine_learning/glossary.md",
     "machine_learning/Supervised Learning.md",
-    "machine_learning/overview.md",
     "README.md"
   ]
 }
