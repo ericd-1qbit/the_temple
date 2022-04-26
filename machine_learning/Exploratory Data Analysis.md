@@ -70,7 +70,26 @@ https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf
 - **quantiles** : categories that occur more than t times
 
 #### Continuous Data
-- single descriptive metrics:
+- location-like metrics:
 	- mean: average value
 	- median: half-point - 50% of data are smaller/larger
-	- quantiles: a fraction k of points
+	- quantiles: a fraction k of points are larger than this value
+- spread of data distributions:
+	- range: [min, max]
+	- variance: distance of values from mean
+		- standard deviation: square root of variance
+	- interquantile ranges (IQR): difference between quantiles
+
+#### Entropy
+A measure of randomness for a given dataset, related to the spread of the data distributions.
+Formal definition:
+
+>How many bits of information are encoded in the average example.
+
+**Entropy for categorical** variable with `k` values and probability $p_c$ of value `c`:
+$$H=-\sum_{c=1}^kp_c\log{p_c}$$
+> **Low Entropy**: very predictable, orderly
+> **High Entropy**: very random, hardly predictable
+
+$$max(H)=\log{k}\\
+min(H):=0$$
