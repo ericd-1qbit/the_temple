@@ -1,4 +1,7 @@
 # Overview
+
+-   [Overview](https://www.cs.ubc.ca/~schmidtm/Courses/LecturesOnML/overview.pdf)
+
 ### Machine Learning
 
 Data Mining and Machine Learning closely related

@@ -1,5 +1,5 @@
 # Exploratory Data Analysis
-
+https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf
 ## Typical Cookbook
 
 1. Learn about the application.
@@ -24,3 +24,33 @@
 	- ordinal: rating
 	- continuous: length
 
+## Data Conversions
+- encodings:
+	- One of K/One-Hot Encoding
+- text approximations:
+	- bag of words 
+		- replace documents with word counts
+		- ignores order but captures general theme
+		- compute distance between docs
+- image approximations:
+	- greyscale intensity
+- graph approximations
+	- adjacency matrix
+
+## Data Cleaning
+- Data might:
+	- be noisy
+	- contain outliers
+	- miss values
+	- have duplicated entries
+
+## Feature Aggregation
+- Combine features into new features
+
+## Feature Selection
+- remove irrelevant features
+
+## Feature Transformation
+- discretisation: turn numerical data into categorical (ranges of values for example)
+- other mathematical transformations like squares, exponentiation, logs etc.
+- 
