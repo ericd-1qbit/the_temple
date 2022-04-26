@@ -27,4 +27,7 @@ Applications:
 
 [[Supervised Learning]]
 
+[[Exploratory Data Analysis]]
+
+[[sources]]
 
