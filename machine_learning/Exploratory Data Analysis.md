@@ -64,6 +64,8 @@ https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf
 	- ML+DM (? #TODO)
 
 ### Summary Statistics
+ ⚠️ Can be misleading!
+
 #### Categorical Data
 - **frequencies**: number of occurences of different classes
 - **mode**: category that occurs most often
@@ -91,5 +93,19 @@ $$H=-\sum_{c=1}^kp_c\log{p_c}$$
 > **Low Entropy**: very predictable, orderly
 > **High Entropy**: very random, hardly predictable
 
-$$max(H)=\log{k}\\
-min(H):=0$$
+$$\begin{align}
+max(H)&=\log{k}\\
+min(H)&:=0
+\end{align}$$
+
+- categorical features: uniform distribution has highest entropy
+- continuous features: **Normal distribution** has highest entropy ⚠️ 
+
+#### Distances and Similarities
+Summary statistics between features:
+- **Hamming distance**: # elements in vector that aren't equal
+- **Euclidian distance**: distance between vectors
+- **Correlation**: [-1,1]
+- **Rank correlation**: non-linear correlation
+- **Jaccard coefficient**: distance between sets
+- **Edit distance**: distance between strings 
