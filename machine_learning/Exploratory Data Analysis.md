@@ -109,3 +109,14 @@ Summary statistics between features:
 - **Rank correlation**: non-linear correlation
 - **Jaccard coefficient**: distance between sets
 - **Edit distance**: distance between strings 
+
+### Visualisation
+2d plots of data can reveal many characteristics of a dataset:
+- patterns, trends, outliers, weird shapes
+**Examples**:
+- x vs y plots
+- histograms
+- Box Plot ![[Pasted image 20220426103822.png]]
+- matrix plot: examples vs feature
+	- correlation plot
+- scatterplots
