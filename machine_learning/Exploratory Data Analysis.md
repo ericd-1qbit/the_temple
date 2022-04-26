@@ -51,6 +51,23 @@ https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf
 - remove irrelevant features
 
 ## Feature Transformation
-- discretisation: turn numerical data into categorical (ranges of values for example)
-- other mathematical transformations like squares, exponentiation, logs etc.
-- 
+- mathematical transformations:
+	- discretisation: turn numerical data into categorical (ranges of values for example)
+	- others like squares, exponentiation, logs etc.
+- scaling
+- fourier coefficients, spectograms, wavelets 
+
+## Exploratory Data Analysis
+- high dimensional data can be hard to inspect:
+	- summary statistics
+	- visualisations
+	- ML+DM (? #TODO)
+
+### Summary Statistics
+#### Categorical Data
+- **frequencies**: number of occurences of different classes
+- **mode**: category that occurs most often
+- **quantiles** : categories that occur more than t times
+
+#### Continuous Data
+
