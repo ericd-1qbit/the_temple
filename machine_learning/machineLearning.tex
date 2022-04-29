@@ -1,0 +1,719 @@
+%!TEX root =../main/main.tex Author: Eric Drechsler
+\chapter[Machine Learning]{Machine Learning}
+%+++++++++++++++++++++++++++++++++++
+\label{ch:ml}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o>%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General}
+
+Machine Learning can be separated into four areas of concern:
+\paragraph{Classification} tasks are mapping input data onto a discrete set of
+classes by learning a function $$ h:\mathbb{R}^m\rightarrow{1,2,...,t}
+$$
+Canonical example is to classify dog or cat in picture.
+
+\paragraph{Regression} tasks  predict a value for given input by learning a function $$
+h:\mathbb{R}^m\rightarrow\mathbb{R}
+$$
+Canonical example is the cost of a house given various external parameters (size, location, etc).
+
+\paragraph{Anomaly detection} is for identifying deviations from the bulk behaviour of data. 
+Canonical example is the detection of credit card fraud.
+ 
+\paragraph{Denoising} tasks take a noisy input $\tilde{x}\in\mathbb{R}^m$ and map it to noise-free data $x\in\mathbb{R}^m$ by learning the underlying features.
+
+\subsection{Formal Definition}
+A formal definition given by Mitchel (1997) [56] 
+\begin{quote}
+  A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, 
+  if the performance at tasks in T , as measured by P, improves with E.
+\end{quote}
+
+\subsection{Types of ML}
+One can distinguish three different types of ML approaches, defined by the kind of input
+provided to the algorithm.
+\paragraph{Supervised} Learning tasks learn from labelled examples, i.e. a training dataset with 
+data points $x$ and labels $y$.
+\paragraph{Unsupervised} Learning tasks try to learn the underlying structure in a training data set without 
+being provided specific labelling. The boundaries to supervised learning are blurry, one can transform 
+an unsupervised task into a supervised one. One could marginalise over data features and do a supervised 
+learning for the given feature. %TODO
+$$
+P(x)=\prod_{i=1}^mP(x_i|x_1,\ldots,x_{i-1})
+$$
+
+\paragraph{Reinforcement} learning does not rely on any dataset. The algorithm generates it's own data and 
+updates the generative process according to a rules/reward functions.
+
+\subsection{Important Definitions}
+\begin{table}
+  \begin{tabular}{r|l}
+  Phrase & Explanation\\\hline
+  Generalisation & Ability of an algorithm to perform on an unseen dataset.\\
+  Features & Variables describing certain characteristics of the input data\\
+  Feature Vector & One input data point instance\\
+  train error & The error of the algorithm estimated on the training dataset.\\
+  test error & The error of the algorithm estimated on the testing dataset.\\
+  \end{tabular}
+\end{table}
+
+
+
+
+\subsection{Hands-On Material Collection}
+Google colab-notebooks:\\
+\url{https://drive.google.com/drive/folders/1ZXlzYVJnBa_QTS4uAa6JGO-KFzR9HQXk}
+
+\begin{itemize}
+  \item Which Considerations to take before translating your problem to ML?
+  \begin{itemize}
+    \item Does my task map to any ML paradigm?
+	\item Can I write down my model analytically?
+	\item What's the dimensionality of my data?
+	\item data sample sizes?
+  \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unsorted Notes}
+\paragraph{Random}
+\begin{itemize}
+  \item GAN - generate Ising model
+  \item translate to QA??
+  \item what's a feedforward NN backpropagation?
+  \item I. Goodfellow has a great many taxonomies
+  \item automatic differentiation - computing derivatives with se compuhda
+  \item Recurrence: The output of a layer goes back to input.
+  \item Hough transform: Image analysis technique which isolates features of a particular shape in an image.
+  \item Dropout of 0.2 means 20\% of nodes in a layer are deactivated randomly
+\end{itemize}
+
+
+
+
+\paragraph{Weight Decay} is a form of regularisation of the model complexity.
+Prevents over or underfitting. It is a penalty on the loss function for model
+complexity. One could add all weights (in quadrature, since pos+neg) of a model to the loss function, resulting
+in a potentially huge loss. Instead multiply the weights with a small factor:
+the weight decay. But then during gradient descent, another term emerges for the
+weight update, which depends on this small factor - that's why it's called
+weight decay.\\
+In math terms, our original loss $MSE(\hat{y},y)$ is updated with the weight
+decay factor $w_d$ time the sum of all weights in quadrature in our model.
+$$
+loss=MSE(\hat{y},y)+w_d*\sum_i{w_i^2}
+$$
+For gradient descent with learning rate $\gamma$, the updated weight looks like this:
+$$
+w(t+1)=w(t)-\gamma+w_d*\frac{\mathrm{d}loss}{\mathrm{d}w}
+$$
+The derivative has an additional term wrt to the original loss:
+$$
+\frac{\mathrm{d}loss}{\mathrm{d}w}= \frac{\mathrm{d}MSE}{\mathrm{d}w}+2w_d\sum_i{w_i^2}
+$$
+and thereby contributes to the update of the weights, aka decay.
+
+\subsection{Reading arXiv:1704.02685v2 - DeepLift - Learning Important Features through propagation of activation differences}
+\subsubsection{Summary}
+\begin{itemize}
+  \item provide interpretability of NN output
+  \item associate output to input features by backproping through all neurons 
+  \item contribution scores of each neuron by comparing activation of n to a reference 
+\end{itemize}
+\subsubsection{Previous Methods}
+\begin{itemize}
+  \item Perturbation-based fwd prop approach: Observe impact on output after perturbing input or neurons.
+ Problem here is that once input contribution has saturated the impact on output, impact of input on importance not attributed any further.
+  Also computationally expensive due to additional fwd prop. 
+ \item Guided backpropagation - Combination of Gradients and deconvolutional networks. Saliency Maps
+ \item Gradient x Input - elementwise product. layerwise relevance propagation
+ \item integrated gradients
+ \item grad/guided CAM
+\end{itemize}
+
+\subsubsection{DeepLIFT}
+Compute a contribution score for a given neuron $x$ to the output $t$.
+
+\begin{tabular}{2}
+  target neuron & t\\
+  neurons or inputs & x\\
+  reference value for smth & smth$^0$\\
+  contribution score & $C_{\Delta x,\Delta t}$\\
+  multiplier & smth$^0$\\
+   & smth$^0$\\
+\end{tabular}
+
+\paragraph{Summation-To-Delta}
+The contribution score is defined such that a summation over all changes from ref 
+in a given layer of n neurons results is the change from ref in the target neuron.
+
+\paragraph{Chain Rule for Multipliers}
+Multipliers qunatify the contribution of the change in neuron x to the target change t. 
+Similar to partial derivatives. For an additional layer, the Multipliers 
+propagate from one layer to the next. Like chain rule - allows to apply backprop.
+
+\paragraph{Defining a reference}
+Problem dependent. Differences measured against what? 
+
+\paragraph{Separating Positive And Negative contributions}
+
+\paragraph{Contribution Score Assignment rules}
+- Linear 
+- Rescale
+- RevealCancel
+
+\paragraph{Target Layer Choice and Softmax}
+
+
+\paragraph{Claimed Advantages}
+\begin{itemize}
+  \item zero gradients still allow for propagation of importance score
+  \item avoid discontinuity artifacts in gradient calculations
+  \item positive and negative contributions to importance separated - reveal dependencies missed by other methods 
+\end{itemize}
+
+
+
+\paragraph{Reading 1708.02949v3}
+\begin{itemize}
+  \item adversial approaches to mitigate mis-modelling effects - decreasing algorithmic performance
+  \item 
+  \item 
+\end{itemize}
+
+
+- ANN architecture (weights)
+Was confused about the return value of keras getweights(). 
+NN architecture: 784 input nodes, 128 nodes hidden, 32 nodes latent, 128 nodes
+hidden, 784 output
+weight returns arrays as follows: 
+784x128 (weights input to each neuron in hidden)
+128x1 (the WHOLE SECOND layer has 1 bias)
+128x32 (weights hidden to latent)
+32x1 (latent layer has 1 bias)
+32x128 (weights second hidden layer)
+128x1 (bias second hidden layer)
+128x784 (weights output layer)
+784x1 (ouptu layer bias)
+
+input layer has no bias!
+
+\paragraph{Reading 1711.09059v1 - Long Short-Term Memory (LSTM) networks with jet constituents for boosted top tagging at the LHC}
+\begin{itemize}
+  \item jet identification - deep learning approaches: calorimeter activation as image, jet constiuents to fully connected network
+  \item recurrent NN - Long Short-Term Memory (LSTM) network (what's the relation?)
+  \item Keras and Theano to train
+  \item NN parameters:
+	\begin{itemize}
+	  \item network depth (=number of layers?)
+	  \item number of nodes/layer
+	  \item ReLU activation for hidden layers
+	  \item sigmoid activation for output node
+	  \item Adam optimiser with 40 epochs
+	  \item early stopping criterion - patience parameter of 5 epochs on the loss in validation set
+	  \item performance quantified by lowest binary cross entropy loss
+	  \item value here: 4 hidden layers, 300-6 nodes
+	\end{itemize}
+  \item validating NN performance
+	\begin{itemize}
+	  \item ROC curve (bg rejection vs sig efficiency)
+	  \item efficiency vs pt
+	  \item scores train vs test (
+	\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Linear Regression}
+
+\paragraph{Regression}
+\begin{itemize}
+  \item modelling target value given independent (from each other) predictors
+  \item used in forecasting/cause and effect analyses between variables
+  \item find exact relationship between independent variable set x and dependent variable y
+\end{itemize}
+\paragraph{Linear Regression}
+\begin{itemize}
+  \item relationship in question is linear
+  \item relies on \textbf{cost function}
+  \item measures difference between prediction and actual value y
+  \item goal: find minimum of this cost function
+  \item minimisation procedure: \emph{gradient descent} - update parameters iteratively
+  \item stepwise approach minimum - number of steps corresponds to learning rate
+  \item using partial derivatives to calculate updated parameters, eg. for parameters $a,b$ and learning rate $\alpha$:
+\end{itemize}
+\begin{align}
+  a&=a-\alpha\frac{\delta J}{\delta a}\\
+  b&=b-\alpha\frac{\delta J}{\delta b}\\
+\end{align}
+\paragraph{Logistics Regression}
+\begin{itemize}
+  \item relationship in question is linear
+  \item relies on \textbf{cost function}
+  \item measures difference between prediction and actual value y
+  \item goal: find minimum of this cost function
+  \item minimisation procedure: \emph{gradient descent} - update parameters iteratively
+  \item stepwise approach minimum - number of steps corresponds to learning rate
+  \item using partial derivatives to calculate updated parameters, eg. for parameters $a,b$ and learning rate $\alpha$:
+\end{itemize}
+\begin{align}
+  a&=a-\alpha\frac{\delta J}{\delta a}\\
+  b&=b-\alpha\frac{\delta J}{\delta b}\\
+\end{align}
+
+
+\subsection{PCA - Principal Component Analysis}
+
+%https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c
+\paragraph{Use Case:}
+
+\begin{itemize}
+  \item reduction of number of variables, without knowing which variables to completely remove
+  \item ensure independence of all variables
+  \item do not care about too much about interpretability of variables
+\end{itemize}
+
+\paragraph{Makes use of:}
+\begin{itemize}
+  \item measure of how each variable is associated with one another. (Covariance matrix.)
+  \item directions in which our data are dispersed. (Eigenvectors.)
+  \item relative importance of these different directions. (Eigenvalues.)
+  \item PCA combines our predictors and allows us to drop the eigenvectors that are relatively unimportant.
+\end{itemize}
+
+
+\paragraph{Notes:}
+\begin{itemize}
+  \item important if many variables considered
+  \item reduce dimension of feature space: \emph{dimensionality reduction}
+  \item fewer correlations to consider, less overfitting
+  \item dim reduction: feature \textbf{elimination} or \textbf{extraction} (PCA)
+  \item construct new, independent variables from old set by combining them in specific way
+  \item drop least important PC - still retain valuable info from ALL original vars
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o>%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Supervised Learning}
+\paragraph{classification tasks} predict the probability of x being in class A
+\paragraph{regression task} predict mean value of continuous parameter y
+
+\subsection{BDT - Boosted Decision Trees}
+
+\subsection{SVM - Support Vector Machine}
+\input{scrolls/svm.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o>%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Semisupervised or weakly supervised Learning}
+
+\paragraph{Sources}
+- overview: weak supervision
+%https://towardsdatascience.com/non-standard-weakly-supervised-classification-problems-51b23211d4bc
+%https://www.sciencedirect.com/science/article/abs/pii/S0167865515003505
+
+\subsection{CWoLa - Classification without Labels}
+\paragraph{Sources}
+%\begin{itemize}
+%  \item Presentation: {\verbatim /Users/drdre/Documents/MachineLearning/BOOST_CWoLa_Hunting.pdf}
+%\end{itemize}
+
+
+\paragraph{Use Case:}
+\begin{itemize}
+  \item extended the bump hunting with ML
+  \item classification problem unknown labels or class proportions
+  \item or unreliable simulations with statistical mixtures of the classes available
+\end{itemize}
+
+\paragraph{Makes use of:}
+\begin{itemize}
+  \item train directly on data
+\end{itemize}
+
+\paragraph{Notes}
+\begin{itemize}
+\item Need some variable X (e.g. mJJ) in which bg is smooth and signal is localized
+\item Need some other variables {Y} (e.g. jet substructure) which may provide discriminating power which may be a-priori unknown.
+\item {Y} should not be strongly correlated with X over the X-width of the signal.Or decorrelate (e.g. if we can predict or measure the correlation, that can be subtracted away to create new uncorrelated variables).
+\item optimal CWola classifier same classifier as in fully-supervised ML
+\item The problem of learning from unknown mixed samples can be shown to be mathematically equivalent to the problem of learning with asymmetric random label noise
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o><o>%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Unsupervised Learning}
+\begin{itemize}
+  \item learn structures in data
+  \item learn specific data distribution, not know a priori
+  \item example methods:
+\begin{itemize}
+  \item Clustering
+  \item density estimation
+  \item anomaly detection
+  \item PCA (?)
+  \item GANs
+  \item reinforcement learning
+\end{itemize}
+\end{itemize}
+
+\section{Reinforcement Learning}
+\begin{itemize}
+  \item nop data is being used!
+  \item an agent learns to perform an action on environment and receives rewards
+  \item example algorithms: QLearning, DQN, SARSA
+  \item jet grooming through reinforcement learning
+  \item qbit control
+\end{itemize}
+
+
+\subsection{Q-Learning}
+\begin{itemize}
+  \item model-free
+  \item Q - quality
+  \item goal: develop optimal policy for an agent
+  \item exploration (a random compo)
+  \item 
+  \item trying to learn a policy
+  \item Q-function solved iteratively
+  \item temporal difference equation - compare reward step t vs t+1
+  \item parameters: learning rate, discount, epsilon
+\end{itemize}
+\subsubsection{Bellman Equations}
+\begin{itemize}
+  \item depends on state x, action a at timne t
+  \item also on reward R
+  \item Value is calculated depending opn prior rewards (gamma)
+  \item functional equation - solve the Q-function:w
+\end{itemize}
+
+
+\subsection{Variational Autoencoders}
+\begin{itemize}
+  \item framework using backpropagation-based fct approximators to build
+	generative models
+  \item weak assuptions, fast training (via backpropagation)
+\end{itemize}
+
+
+
+\section{Paper Notes - Why does deep and cheap learning work so well?}
+1608.08225
+Deep Learning in AI is as well understood as learning in the human brain. We
+know that certain protocols result in fantastic results in certain tasks, just
+like we know that training the human brain with particular methods results in a
+specific skill set. But why that is, is not well understood.
+
+At the core of the majority of ML algorithm lies the task of approximating an
+arbitrary function, i.e. learning a data distribution following some kind of
+structure. This gives three main aspects to shed light on:
+\begin{itemize}
+  \item[Expressibility] Which class of functions can the algorithm represent?
+  \item[Efficiency] Which ressources (ressources, free parameters,...) are
+	required to represent the a given function? How does this compare to the
+	space of overall available arrangements in that class of functions?
+  \item[Learnability] How quickly can my algorithm learn the function
+	approximation?
+\end{itemize}
+
+Core question in this paper \emph{How is a NN able to learn and approximate
+functions efficiently, if the space of possible functions is exponentially
+large?}.
+Awesome example: Classifiying pictures with Megapixels into cat or dog
+categories. Assume each pixel can take 256 values. This gives a possibility of
+$256^{1000000}$ pictures! For each picture, we would like to get a probability
+of how cat/dog-like the content is. But this means that we have an arbitray
+function covering $256^{1000000}$ probabilites!! A much much greater number than
+atoms in the universe ($10^{78}$). But NN usually require only millions of
+parameters to approximate this well... Hence the term "cheap".\\
+In rough terms, the NN break the available exponential space of parameters down
+from $v^n$ to $v\times n$ for $v$ being values and $n$ being the number of
+inputs. The NN will only work well on a tiny fraction of the exponential input,
+but it turns out that laws of physics ensure that this is the fraction we are
+interested in, as the input we are interested in is also just the tiny fraction
+of all available inputs. The argument is then, that these subset are very
+similar, allowing efficient work on these subsets only.\par
+Notation: $p(x|y)$ is a prediction problem - given the class $y$, how do $x$
+look like, i.e. what is the pdf. $p(y|x)$ is a classification problem - which
+class does a given set of $x$ belong to?
+It is natural to understand that $p(x|y)$ would come with simplifications. The
+class of cat picture exhibits a certain set of characteristics about $x$ which
+reduces the relevant space by much. Generally speaking these characteristics
+could be symmetries, localities, polynomial functional dependencies etc.
+It's harder to understand how $p(y|x)$ with $y=cat$ would simplify, or how we
+could apply generic rules to that...
+Steps in paper: 
+- reformulate $p(y|x)$ with bayes theorem
+- Then do a translation of information theory terms into physics terms!
+  introduce hamiltonians.
+- End up with an Boltzmann-form expression.
+- introduce shortened notation
+- rewrite Bayes theorem in softmax notation
+- investigate which Hamiltonians can be approximated. 
+- ML and physics focus on Hamiltonians which are symmetric and sparse and often
+  of low-order polynomial complexity
+- show that one can approximate multiplication efficiently with small nr of
+  neurons
+- repeated multiplication and addition then approximates any hamiltonian  in
+  taylor expansion
+- ML and physics focus on Hamiltonians which are symmetric and sparse and often
+  of low-order polynomial complexity
+- examples of hamiltonians indeed only range up to small dimensionality! SM
+  Hamiltonian has dimensionality of 4, for example.
+- locality argument stating that for physical systems only local, neighbouring
+  connections have effect
+- symmetries like rotational invariance and others reduces number of parameters
+
+\paragraph{What causes deep learning to improve performance?} Or in other words,
+what underlying structure of data distributions in the real world cause an
+imporvement in NN performance when additional layers are added?
+The papers argument involves the hierarchical underlying structure in any
+generative process. This follows a Markovian Chain - the state of a system is
+determined by its causal predecessor state alone and a transition matrix between
+the states. This is iterative.
+THe argument then is, that a NN with multiple layers can approximate any
+hierarchical structure which can be decomposed. These are ubiquitous in the
+physical world, everythiong can be seen from a hierarchical standpoint and
+decomposed intop simpler substructures. Each of these substructures can be
+approximated by the layers in the NN.
+
+\subsection{Questions}
+\begin{itemize}
+  \item Where does "Deep" start in Machine learning?
+  \item Why is $p(y|x)$ much harder to understand/assign 
+  \item Where does divident in Equ. (1) come from? This is an expression for
+	$p(x)$. Is that what's called marginalisation?
+  \item What exactly does the locality argument state? Couldn't one create a
+	counterexample in some image recognition case eg?
+  \item What's a Markov Chain?
+  \item How is that locality argument anything really? Relation to ML? even in
+	physical world: Would it not be possible to have a macro effect from
+	non-local influences?
+\end{itemize}
+\subsection{Insights}
+\begin{itemize}
+  \item 
+\end{itemize}
+
+\paragraph{ML Overview from evernote}
+
+Supervised learning
+ - classification
+    predict probability of x being in class i 
+- regression
+predict mean value of continuous label y
+
+Unsupervised learning:
+ - learn structure in data:
+methods:
+clustering
+density estimation
+anomaly detection
+PCA
+
+semi-supervised: 
+noisy labels
+weakly supervised
+
+generative models
+- attempt to learn data distribution
+- GANs, VAE
+I. Goodfellow taxonomy
+
+Reinforcement learning
+no data!
+agent to perform action on environment - receive rewards
+Q_learning
+DQN
+SARSA
+inverse reinforcement learning
+
+
+Reinforcement learning: qbit ontol, jet grooming through reinforcement learning
+
+COnsiderations before probl;em to ML?
+task mapping to ML paradigm?
+model be written analytically>?
+dimensionality of data?
+data suze?
+
+
+\section{CNN - Convolutional Neural Network}
+
+
+\section{Paper Notes - Dynamic Graph CNN for Learning on Point Clouds}
+arXiv:1801.07829
+
+Point Clouds (PC) are a geometric representation of data in particular in ciomputer
+graphics (or vision). This paper combines successes in CNN with point cloud representation.
+Point clouds do not possess topological infoirmation. The authors introduce a NN
+module called EdgeConv which allows CNN application on PC.
+Paper considers PC classification and segmentation. 
+EdgeConv is an NN operation which captures local geometric structures in the PC,
+which remain invariant under permutations. Learns edge features, i.e. relations
+between points and their neighbors. This approach is based on PointNet.
+
+Related Work:
+Handcrafted Features:
+extrinsic descriptors use coordinates of PC in 3D space
+intrinsic descriptors interpret 3d shape as manifold with a discretized metric
+like mesh.
+Deep Learning on Geometry: CNN for geometric data
+Geometric generative models: adapt VAE, GAN to non-euclidean setting of PC.
+Problem is the comparison between input and output, as there is no canonical
+order.
+Dynamic Graph CNN - DGCNN
+- construct a local neighborhood graph
+- apply convolution-like operations on graph edges
+- An edge is a nonlinear function from a pair of points to real numbers and
+learnable parameters.
+
+DGCNN approach for PC
+-Edge Convolution
+from input points in PC (can also be PC of features in subsequent layer)
+-Dynamic Graph Update
+Multilayer Perceptron (MLP)
+
+-Properties
+-- permutation invariance
+because operation based on max() which is symmetric under permutations
+-- translation invariance
+partially true, as paper choice enables switching off translation dependency
+-Comparison to existing methods
+
+Evaluation
+- Classification
+-- Model Complexity
+-- ModelNet40 experiments
+- part segmentation
+each point in a PC classified into a predefined set of categories
+- indoor scene segmentation
+
+Discussion
+- new operatopr for learning on PC
+- local geometric features important in 3D classification tasks
+
+
+
+Questions
+Applications of point clouds?
+Permutation invariance as quoted on p1:2
+What are embeddings?
+
+Figures:
+F1 - nice example how algorithm finds "semantic" features in PC
+Basically, it decomposes the PC into similar looking objects and marks their
+classification in "distance"
+
+F2 - own note: looks similar to RBM? compare this
+
+This being used in HEP: jet reconstruction.
+
+In this paper, we present a new approach for machine
+learning on jets. The core of this approach is to treat
+jets as particle clouds, i.e., unordered sets of particles.
+Based on this particle cloud representation, we introduce
+ParticleNet, a network architecture tailored to jet tagging tasks. The performance of the ParticleNet architecture is compared with alternative deep-learning architectures, including the jet image–based ResNeXt-50
+model, the particle sequence–based P-CNN model and
+the particle set–based PFN model. On both the top
+tagging and the quark-gluon tagging benchmarks, ParticleNet achieves state-of-the-art performance and improves significantly over existing methods. Although the
+very deep image–based ResNeXt-50 model also shows significant performance improvement over shallower models
+like P-CNN and PFN on the top-tagging benchmark, indicating that deeper architectures can generally lead to
+better performance, the gain with the ParticleNet architecture is more substantial. Moreover, the high performance is achieved in a very economical way as the number of trainable parameters is a factor of 4 (56) lower in
+ParticleNet (ParticleNet-Lite) compared to ResNeXt-50.
+Such lightweight models are particularly useful for applications in high-energy physics experiments, especially for
+online event processing in which low latency and memory
+consumption is critical.
+While we only demonstrate the power of the particle
+cloud representation in jet tagging tasks, we think that
+it is a natural and generic way of representing jets (and
+even the whole collision event) and can be applied to a
+broad range of particle physics problems. Applications
+of the particle cloud approach to, e.g., pileup identification, jet grooming, jet energy calibration, etc., would be
+particularly interesting and worth further investigation.
+
+
+\section{Jet Tagging via Particle Clouds}
+arXiv:1902.08570v3
+
+Quark- and gluon-jet separation important for physics at LHC. This paper treats
+jets as unordered set of particles, which is different than most approaches
+seeing them as ordered structure. This leads to the analogon to point clouds in
+3D space used in computer vision - a \emph{particle cloud}. They use the Dynamic
+Graph CNN from the other paper (Dynamic graph cnn for learning on
+point clouds).  This approach here outperforms state of the art tools!
+
+Jet representation as images comes naturally, given the way they are detected.
+Calorimeter cells can be seen as image pixels, their values corresponding to the
+deposited energy. This has been well studied and understood using relatively
+shallow CNN. Deeper structures might improve things. CNN offer computational
+disadvantages and complications when using more information than just
+calorimeter.
+
+Another way of representing jets is through their constituent particles. For
+deep learning this
+requires to order constituents somewhow, commonly according to their transverse
+momentum. This is an arbitrary choice and may imply some suboptimal choice.
+
+Jets seen as particle clouds - an unordered, permutation invariant set -  seem
+more natural choice. Point clouds are irregular distributed points in space,
+with an underlying internal structure, just like jets. 
+
+Convolution is the extraction of features from an input image and can be
+understood as the subsequent application of functions. For a pixelised image, it
+would map the original pixels onto a smaller dimensional image, preserving
+relationships between original pixels 
+
+CNN extremely successful. Key features for their success: 
+- convolutional operation exploits translational symmetry of images (shared
+kernels across full image). This reduces the number of parameters to be learned
+and improves learning, as each weight uses full image. 
+- hierarchical approach: convolutions are stacked. subsequent layers learn
+different structures of images, from shallow layers learning neighbouring
+relations to deep layers learning global properties. 
+
+Here, combine CNN and point cloud. Convolutional operation needs some local
+patch to operate - not given in point cloud and needs to be defined.
+Furthermore, the convolution form needs to be modified on point clouds to
+respect permutation invariance.
+
+That's why they introduce EdgeConv in that aforementioned paper - Edge
+Convolution. Each point in the cloud is a vertex in a graph, the connection of
+each point with its k nearest neighbours are the edges. This defines a local
+patch. With that, the EdgeConv operation is defined. It can be understood as a
+perceptron operating on the point and its k neighbours.
+These perceptrae can be stacked, making a deep learning structure possible. This
+stackability also means that the distances learned by the EdgeConv operation
+change with each layer. The parameters of the Network are thereby updated. This
+results in a Dynamic Graph CNN.
+
+ParticleNet is an adaption of the EdgeConv and DGCNN structures. 
+One Building block is the EdgeConv operation. This operation goes as follows:
+- find k neartes neighbors (k is a hyperparameter)
+- construct edge features from the "features" (?)
+- feed to 3 layer multilayer perceptron - linear layer, batch norm,lisation and
+ReLU. 
+- 
+
+Approach outperforms staet of the art technology!
+
+
+Q: 
+- How is the cloud permutation invariant? 
+- Fig 1: features as input to edge features?
+- adaptive learning rate observed before? (p4)
+-- warm up
+-- cyclical
+-- depending on optimiser
+-- ADAM not necessary, since it is adaptive. check it!
+- cross entropy loss is constructed how? what's the truth info?
+- input to algorithm given by kinematic variables?
+
