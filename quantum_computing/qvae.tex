@@ -1,0 +1,948 @@
+
+\chapter[]{Towards Quantum Variational Autoencoders}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Autoencoders}
+An autoencoder (\textbf{AE}) is a feed-forward neural network architecture for
+unsupervised learning. Specifically, it falls under the domain of
+self-supervised learning, as the AE creates its own labels during training.
+These labels are a latent (hidden) representation of the input data in a
+different dimensional vector space. During training, the Autoencoder learns how
+to represent its input by abstracting the input data into a latent space. This
+can be understood as learning a probability density function which governs the
+underlying structure, i.e. the latent representation of the input data.
+
+AE are similar to Principal Component Analysis (PCA), in that they map out
+underlying structures of the input data. However, in contrast to PCA which are
+restricted to lower dimensional hyperplanes, AEs can learn non-linear manifolds,
+making them more powerful in describing complex data.
+
+AEs are used for dimensionality reduction and feature extraction, denoising
+data, compression, etc. 
+
+As a concrete example, consider the MNIST dataset of handwritten digits ranging
+from $0-9$. The latent space learned by the autoencoder is an abstraction of the
+input data.
+
+\subsection{Components}
+
+An AE consists of 3 parts: the encoder, the latent space layer and the decoder.
+This structure is depicted in \autoref{fig:autoencoder}.
+
+\begin{figure}[ht!] \centering
+  \includegraphics[scale=0.9]{snippets/Auxillary/fig_xvae/autoencoder}
+  \caption{Structure of an autoencoder. Here, the input is mapped to a vector
+  space with smaller dimension, the latent space, by feeding the data forward
+  through the fully connected encoder layers. The latent space representation is
+  then reconstructed into a the output by the decoder.}
+\label{fig:autoencoder} 
+\end{figure}
+
+\paragraph{The Encoder} is a fully connected feed-forward neural network which
+takes the original data as input, e.g. for MNIST $28\times28$ pixel images of
+handwritten digits. During a forward pass, this input is fed through the layers
+of the network, usually with successively smaller number of nodes per layer.
+This translates (\emph{encodes}) the input data into a latent space
+representation. 
+
+\paragraph{The Latent Space} is a single layer of $n_\mathrm{hidden}$ nodes,
+corresponding to the dimension of the space the input features are mapped to.
+This hyperparameter is problem-specific and needs to be tuned. Small
+$n_\mathrm{hidden}$ force the AE to learn abstractions. This is referred to as
+bottleneck and needs to be small enough to force the AE to learn hidden
+representations instead of memorising individual input examples. For MNIST,
+these hidden representations could be stroke width, number of circles, slant
+etc. In \autoref{fig:latspaceAE}, an example of a 2 dimensional latent space
+representing the MNIST dataset is shown. The plot reveals distinct regions in
+the latent space representing specific digits and their variations in the input
+data.
+
+\begin{figure}[ht!] \centering
+  \includegraphics[scale=0.9]{{{figz/200810_latSpace_AE_-1_2000_100_10_0.001_2_ReLU}}}
+  
+  \caption{Example of a 2 dimensional latent space learned on the MNIST dataset for an autoencoder}
+\label{fig:latspaceAE}
+\end{figure}
+
+\paragraph{The Decoder} maps vectors from the latent space back to the input
+vector space. Oftentimes the decoder structure is mirrored from the encoder, but
+this is not a necessity. The output must however be of same size as the input
+such enable the calculation of a loss function.\\
+
+The hyperparameters are a compromise between powerful feature estimation and
+overfitting. Too many nodes in the latent space will just lead to replication of
+the input, eg. overfitting. Too few layers in the NN will lead to problems
+revealing structures.
+
+\subsection{Loss Functions}
+Given an original input $x$, the goal of an AE is to reconstruct $x^\prime$ so
+that the reconstruction error $\mathcal{L}(x,x^\prime)$, i.e. the difference
+between input and output examples is minimised. Furthermore, the AE should not
+memorise specific features of individual input examples, in other words overfit.
+This can be enforced by adding a regularisation to the Loss function.
+
+A suitable choice for the reconstruction error loss function for training an AE
+on MNIST data is the binary cross entropy or the mean square error. 
+
+Different types of AE exists, depending on the chosen regularisation. In the
+following, two popular examples are described. This is a non-exhaustive list -
+other mentionworthy examples includegraphics
+
+\paragraph{Contracting AE} are useful for inputs with small relative changes.
+The requirement on the loss can then be expressed through a derivative of the
+hidden layer activations, i.e. if the input changes are small, so should the
+hidden layer activation changes.
+
+\subsubsection{Undercomplete AE}
+Here, no regularisation is chosen but the hyperparameters are chosen such that
+the model itself avoids overfitting, i.e. by restricting the number of nodes in
+the latent layer. In addition, the capacity of the encoder and the decoder need
+to be chosen with care. If they become too powerful, i.e. could create a
+sufficiently complex arbitrary function, the input data could be mapped to
+indices in the latent space instead of underlying features.
+
+\subsubsection{Sparse Autoencoder}
+%SOURCE https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf
+%https://www.jeremyjordan.me/autoencoders/
+
+For sparse AE, a penalisation on the \emph{activation of nodes} is introduced to
+to the loss function. This encourages the AE to only activate necessary nodes,
+regardless how many are defined. Note that the activation of individual nodes
+depend on the specific input data. This means, that the activation of individual
+nodes in the layers becomes sensitive to the specific input datum. Depending on
+the input, only specific areas of the network are active. In contrast, the
+undercomplete AE utilises the full network for every input example. Therefore,
+the constraint on the latent space dimensionality can be viewed as independent
+from the overfitting regularisation: instead of choosing a small value to avoid
+memorising input examples, the dimensionality can be chosen according to the
+problem. The sparse activation of network parts in itself provides protection
+against overfitting.
+
+\paragraph{L1 Regularisation} simply adds the sum of absolute activation values
+$|a|$ for layer $l$ and input example $x_i$ to the reconstruction error:
+\begin{align}
+{\cal L}\left( {x_i,\xprime_i} \right) + \lambda \sum\limits_j {\left| {a_j^{l}(x_i)} \right|}
+\end{align}
+The hyperparameter $\lambda$ is to be determined empirically and steers how much
+weight the regularisation should get.
+
+\paragraph{Kulback-Leibler Divergence} $KL(q||p)$ quantifies the difference
+between two distributions. This is used to constrain the average activation of a
+single neuron $j$ to encourage it to fire only on a specific subset of input
+data. The expected average activation over $m$ input samples for neuron $j$ in
+layer $l$ is given by
+\begin{align}
+  {\hat \rho }_j=\frac{1}{m}\sum\limits_{k=1}^m|a_j^l(x_k)|
+\end{align}
+This average activation ${\hat \rho }_j$ can be understood as a Bernoulli random
+variable. Defining a \textbf{sparsity parameter} $\rho$, another Bernoulli
+random variable, provides means of restricting the activation: Choosing a small
+$\rho$ and adding the $KL({\rho ||{{\hat \rho }_ j}})$-term to the loss function
+ensures that the average activation for a neuron is close to the chosen sparsity
+parameter.
+\begin{align}
+{\cal L}\left( {x_i,\xprime_i} \right) 
++ \beta \sum\limits_j {KL\left( {\rho ||{{\hat \rho }_ j}} \right)}
+\end{align}
+Here, $\beta$ defines a weight for the sparsity loss term. An analytic form can
+be given for the KL-divergence between two Bernoulli random variables
+\begin{align}
+KL({\rho ||{{\hat \rho }_ j}})={\rho \log \frac{\rho }{{{{\hat\rho }_ j}}}}+ \left( {1 - \rho } \right)\log \frac{{1 - \rho }}{{1 - {{\hat \rho }_ j}}}
+\end{align}
+
+% \sum\limits_{j = 1}^{{l^{\left( h \right)}}} {\rho \log \frac{\rho
+% }{{{{\hat\rho }_ j}}}}+ \left( {1 - \rho } \right)\log \frac{{1 - \rho }}{{1 -
+% {{\hat \rho }_ j}}}
+
+\subsubsection{Denoising Autoencoder}
+A way to clearly see the workings of the mapping to the latent space is by
+adding random noise to the input and letting the AE reconstruct the original
+underlying image. If it overfits, it would reproduce the noise. Only if the
+latent space is composed of the actual interesting correlations can we see the
+denoised input image. This can be leveraged by feeding the AE input with
+augmented noise and comparing the reconstruction loss to the original input.
+
+\begin{figure}[h] 
+  \centering \includegraphics{{{snippets/Auxillary/fig_xvae/denoising_ae}}}
+  \caption{
+  %TODO  
+  Denoising autoencoders. In the left panel is the original image. In the centre
+  is a version of the image with salt-and-pepper noise added (we randomly choose
+  some pixels and assign to them the minimum or maximum value of the parameter).
+  Noisy images like this are fed through the AE, and the loss function is
+  calculated with respect to the true original image. As evidenced in the
+  rightmost panel, the AE learns how to remove the noise, and produces for us an
+  image that is very close to the true one.}
+\label{fig:combined_image} 
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TODO Everything below this line still needs to be processed continue here:
+%https://www.jeremyjordan.me/autoencoders/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Technical Glossary}
+%TODO where should this live? Is it worth it?
+\begin{table}[ht]
+	\caption{Technical Expression and Quantities}%
+	\label{tab:techExp}
+	\centering
+	\begin{tabular}{lc}
+	\toprule
+	Name & Definition/Description \\
+  \midrule
+  \texttt{Logit mu} & IS the raw output of a NN \\
+  \texttt{Restricted Boltzmann Machine (RBM)} & A neural network architecture.
+  See \ref{sec:rbm}.\\
+  \texttt{Gibbs Sampling} & A Sampling method. See \ref{sec:gibbs}.\\
+  \texttt{Persistent Contrastive Divergence (PCD)} & A Sampling method. See
+  \ref{sec:pcd}.\\
+  \texttt{Evidence Lower Bound (ELBO)} & \\
+  \texttt{Cross Entropy} & \\
+  \texttt{RBM Energy} & \\
+  \texttt{Weight Decay} & \\
+  \texttt{Prior} & \\
+  \texttt{(Hierarchical) Posterior} & \\
+  \texttt{Kulback-Leibler Divergence (KLD)} & \\
+  \texttt{Bernoulli Distribution} & \\
+  \texttt{Unit} & Node in Network \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Collecting Notes since 06.08.}
+- Hierarchy can probably be left out, but is no major point anymore. What
+changes is the input to the decoder depending on hierarchy levels. Each
+hierarchy level takes the preceding zetas (reparameterised) as input.
+
+- The RBM as prior sits "independent" from encoder, decoder. It has a left and a
+right side, which is somehow squeezed into the encoder. The RBM in the code is
+squeezed into the encoder: it's left side is one input, it's right side another.
+Why? The RBM also gets binarised and non-binarised input. why? Looks like this: 
+
+(4 hierarchies) Left side: L1, L2 Right side: L3, L4
+
+binary values to L1,L2,L3 sigmoid() to L4.
+
+Why????
+
+The KLD gradient wrt to the prior is: Positive samples made of posterior samples
+with marginalised last layer. The negative samples are the rbm drawn samples.
+
+In code: numvar1 and numvar2 are left, right side of RBM respectively
+
+- How does the sampling from the RBM work? Something called ancestral sampling?
+I guess that means drawing z0, then zi conditionally depending on zi<k. TODO
+
+- The sampling from a Bernoulli distribution is a fancy word for drawing a 1
+with a probability p, where p defines the Bdist. It is simply drawing from a
+uniform distribution and checking if the value is larger than p (or 1-q,
+depending on the definition).
+
+- THe RBM energy is calculated on the samples from the approximating posterior,
+after they are reparamterised, i.e. on the smoothed version of the discrete
+latent vars. 
+
+- Each hierarchy level is a NN which gets the concatenated input wioth the
+latent variables from the predecessor. This is called conditional distribution
+$p(z_i|z_{i<k})$. Does this have something to do with Markov Chains?
+
+- The sampling procedure in a VAE is from a space lower in dimensionality than
+the original space, making it computationally easier.
+
+\paragraph{Density}
+Another word for probability density function. If referred to as explicit, the
+underlying distribution is learned by learning its parameters. Therefore
+explicit models assume a prior distribution for the data points.\\
+Implicit density models use stochastic procedures to generate data, no
+underlying distribution is explicitly learned.
+
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Feed Forward Neural Networks}
+In a FFNN information ony flows in one direction, from the input layer to the
+hidden layers to the output layer. No cyclic information flow like RNN. Each
+layer in an NN maps the input into a different vectorspace. Thereby complex
+correlatioins can be revealed and highly non-linear decision boundaries
+constructed. NNs are universal function approximators. Fully connected
+feed-forward NN. Each node is connected to each node in the next layer.
+
+\subsection{Training (of FFNN in general)}
+First step is to initialise weights randomly. Then loop all training samples.
+For each sample perform a forward pass of information to the output. Compare the
+output to the target and measure the deviation with a cost function (also called
+loss fct, objective fct) like the Mean-Squared Error (MSE). Then deploy
+backpropagation: at each node, calculate the contribution of the node to the
+overall cost function. Start at the output layer and go backwards. Update the
+weights (and biases - the parameters of your model) according to the gradient at
+that point and the learning parameter. The gradient is calculated using
+Automated Differentiation.
+
+\subsection{Gradient Descent}
+Parameters of a model are updated by calculating the impact of their changes on
+a global cost function. This change is calculated by using a learning parameter
+and the derivatives of the cost fct wrt the parameter in question (eg. weight i
+at node i in layer l). The learning parameter impacts by how much each weight is
+updated in one cycle.
+
+\subsection{Stochastic Gradient Descent}
+Same as gradient descent but ony use a subset of the full training dataset to
+determine the complete gradient of the cost function for an iteration.
+
+\subsection{Automated Differentiation}
+Numerically evaluate the derivative of a function as specified by a computer
+program. It splits the derivation calculation into a succession of basic
+operation and approximates the derivative up to computational precision.
+
+\subsection{Regularisation}
+A common problem of complex models is overfitting, i.e. that a model learns too
+many specific details about the training data. A way to restrict model
+complexity is to implement regularisation schemes. The two most common schemes
+are called L1 and L2 regularisation. These borrow their names from the norm
+definition of $L^p$ spaces in mathematics: function spaces defined by their
+$p$-norm.
+\begin{align}
+  \mathrm{Lp-norm:}\qquad\left\|\mathbf {x} \right\|_{p}:&={\bigg (}\sum _{i=1}^{n}\left|x_{i}\right|^{p}{\bigg )}^{1/p}\\
+  \mathrm{L1-norm:}\qquad\left\|\mathbf {x} \right\|_{1}:&=\sum _{i=1}^{n}\left|x_{i}\right|\\
+  \mathrm{L2-norm:}\qquad\left\|\mathbf {x} \right\|_{2}:&={\bigg (}\sum _{i=1}^{n}\left|x_{i}\right|^{2}{\bigg )}^{1/2}
+\end{align}
+
+The regularisation in learning are implemented by adding terms to the Loss
+function as detailed in the following.
+
+\paragraph{L1 regularisation (Lasso Regression)} adds a L1 norm term to the loss
+function $\mathcal{L}$ together with a tuning hyperparameter $\lambda$, such
+that
+\begin{align}
+  \mathcal{L}\rightarrow \mathcal{L}+\lambda\sum _{i=1}^{n}\left|w_{i}\right|
+\end{align}
+The $w$ are the weights of the model. In other words: the L1 norm penalises the
+absolute value of weights and creates sparsity, as weights close to 0 are
+encouraged.
+ 
+
+\paragraph{L2 regularisation (Ridge Regression)} adds the \textbf{squared} L2
+norm, like so:
+\begin{align}
+  \mathcal{L}\rightarrow \mathcal{L}+\lambda\sum _{i=1}^{n}\left|x_{i}\right|^{2}
+\end{align}
+The sum of squares behaves differently from the L1 norm and does not push the
+weight values to 0, just keeps them sufficiently small. Large weights are
+penalised stronger, small weights (smaller than 1, in square) less. THis
+encourages simplicity over sparsity.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Restricted Boltzmann Machine (RBM)}
+\label{sec:rbm}
+Text Here
+
+\subsection{Gibbs Sampling}
+\label{sec:gibbs}
+Text Here
+
+\subsection{Persistent Contrastive Divergence}
+\label{sec:pcd}
+Text Here
+
+\subsection{Annealed Importance Sampling}
+\label{sec:ais}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Investigating DWave Code}
+\subsection{Encoder}
+Class creates a hierarchical posterior, the encoder of the dVAE framework.
+Consists of a series of fully connected neural networks. The number of layers in
+the encoder is NOT to be understood as flat layers in a NN. It's layers of
+successive NN instead. The class has 3 functions: \paragraph{init} Read the
+configuration. Set the structure, such as number of layer and number of units
+per layer. \paragraph{hierarchical posterior} takes the input and processes it
+through all hierarchy levels in the posterior. The input to each successive
+layer is a concatenation of input+posterior samples (latent vars) for each
+layer. \paragraph{get weight decay} sums the weight decay loss over all networks
+in the hierarchy of NN in the encoder.
+
+\paragraph{Hierarchy} The depth of the hierarchy is defined by
+\emph{num\_latent\_layers}. A loop is done over the range defined by that. The
+input is taken and processed through the network of the current layer. A
+distribution is created per iteration, its type depending on whether we train or
+evaluate. Samples are drawn per iteration from this distribution (using the
+logit - current output of the network). The next iteration appends the output of
+the current iteration - that defines the hierarchical dependency. 
+
+\subsection{Decoder}
+The decoder is comparably simple. This is one FFNN build to create output from
+the latent space variables. Parameters set through config. Three functions are
+implemented \paragraph{generator} calls reconstruct fct with prior samples. Just
+a semantic separation in the framework \paragraph{reconstruct} takes the
+posterior/prior samples and runs the decoder network. The output is the
+activation of the nodes, the logits. Further down in the code: The train bias is
+added to these activations. A distutil instance is created fromt he activations
+(logits). The fina utput is formed from the activations by applying the sigmoid.
+
+
+\paragraph{get weight decay} calls network weight decay.
+
+\subsection{DistUtil Object}
+Stores NN output as logits - unnormnalised, predictive output of the model. This
+output is to be processed by eg. a sigmoid to yield fully interpretable
+probability. THis is the baseclass for all distributions used in the code. The
+main child is the FactorialBernoulli. This implements important functions which
+are called for all the statistical magic.
+
+\paragraph{reparameterise} It takes the logit stored in the instance and
+processes them to give samples. For the FactorialBernoulli that is sampling from
+a uniform distreibution and comparing if the sigmoid(logit) is bigger than the
+sample. For the Spike-and-Exp relaxation distribution that is sampling from this
+function itself according to the parameter beta. 
+
+\paragraph{entropy} returns the entropy for the current logit. For the
+FactorialBernoulli this is the sigmoid cross entropy. calculated from the logits
+and from the sigmoid(logits) used as "labels" (TODO) 
+
+\paragraph{log prob} returns the negative entropy for the logit and the sample
+being checked.
+
+\subsection{RBM}
+This is a child of the DistUtil object. It implements many other functions on
+top of the parent set. \paragraph{init} creates rbm structure (left, right
+side). sets the sampler. sets the partition function calculation steps.
+\paragraph{energy} calculates the RBM energy, depending on input samples, hidden
+and visible probabilities, biases and weights. \paragraph{log\_prob} probability
+of the samples. this requires the partition function evaluation. and energy.
+\paragraph{cross entropy} the cross entropy term for overlapping distribution. I
+believe this is not necessary for the simple dVAE case. \paragraph{kld} multiple
+functions split into calculation of separate KLD. The original implementation
+has a lengthy calculation of gradients in kld from original - kld prior  - kld
+posterior. \paragraph{weight decay} manual weight decay calculation from weight
+decay factor and weights. \paragraph{log Z estimate} annealed importance
+sampling is used to estimate log Z every 10k events. 
+
+\subsection{Why is it logit --mu--?}
+Logit is a ML term for the raw NN output before feeding it through a
+non-linearity like a sigmoid. 
+
+\subsection{Relation of NN output to Distributions}
+The raw NN outputs $logit_mu$ are stored within a DistUtil object, such as a
+FactorialBernoulli. The implemented functions of the DistUtil object allow for a
+treatment of the logit output like a function. Internally, sigmoids are applied,
+ICDFs calculated (reparameterise) and logprobs defined. In the code, the raw
+output is often accessed from the distribution to calculate higher level
+quantities.
+
+\subsection{Difference in Posterior in Training and Evaluation}
+The DistUtil object which the NN output is assigned to is a FactorialBernoulli
+when things are evaluated. In training, the posterior is defined by the
+configuration and through the DistUtil tool. The "raw" output (TODO: check what
+that means from NN structure) is stored in the posterior distribution object.
+Samples are created from the posterior by calling reparametrise. In training the
+samples are drawn from the spike and exponential via reparameterise. Otherwise
+the distributions do not differ. 
+
+% https://datascience.stackexchange.com/questions/31041/what-does-logits-in-machine-learning-mean/31045
+
+\subsection{Sampling step from prior}
+
+Initially, I got confused what exactly it means to asample from VAE. As we learn
+a approximating posterior $q(z|x)$ by learning means and variations of gaussians
+during training, it seemed sensible to draw $z\sim q(z|x)$ where x is random.
+This is not true however! What really should happen in the generation step is to
+sample from the prior $z\sim p(z)$ instead, or from a learned approximation of
+the prior (RBM in qVAE?). For the VAE this is simply the normal distribution
+$\mathcal{N}(0,1)$. Seems odd, considering we learned all those means and
+variances?! But that is how it works. THe posterior is conditioned on the input
+and learns what a good representation of the input looks like in the latent
+space. The prior simply represents the distribution of the variables in the
+latent space.  
+
+% https://stats.stackexchange.com/questions/365336/variational-auto-encoder-vae-sampling-from-prior-vs-posterior
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Variational Autoencoders}
+
+\begin{figure}[h] \centering
+  \includegraphics{{{snippets/Auxillary/fig_xvae/plain_vae}}} \caption{
+  %TODO
+  Boilerplate structure for a VAE - an encoder neural network takes the input to
+  the latent space, and the decoder network takes the latent space back to the
+  domain of the data. Since the output of the encoder represents a probability
+  distribution of the latent variables, we would have to sample to get values
+  for the latent variables - such a network would not work in practice, and we
+  must apply the reparamaterization trick, as shown in
+  \autoref{fig:vae_reparam}.} \label{fig:plain_vae} \end{figure}
+
+  Assume data generated by a underlying, hidden distribution in the latent space
+(like four momentum of a particle). Assume additionally a prior distribution
+from an easy family of distributions $p(z)$ - like Gaussian. Then model the
+output using a NN by tuning parameters $\theta$ in model $p_\theta(x|z)$. In
+other words, draw z from prior and have $p_\theta$ tuned such, that ouput x is
+close to initial data distribution. Inference model - an encoder $q_\phi(z|x)$
+approximating true posterior $p_\theta(z|x)$. A defined inference model then
+allows to set a limit on the log likelihood - the ELBO (evidence lower bound).
+To maximise the ELBO utilise gradient methods. But there's a random variable
+draw in our chain ($p(z)$) and can't backpropagate through that. Use the
+reparametrisation trick - instead of drawing $z$ directly from a prior, take the
+mean and variance of the encoder and draw calculate $z=\mu+\sigma\epsilon$ where
+now $\epsilon$ is drawn from gaussian.
+
+Experimental test on water cherenkov detectors, targeting CP angle. VAE
+reconstruction runs give satisfying results, however they seem washed out in
+general and suffer from a too simple assumption on the noise model. THe sampling
+from a prior leaves artigfcats in some events.
+
+Improvements by doing semi-supervised learning. Pre-train the VAE model with
+labelled data. The encoder learns the features from the labelled dataset.
+
+%\paragraph{Wojtek Talk}
+The goal of generative models is to learn an underlying data distribution of som
+data $x$. This data can be images, calorimeter cell energies, tracker hgits, PMT
+charges etc. Model is trained such that model distribution is as aclose as
+possible to true distribution. This is self-supervised/unsupervised learning, as
+there is no labelling at all.
+\paragraph{VAE}
+Assume data generated by a underlying, hidden distribution in the latent space
+(like four momentum of a particle). Assume additionally a prior distribution
+from an easy family of distributions $p(z)$ - like Gaussian. Then model the
+output using a NN by tuning parameters $\theta$ in model $p_\theta(x|z)$. In
+other words, draw z from prior and have $p_\theta$ tuned such, that ouput x is
+close to initial data distribution. Inference model - an encoder $q_\phi(z|x)$
+approximating true posterior $p_\theta(z|x)$. A defined inference model then
+allows to set a limit on the log likelihood - the ELBO (evidence lower bound).
+To maximise the ELBO utilise gradient methods. But there's a random variable
+draw in our chain ($p(z)$) and can't backpropagate through that. Use the
+reparametrisation trick - instead of drawing $z$ directly from a prior, take the
+mean and variance of the encoder and draw calculate $z=\mu+\sigma\epsilon$ where
+now $\epsilon$ is drawn from gaussian.
+
+Experimental test on water cherenkov detectors, targeting CP angle. VAE
+reconstruction runs give satisfying results, however they seem washed out in
+general and suffer from a too simple assumption on the noise model. THe sampling
+from a prior leaves artigfcats in some events.
+
+Improvements by doing semi-supervised learning. Pre-train the VAE model with
+labelled data. The encoder learns the features from the labelled dataset.
+
+\section{Hierarchical Variational Autoencoders}
+\begin{figure} \centering
+  \includegraphics[scale=1.5]{snippets/Auxillary/fig_xvae/hierarchical_dvae}
+  \caption{A discrete VAE with a hierarchical prior as described in
+  \cite{Khoshaman2019,Rolfe2016, Vahdat2018, Vahdat2018pp}. Relevant
+  distributions are shown, with the dependencies highlighted. This situation can
+  be easily extended to a larger system with more partitions in the latent
+  space.} \label{fig:hierarchical_dvae} \end{figure}
+
+
+\section{Discrete VAE}
+
+\begin{figure}[h] \centering
+  \includegraphics[scale=1.5]{snippets/Auxillary/fig_xvae/dvae_reparam}
+  \caption{The reparameterization trick for DVAEs. Samples are drawn from
+  $q_\phi(\zeta | x)$ by first sampling $\rho$ from the uniform distribution,
+  and then running this, together with the output $q_\phi(z | x)$, through the
+  inverse CDF of the smoothing function $r(\zeta | z)$.}
+  \label{fig:dvae_reparam} \end{figure}
+
+\begin{figure} \centering
+  \includegraphics[scale=1.5]{snippets/Auxillary/fig_xvae/rbm_dvae} \caption{A
+  discrete VAE using an RBM prior in the style of \cite{Khoshaman2019,Rolfe2016,
+  Vahdat2018, Vahdat2018pp}.   The RBM consists of a latent space partitioned
+  into $z_1$ and $z_2$, where both sets of nodes are connected to the rest of
+  the model. The prior itself is a joint distribution, but there are still
+  hierarchies present in the latent space themselves. The weights in the RBM are
+  incorporated in the loss function and are trained along with the rest of the
+  model.} \label{fig:rbm_vae} \end{figure}
+  \begin{figure}[h] \centering
+    \includegraphics[scale=1]{snippets/Auxillary/fig_xvae//rbm_hu} \caption{A
+    discrete VAE using an RBM prior in the style of \cite{Hu2018}. Here, rather
+    than unrolling an entire RBM as the latent space, only the visible units are
+    connected to the model, and the hidden units are held separately. The model
+    is then trained by alternating between training of the autoencoder part and
+    the RBM. Sampling from the latent space can be done by Gibbs sampling the
+    RBM, and then feeding the resultant visible variables into the decoder.}
+    \label{fig:rbm_hu} \end{figure}
+  
+
+Discrete variables are needed to model classes. Dcontinuous random variables are
+defined in the model by relatingf them to discrete variables with a relaxation
+term. This allows to introduced additional structure in the posterior. A
+restricted Boltzmann Machine is a candidate here. The KL loss term in the ELBO
+is problematic when applying the gradient during learning - sampling is needed.
+Here the quantum annealer can help! Replace RBM with QBM and use quantum
+annealer as sampler. Can generate synthetic data!
+
+Summary of paper Rolfe Discrete Variational Autoencoders.
+https://arxiv.org/abs/1609.02200
+
+
+The goal of proibabilistic models with adiscrete latent spaaceis to capture
+datasets with discrete classes. Imaginbe MNIST with classes 0-9 and each class
+with its own properties. That's a big advantage over classical VAE. Discrete VAE
+are composed of: - directed hierarchical components: directed layers of
+continuous latent variables - undirected discrete components: graphical model
+over binary latent variables - hierarchical approximation to posterior (which is
+the distribution from which to draw random latent var values given an x) -
+hierarchy of continuous latent variables
+
+All distributions in the dVAE are NN, except the $r(\zeta,z)$.
+
+DVAE: Discrete is the model to be learnt. VAE is the framework in which to
+learn.
+
+The general idea looks as follows. The posterior and prior are symmetrically
+mapped from the discrete latent space into a continuous latent space. The
+discrete space is marginalised out. The AE term in the ELBO is only evaluated on
+the continuous variables, this enables backpropagation. The symmetric mapping
+means also, that posterior and prior are trained at the same time. The
+representative power is increased by making the approximating posterior over the
+discrete latent space hierarchical and also adding hierarchy to the cont.
+variables sitting below that.
+
+\paragraph{Directed and Undirected Models}
+Directed means that a given node $i$ is evaluated by its predecessor via
+$p(i|i-1)$. Directed models therefore have a direction and model the dependence
+of variables. Undirected models on the other hand model the correlations, by
+exopressing $p(0,...,i-1,i,...N)$ for N nodes.
+
+This procedure is much closer to what happens in nature, a perception is first
+achieved by grouping an objects into a discrete manifold (cats, dogs, skwirrel)
+and then by some smooth distribution on the manifold (change of motion, purr,
+hazelnut). 
+
+The VAE is intractable on discrete variables (undirected graphical models).
+Backpropagation adjust parameters by smoothly changing them through each layer
+of the network. If one layer can't be changed smoothly, then the gradient can't
+be calculated for these points and the backpropagation breaks down. Instead of
+calculating exact log-likelihoods one better optimises an ELBO. Computationally
+less expensive.
+
+Expression for a VAE:
+\[
+  \mathcal{L}(x,\theta,\phi)=-\underbrace{\mathrm{KL}\left[q(z|x,\phi)||p(z|x)\right]}_{\mathrm{KL Divergence}}
+  +\underbrace{\mathbb{E}_q\left[\log{p(x|z,\theta)})\right]}_{\mathrm{AE term}}
+\]
+
+with the following terms:
+\begin{table}
+  \begin{tabular}{c|c|c}
+    Expression & Name & Explanation\\\hline
+    $x$ & Observed Random Variable & Dataset input. This is what's being fed to
+    the model.\\
+    $z$ & Discrete Latent Random Variable & In the latent space, this is what we
+    would like to draw random numbers from to generate new output.\\
+    $\phi$ & Parameters of the approximating posterior q & Tuned with
+    backpropagation.\\
+    $\theta$ & Parameters ... prior? gen model? & 11\\
+    $\log{p(x|z,\theta)}$ & ja & 11\\
+    $q(z|x,\phi)$ & jaaaa & 11\\
+   \end{tabular}   
+\end{table}
+
+In the VAE algorithm, training the posterior is possible if samples can be drawn
+from the posterior with a smooth, differentiable distribution. The gradient of
+the posterior can be approximated. The function is a deterministic inverse
+cummulative distribution function, which depends smoothly on the parameters.
+That is what a continous latent space means...
+
+With discrete latent spaces, like one given via a RBM, %TODO verify
+this is not possible. The iCDF is only piecewise constant and the derivative
+thereby not defined.
+
+The idea of the dVAE is to smooth this iCDF by augmenting continuous rnd
+variables $\zeta$ on the random discrete latent variables $z$. This augmentation
+is achieved as follows. The model is redefined by introducing a distribution
+$r(\zeta|z)$. This means that the continous variables are conditioned on the
+discrete ones. Therefore the model is now a continuous function in $z$ over the
+model! Note that this does not actually alter the model. %TODO (specify this)
+This is done symmetrical, so also the prior - the step after the latent space,
+in the decoding step - has this very same distribution.
+
+Now let's look specifically at the RBM as a prior... Is this a different prior
+than the one in the VAE model? $p(z|x,\theta)$ %TODO
+Within an RBM it's possible to model strong correlations well. %TODO verify that
+These can be problematic for tractability of the model. Does this mean
+backpropagation would be problematic due to gradients behaving wildly? To
+facilitate this, introduce a hierarchical structure. Take $z$ and divide it into
+$k$ disjoint groups. Then build an acyclical graphical mopdel 
+\[
+q(z_1,\zeta_1,...,z_k,\zeta_k|x,\phi)  
+\]
+This means, the model now introduces dependencies of $z_i$ on $z_{j<i}$, which
+are never direct (since that would break differentiability) but through the
+continuous $\zeta_{i<j}$.
+
+Next step is to make the posterior and the generative model even more powerful.
+This is done by extending the RBM with additional layers of continuous latent
+variables. The layers are "positioned below" the RBM. I think that means they
+are executed before the $\zeta$ are drawn. They are comnditioned on the discrete
+variables $z$. Therefore a hierarchy of sets of continous latent variables is
+formed. What does that mean? It's copying natural perception: Objects in the
+same group are first associated to a discrete manifold - cats, dogs squirrels.
+Then the continous attributes are accessed. Here in this abstract case, first
+the discrete variables choose what manifold works best (group, 0-9, cats, dogs,
+...) and then draw the continous variable from the continuous manifold. 
+
+\paragraph{Technical Details on NN}
+All approximating posteriors $q$ depend on input $x$ and are trainable through
+parameters $\phi$ - the weights and biases of NN. To create distributions
+following discrete variables, the final layer of the NN is a logistic function
+outputting the parameters of a factorial Bernoulli distribution. For the
+continuous latent variables, the NN output mean and covariance of Gaussian with
+a linear final layer. Each layer in the latent space (parameterising over
+z,$\mathcal{z}$ and $x$) consists of linear trafo, batch normalisation and ReLU.
+Stochastically approximate expectation wrt RBM - Gibbs sampling on persistent
+Markov Chain. The ELBO is minimised with ADAM.
+
+\paragraph{Technical Details of Code} THree main parts: data preparation, VAE
+creation, training (+eval). The VAE structure has encoder and decoder, both
+FCCFFNN (fully connected feed forward networks). The prior is an RBM. During the
+training/evaluation  the negative elbo is caluclated. Samples are generated from
+the prior (but only for visual images, not used in training...). The forward()
+call is important in pytorch - it is what happens when you call model(). It
+includes encoding and decoding. 
+
+THe hierarchy is implemented as a for loop on the input. The original input
+tensor is concatenated with the latwent variables in the current hierarchy -
+recursively. 
+
+%TODO ensure this is correct
+The RBM models a probability distribution for a system's configuration depending
+an energy expression for that system. The Is this maybe very suited for discrete
+classes, seen as oinfiguration each? What's the exact relationship between the
+prior and posterior, i.e. what is the KL divergence minimisation achieving? THe
+posterior and prior are updated... The prior is updated only every 20k
+samples... OR "logZ" is I should say. 
+
+
+
+\section{Quantum Variational Autoencoders}
+%transcribing paper
+
+%1802.05779_QVAE_source
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\nn}{\nonumber \\}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\z}{\mathcal{\bzeta}}
+\renewcommand{\bf}{\mathbf}
+\def\pd{\partial} 
+\def\ph{\phantom{\hspace{1cm}}}
+\def\x{\mathbf{x}}
+\def\z{\mathbf{z}}
+\def\bzeta{\bm{\zeta}}
+\def\btheta{{\bm{\theta}}}
+\def\bepsilon{{\bm{\rho}}}
+\def\brho{{\bm{\rho}}}
+\def\bphi{{\bm{\phi}}}
+\def\p{\partial}
+\def\tr{\text{Tr}}
+\def\Ex{\mathbb{E}_{\x \sim p_\text{data}}}
+
+\subsection{Notation}
+$X = \{  \x^{d}\}_{d=1}^N$ training set of $N$ independent and
+identically distributed samples following unknown data distribution
+$p_\text{data}(X)$\\
+$\btheta$ model parameters
+$\bzeta$
+$p_\btheta(X)$ model distribution
+$p_{\btheta}(\x, \bzeta)$ joint probability distribution of latent variables and
+input
+
+
+\subsection{Some math}
+Marginal Distribution: The full set of random variables in our model is
+$(X,\zeta)$. So we can write a joint distribution $p(X,\zeta)$. We only know $X$
+initially, so we can \emph{marginalise out} the $\zeta$ by summing over them:
+\beq
+ p_{\btheta} (\x) = \sum_{\bzeta}  p_{\btheta} (\x,\bzeta)
+\eeq
+This is the marginal distribution of the visible units $\x$. This joint
+expression is defined by the conditional probabilities of $\x$ and $\bzeta$, hence 
+\beq
+p_{\btheta} (\x,\bzeta)= \sum_{\bzeta} p_{\btheta} (\x|\bzeta)p_{\btheta}(\bzeta)
+\eeq
+
+\subsection{Summary}
+%CONTINUE THIS
+Training of a generative model: Maximum Likelihood Estimation for parameter set
+$\btheta$
+\bea
+\max_\theta \mathcal{L(\theta)} &=& \max_\theta \prod_{x \in \mathcal{D}}
+p_\theta(x)^{p_d(x)}\\
+\max_\theta \log(\mathcal{L(\theta)}) &=&
+  \max_\theta \log \left( \prod_{x \in \mathcal{D}} p_\theta(x)^{p_d(x)} \right)
+  \\ &=& \max_\theta \sum_{x \in \mathcal{D}} \log \left( p_\theta(x)^{p_d(x)}
+  \right) \\ &=& \max_\theta \sum_{x \in\mathcal{D}} p_d(x) \log \left(
+p_\theta(x) \right) \\ &=& \max_\theta \Ex [\log p_\theta(x)]
+\eea
+
+% \sum_{\bf x} p_\text{data}(\x) \log p_{\btheta} (\x) = \Ex{[\log p_{\btheta}(\x)]}\,,
+
+
+
+
+
+\subsection{Questions Paper}
+What is continuous-time quantum Monte Carlo (CT-QMC)?
+Make sketch of models (directed/undirected.) - see Fig. 1
+WHat's the exact mathematical definition of expectation value?
+What changes with hierarchical posterior - check Appendix C.
+
+\subsection{Todos in Code}
+Batch normalisation
+Annealing of learning rate
+Annealing of beta parameter
+
+
+\subsection{References from Paper}
+Nonetheless,
+discrete stochastic units are indispensable to representing distributions in
+supervised and unsupervised learning, attention models, language modeling and
+reinforcement learning~\cite{jang2016categorical}. Some noteworthy examples
+include application of discrete units in learning distinct semantic
+classes~\cite{kingma2014semi} and in semisupervised
+generation~\cite{maaloe2017semi} to learn more meaningful hierarchical VAEs. In
+Ref.~\cite{makhzani2017pixelgan}, when the latent space is composed of discrete
+variables, the representations learn to disentangle content and style
+information of images in an unsupervised fashion.  
+76,62,77,78
+
+reinforcement learning
+literature~\cite{paisley2012variational, mnih2014neural, gu2015muprop}
+these methods yield noisy estimates of gradient --  variance reduction
+techniques necessry
+There are also two approaches that
+extend the reparameterization trick to discrete variables.
+Refs.~\cite{jang2016categorical, maddison2016concrete} concurrently came up with
+a relaxation of categorical discrete units into continuous variables by adding
+Gumbel noise to the logits inside a softmax function, with a temperature
+hyper-parameter. The softmax function transforms into a non-differentiable
+argmax function obtaining unbiased samples in the limit of zero temperature.
+However, in this limit the training stops since variables become truly discrete.
+Therefore, an annealing schedule is used for the temperature throughout the
+training to obtain less noisy, yet biased, estimates of
+gradients~\cite{jang2016categorical}. 
+
+The $\log Z$
+was computed using population annealing~\cite{hukushima2003population,
+machta2010population} (see also Appendix~\ref{sec:ctqmc} for the quantum
+partition function). In all our experiments we have verified that the
+statistical error on the evaluation of $\log Z$ is negligible.  
+
+
+
+
+
+\section{CaloGAN}
+% https://arxiv.org/abs/1712.10321
+
+% from abstract
+The most computationally expensive step in the simulation pipeline of a typical
+experiment at the Large Hadron Collider (LHC) is the detailed modeling of the
+full complexity of physics processes that govern the motion and evolution of
+particle showers inside calorimeters. We apply these neural networks to the
+modeling of electromagnetic showers in a longitudinally segmented calorimeter,
+and achieve speedup factors comparable to or better than existing full
+simulation techniques on CPU (100×-1000×) and even faster on GPU (up to 10000×).
+There are still challenges for achieving precision across the entire phase
+space, but our solution can reproduce a variety of geometric shower shape
+properties of photons, positrons and charged pions.
+ 
+goal of this project is to help physicists at CERN speed up their simulations by
+encoding the most computationally expensive portion of the simulation process
+(i.e., showering in the EM calorimeter) in a deep generative model.
+
+The challenges come from the fact that this portion of the detector is
+longitudinally segmented into three layers with heterogeneous granularity. For
+simplicity, we can visualize the energy depositions of particles passing through
+the detector as a series of three images per shower, while keeping in mind the
+sequential nature of their relationship in the generator.
+
+% CaloGAN repository
+This repository contains three main folders: generation, models and analysis,
+which represent the three main stages in this project.
+
+generation contains the code to build the electromagnetic calorimeter geometry
+and shoot particles at it with a given energy. This is all based on Geant4. For
+more instructions, go to Generation on PDSF.
+
+models contains the core ML code for this project. The file train.py takes care
+of loading the data and training the GAN.
+
+analysis contains Jupyter Notebooks used to evaluate performance and produce all
+plots for the paper.
+
+
+% Dataset 
+
+- collection of 100,000 calorimeter showers - particles: eplus = positrons,
+gamma = photons, piplus = charged pions - hdf5 files - structure:
+% true energy of incoming particle [GeV] `energy     Dataset {100000, 1}`
+
+% deposited energy in each layer different segmentations define image dimensions
+% (3x96,12x12,12x6 etc) `layer_0    Dataset {100000, 3, 96}` `layer_1    Dataset
+% {100000, 12, 12}` `layer_2    Dataset {100000, 12, 6}` amount of energy
+% deposited outside calorimeter `overflow   Dataset {100000, 3}`
+
+Detector layout: - longitudinally segmented in 3 layers - each layer different
+granularity - dimensions per layer [mm]
+% Layer 0: (5, 160, 90) Layer 1: (40, 40, 347) Layer 2: (80, 40, 43)
+
+
+% paper reading
+
+- full simulation modeling of particle showers in calorimeters - Geant4 [1] as
+the state of the art - the most computationally demanding part of the whole
+simulation process - can take minutes per event on modern, distributed high
+performance platforms per event!
+
+- physics results can be limited by the absence of large enough MC simulation -
+HL-LHC expect 3 billion top quark pair events - MC statistical uncertainty <<
+data uncertainty: - hundreds of billion simulated events - impossible using full
+detector simulation techniques - full MC simulation occupies 50-70\% of the
+experiments’ worldwide computing resources - equivalent to billions of CPU hours
+per year
+
+Current solutions: - approximate, fast simulation okay for many applications -
+parametrized showers for fluctuations - look-up tables for low energy
+interactions - analyses that utilizing the detailed shower structure for
+PID/energy/direction calibration may not rely on these simplifications
+
+Calorimeter dataset specific challenges: - sparsity of hit cells - non-uniform
+granularity among the detector layers - sequential layer structure
+
+- focus on EM calo showers - transverse segmentation important for physics:
+distinguish gammas from pi0 decays - calorimeter in study: 480 mm3 cube, three
+layers in radial (z) direction - thicknesses 90 mm, 347 mm, and 43 mm - active
+LAr, absorber lead - ATLAS calo as reference - only total energy considered
+(active+absorber) - detailed geometry in table
+
+- use Geant4 10.2.0 to simulate positrons, photons, charged pions - shot
+perpendicular to center of first calo layer - energies between 1-100 GeV
+
+Performance of CaloGAN model - qualitative assessment by comparing neighrest
+neighbour GAN vs GEANT images - quantitative assessment by using 1d shower shape
+as proxy
+
+Sequential nature of relationship between calorimeter images - "attention
+mechanism" - dependence among layers - trainable transfer functions - these
+allow to resize and apply knowledge of previous calo layer
+
+Possible Improvements - add shower shape to GAN training
+
+
+%Further Reading
+Enabling Dark Energy Science with Deep Generative Models of Galaxy Images
+https://arxiv.org/abs/1609.05796 StackGAN: Text to Photo-realistic Image
+Synthesis with Stacked Generative Adversarial Networks
+https://arxiv.org/abs/1612.03242

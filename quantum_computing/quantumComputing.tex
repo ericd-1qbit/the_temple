@@ -1,0 +1,690 @@
+%!TEX root =../main/main.tex 
+%Author: Eric Drechsler
+\chapter[Quantum Computing]{Quantum Computing}
+%+++++++++++++++++++++++++++++++++++
+\label{ch:quacom}
+
+\section{Quantum Machine Learning}
+\subsection{Roadmapping Workshop}
+\input{scrolls/2021_roadmapping.tex} 
+
+\section{General}
+
+\subsection{Definitions}
+\subsubsection{NISQ} 
+Noisy Intermediate Scale Quantum machines are computers with $\mathcal{O}(100)$
+qbits, which are not error-corrected (noisy). These perform imperfect
+operations and have a limited decoherence time.
+
+\subsubsection{Fault Tolerant } 
+These machine have $\mathcal{O}(10^{6})$ (millions) qbits, which are
+error-corrected and have a long decoherence time compared with the required
+operations. This allows for circuits with great depth. These will be able to
+solve the hard problems QC is famous for - SHor, GRover, etc.
+
+\subsection{Local Projects}
+\paragraph{TRIUMF}
+\begin{itemize}
+  \item using variational autoencoders: classification and synthetic data generation (neutrino detector outputs)
+  \item efficient qubit encoding for calculating molecular energies with variational quantum eigensolver
+  \item graph-theoretic methods to reduce problem size of QUBOs for QAnnealing
+  \item Extrapolating Nuclear Many-Body Calculations with Constrained Gaussian Processes
+  \item Water-Cherenkov Machine Learning
+\end{itemize}
+
+
+\paragraph{UBC}
+\begin{itemize}
+  \item 
+  \item 
+\end{itemize}
+
+\paragraph{SFU}
+\begin{itemize}
+  \item classification
+  \item particle tracking
+\end{itemize}
+
+
+\subsection{Companies to check out}
+\begin{itemize}
+  \item Strangeworks
+  \item particle tracking
+\end{itemize}
+
+
+%Research at Helmholtz
+% Improving the variational quantum eigensolver (Bayesian
+%optimization with Gaussian processes, gradient optimization)
+% Applying variational quantum eigensolver to lattice gauge
+%theory simulation
+%Solving real-world problems with quantum annealing and QAOA
+%(quantum approximate optimization algorithm)
+%Other news
+% Quantum computing retreat on 28 November with faculty from
+%across the country – what should TRIUMF’s role be for quantum
+%computing in Canada?
+% On-going lecture series about quantum computing hardware
+%and how to build qubits
+%TRIUMF:
+%Helmholtz:
+% Constantia Alexandrou named Helmholtz International Fellow
+%and will be visiting DESY; will contribute to development of
+%quantum computing at Helmholtz
+% Jülich is creating a platform with different quantum computers
+%(from Kerstin: more news next time)
+
+\subsection{Unsorted Notes}
+
+\paragraph{Skimming notebooks}
+\begin{itemize}
+  \item entanglement: state is not representable by tensor-product of single, pure states and always depends on basis (partition)
+  \item Bell-state prime example: $\sqrt{2}^{-1}(\ket{00}+\ket{11})$ - cannot be created with linear combination of basis states
+  \item ancilla qbit: extra, unused (?) qbit
+  \item connectivity and nr of nodes in QUBO do not necessarily influence gap
+	size of min E (adiabatic)
+  \item qbit error correction principle: make multiple "copies" of a
+	measurement. instead of measuring 0 and 1 measure 000 and 111. observe spin
+	flip. more difficult due to no-cloning theorem.
+  \item code distance: how many errors can your code detect?
+\end{itemize}
+
+\paragraph{Tracking}
+\begin{itemize}
+  \item tracking: matching hits to trajectories, fitting trajectories to understand particle properties
+  \item general difficulties: secondary vertices, multiple scattering, holes, double hits
+  \item current algorithms complexity: $\mathcal{O}(N^2)$ (N: number of hits)
+\end{itemize}
+\begin{itemize}
+  \item fast track finding based on NN
+  \item form doublets of hits (with selection criteria)
+  \item do a binary classification: which doublets are ok to keep? Define Energy function (Stimpfl-Abele)
+  \item doublet definition hard - high pt and small densities necessary
+  \item in hepqpr.qallse - use triplets and combine to quadruplets, quintuplets
+\end{itemize}
+
+\paragraph{TrackML specifics}
+\begin{itemize}
+  \item $1\%$ missing hits
+  \item $10\%$ double hits
+  \item $15\%$ noise hits
+  \item $\mu>140$, number particles $11.000$
+  \item $1-12$ hits per particle, average 12
+  \item therefore $110.000$ hits per event
+\end{itemize}
+\paragraph{Doublet creation}
+\begin{itemize}
+  \item $\Delta\phi<0.15$ between hits
+  \item $\Delta\theta<0.10$ between hits
+  \item less than 4 detector layers between hits
+  \item ordered towards outside
+\end{itemize}
+
+\paragraph{Other limitations}
+\begin{itemize}
+  \item track origin always $(0,0,0)$
+  \item if track finding with with only doublets - always a doublet
+  \item tracks need to be high pt
+  \item more false positives than usual methods
+  \item works up to 200 tracks - less than 4k hits
+  \item only central barrel used from track detector
+  \item 
+\end{itemize}
+
+\paragraph{DWave}
+\begin{itemize}
+  \item QUBO/Ising translated to BQM internally
+  \item Josephson Junctions - two superconductors with insulator in the middle
+  \item superconducting qbits at DWave - cooper pairs spread in material
+  \item cooper pairs oscillating between sides
+  \item different qbits according to shape of potential bias - transmon, gmon
+  \item charged qbits best for universal QC
+  \item flux qbit for annealing - double well potential by JJ+inductivity
+  \item short coherence times? no killer for annealing, just decreasing efficiency
+  \item next evolution of machines - Chimera 16 to Pegasus 6 to Pegasus 16
+  \item Pegasus 16: 5.5k qbits, 40k junctions, 15 connections per qbit
+\end{itemize}
+
+From Evernote:
+- toolkit: ocean tools, open source
+- problems on dwave can be understood via graph theory
+- QUBO:
+-- binary variables
+-- objective function to minimise, its minimum leading to desired result
+-- constraints are added as penalty to OO
+--- Lagrange parameters use to tune iompact of constraint
+- sampling: from all solution, pick one with lowest energy values
+-- all solutions characterise the energy landscape
+
+
+\subsection{DWave Advantage}
+Newest Quantum Computer introduces new QPU architecture: Pegasus. Advances in
+QPU fabrication technology allows for a higher connectivity between qbits. On a
+QPU not all qbits are connected to each other, instead the connectivity follows
+a certain topology. How a problem is embedded on the QPU is crucial - not only
+the qbit count matters but also the topology. In a sparse QPU structure (one
+where not all qbits are connected) certain QUBO terms can only be embedded by
+using logical qbits: a qbit formed by coupling two qbits strongly, making them
+act as one. This allows certain graph edges and nodes to be interconnected on
+the chip. A variable represented on the chip is therefore not a single qbit but
+a logical qbit (set of strongly connected qbits). The procedure of doing this
+kind of problem embedding onto logical qbits to fit the architecture is called
+minor embedding.
+The size of a problem a QPU can process depends on its qbit count but also on
+the connectivity, or the working graph - the available qbits and couplers
+between them.
+
+Previous DWave generations have 2000+ qbits, the Advantage system 5000+. The
+connectivity between those is just as important. The topology is denoted as
+either CN or PN, where C and P stand for Chimera and Pegasus respectively, and N
+is the number of unit cells in a grid. C16 is a lattice of 16x16 unit cells. C16
+consists of 2048 qbits (16x16x8). A unit cell is NOT one qbit. A unit cell is a
+block of more densely connected qbits. The blocks are connected in the CN
+lattices.
+Hardware limitations - manufacturing, cryogenic - the count of avaiolable qbits
+is lower than the lattice suggests. 
+
+% Continue at: ## Test Case: Embedding Random Graphs 
+
+\paragraph{DWave Hybrid Solver}
+\begin{itemize}
+  \item new (2020) framework to enable parallel workflows invoking various
+	samplers
+  \item enables decomposition of large QUBOs (cut at 10k?) into set of smaller
+	samples
+  \item multiple solution techniques can run in parallel in branches
+  \item for example: have global tabu search (classic qbsolv) - can be
+	interrupted by another, parallel running branch
+  \item branches (parallel solution runners) can be divided into Decomposer
+	(split current sample according to some criterion),
+	Sampler (QPU, SA, ...) and Composer (user defined criterion to select from
+  current samples)
+\end{itemize}
+
+\paragraph{Quantum annealer}
+\begin{itemize}
+  \item adiabatic theorem: system remains in ground state if 
+  \begin{itemize}
+	\item perturbations slow
+	\item large enough energy gap to next excited state
+  \end{itemize}
+  \item  $H(s)=A(s)H_0+B(s)H_p$ - initial Hamiltonian $H_0$, problem Hamiltonian $H_p$
+  \item anneal time $s=t/t_f$. amplitude A lowered, B raised - introduce problem, remain in ground state
+  \item problem formulation on annealer: quantum machine instructions as quadratic unconstrained binary optimisation QUBO
+  \item objective function:
+\end{itemize}
+\begin{align}
+  O(a,b;q)=\sum_{i=1}^{N}{a_iq_i}+\sum_{i=1}^{N}\sum_{j=1}^{N}{b_ijq_iq_j}
+\end{align}
+\begin{itemize}
+  \item minimum gap: (E vs time spectrum) point where ground state energy approaches next energy level closest
+  \item complex problems:  many energy states close to minimum, several minima...
+  \item thermal fluctuations can lead to jump out of minimum energy
+\end{itemize}
+\begin{itemize}
+  \item 
+\end{itemize}
+
+\paragraph{QC general}
+\begin{itemize}
+  \item dimensionality argument: classical - cartesian product, quantum - tensor product
+\end{itemize}
+\begin{align}	
+  \mathrm{classical:}\quad& \dim{V \prod W}=\dim(V)+\dim(W)
+  \mathrm{quantum:}\quad&   \dim{V \otimes W}=\dim(V)\dim(W)
+\end{align}
+\begin{itemize}
+  \item $n$-qbit system: $2^n$ amplitudes
+\end{itemize}
+
+v
+
+\paragraph{Quantum Neural Networks}
+\begin{itemize}
+  \item see reading list, two related items: 1912.12486, 1811.02266
+  \item similar to qRAM
+  \item state preparation via hypergraph
+  \item defered measurement - two ways
+\end{itemize}
+
+\paragraph{Quantum Circuit Learning}
+\begin{itemize}
+  \item hybrid algorithm - quantum+classical component
+  \item low depth quantum circuit (better for NISQ)
+  \item ideal - Quantum-Phase-Estimation: Harrow-Hassidim-Loyd Algorithm
+  \item low depth circuits:
+\begin{itemize}
+  \item  QVE/VQE (Variational eigensolver)
+  \item  QAOA (approximate optimisation algorithms
+\end{itemize}
+  \item QCL basic idea: problem divided into 2 parts
+  \item encode problem in A (hermitian matrix) and optimise expectation value
+  \item optimisation wrt parameter dependant state $\ket{\psi(\theta)}$
+  \item algorithm
+\begin{itemize}
+  \item[1] prepare state $\ket{\psi(\vec{x})}$ with unitary operations from initial encoding data points $x_i$
+  \item[2] parameterise this state with unitary operations and tunable parameters $\vec{\theta}$
+  \item[3] measure expectation value of observable
+  \item[4] calculate loss function from predicted labels (0,1) on $\vec{x}$
+  \item[5] embed 2-4 in classical loop to minimise loss function by varying $\vec{\theta}$
+  \item[6] evaluate on test/validation set
+\end{itemize}
+  \item quantum advantages: non-linearity can be modelled without high cost/number of nl functions (classical)
+  \item kernel-trick-method
+  \item avoids overfitting
+\end{itemize}
+
+\paragraph{Variational Quantum Classification}
+\begin{itemize}
+  \item QCL paper uses Qulacs framework
+  \item also available: variational quantum classification (VQC) part of QiSkit
+  \item see presentation
+\end{itemize}
+
+\paragraph{Qiskit notes}
+\begin{itemize}
+  \item shots - number of experiments run on QPU for one measurement - how often same circuiot repeated
+  \item also available: variational quantum classification (VQC) part of QiSkit
+  \item see presentation
+  \item variational form RyRz - number of parameters $n\cdot(d+1)\cdot2$ (number qbits, depth)
+  \item number of qbits = number of featrures
+  \item feature maps - how to put classical data on QPU
+\end{itemize}
+
+\paragraph{Easy ways to explain}
+\begin{itemize}
+  \item qbits - lightbulb in room
+\end{itemize}a
+
+
+%https://interestingengineering.com/the-race-for-quantum-supremacy-7-reasons-why-people-are-so-excited-about-quantum-computers
+
+- quantum supremacy: a programmable quantum device solves a problem no classical
+  computer can solve in any feasible amount of time
+-- for google: 200 seconds  vs 10k years
+- computational power based on QM principles of superposition and entanglement
+- superposition: a system is not fixed to a specific state but can "be" in
+  several states at once, governed by a prob function
+-- QC perform operations on the object's state probability
+- example: Maze.
+-- classical, every possible path explored until solution. One by one.
+-- QC: all paths at once
+- domain of AI/ML: computational power might enable step beyond current "narrow"
+  AI towards general AI
+-- weather forecast - huge impact on society
+-- drug development: simulate molecule interactions much more efficiently
+- cryptography: old protocols might be broken by Shor Factoring alg. new
+  protovcols based on quantum much safer.
+
+
+\paragraph{Quantum Generative Models and VAE}
+%DWAVE talk 2018_qVAE_DWace_QC_for_HEP
+\begin{itemize}
+  \item hybrid approach - classical/quantum:
+  \begin{itemize}
+	\item NISQ devices to process encoded/compressed representations of data
+	\item learn these encodings through classical Deep Learning
+  \end{itemize}
+  \item[$\rightarrow$] Quantum Generative Models with latent variables
+  \item goal: reproduced a data distribution by approximating it through a model
+	which marginalised the original distribution in latent variables (hidden or
+	unobserved variables in original distribution)
+\item sampling with QA to replace CPU-inbtensive MC simulation
+\item priors estimated with quantum computers might be perfect for q processes
+  like in HEP
+\item qGenerative models: computational advantage?
+\item what has been shown so far:
+  \begin{itemize}
+	\item qVAE are classes of state-of-the-art generative models - performance
+	  en par for complex datasets;
+	\item qVAE can be trained with QA on non-trivial datasets - MNIST - TODO:
+	  HEP? 
+	\item Path to quantum advantage in realistic applications (with NISQ)
+  \end{itemize}
+	\item Examples of Generative Models trained on QA:
+  \begin{itemize}
+	\item Quantum Boltzmann Machine: non-hybrid. connectivity of qbits major
+	  problem
+	\item Quantum Assisted Helmholtz Machine: hybrid. lacks well defined loss
+	  function and is inefficient in training
+	\item QVAE: hybrid, efficient training, state of the art generative
+	  modelling
+  \end{itemize}
+\item qVAE: 
+  \begin{itemize}
+\item[1] classical AutoEncoding structure - fwd-propagation through DNN
+\item[2] quantum prior: generative process - sample from quantum Boltzmann
+  distribution
+\item[3] hybrid framework: efficient training with stochastic gradient descent
+  \end{itemize}
+  \item quantum in qVAE: the prior is implemented as qBoltzmann Machine
+  \item problem: must generalise reparametrisation trick to discrete variables
+  \item developed at DWave: DVAE by back-propagation through smoothing distributions or
+	through smoothed, continous variables
+\item q Boltzmann Machine:
+  \begin{itemize}
+	\item uses a thermal distribution of a quantum spin system to reproduce data
+	  distributions
+  \end{itemize}
+\item path towards quantum advantage:
+  \begin{itemize}
+	\item improvement of QPUs for better sampling quality
+	\item increase generative capacities by exploiting representative quantum
+	  distributions and larger number of latent variables
+	\item lots of classical ressources
+  \end{itemize}
+  \item contrastive divergence
+  \item training a BM: clamped and unclamped values
+\end{itemize}
+
+\section{qRAM}
+An integral part of quantum Machine Learning tasks is to translate classical
+data to the quantum circuit. This state preparation is also called quantum RAM.
+The term encompasses all circuitery and hardware needed to prepare data for
+further processing on the QPU. This is one crucial component of any qAlg, as the
+efficiency of loading data is a factor in an speedup estimation.
+Reminder: a qbiot is given as a superposition of basis states with an amplitude
+per state. For $n$ qbits we have $2^n$ amplitudes.
+There are two ways to encode data into a quantum state:
+\begin{itemize}
+  \item[\textbf{Amplitude encoding}] Take classical data and encode them into
+	amplitudes, i.e. by rotations on the Bloch Sphere.
+  \item[\textbf{Basis encoding}] Each data point is transformed into binary
+	strings, which are the qbit configurations. A superposition of those is a
+	quantum state.
+\end{itemize}
+Now what is an actual quantum Random Access Memory? It's defined as a encoding
+procedure which loads the given classical data into a superposition quantum
+state.
+\paragraph{Classical RAM} A classical RAM can be visualised as a grid of cells.
+A RAM query is a call to a specific address in that grid for its content.
+\paragraph{qRAM} A qRAM can retrieve multiple locations at once. This is done by
+performing a query in superposition! The query itself is a quantum
+superposition.
+There are two types of qRAM:
+\begin{itemize}
+  \item[explicit] Data is directly encoded into physical qbits. A quantum
+	circuit is used to extract that data. Easy to change memory contents. But need a
+	whole lot of qbits just to hold data.
+  \item[implicit] Design a circuit such to extract the information directly.
+	Make a query of all states at once... TODO: didnt understand well.
+\end{itemize}
+A qRAM suffers under error rates and needs active error correction. Note that QQ
+QML algorithms don't really need qRAM. Also there's papers of CQ algorithms
+which avoid the use of qRAMs.
+
+
+
+\section{QML in HEP paper}
+%Quantum Machine Learning in High Energy Physics - arXiv:2005.08582v1
+- a review paper - great for talks!
+- how can QC learn from data?
+-- learning theory adapted to quantum realm - new paradigm
+-- find quantum algorithms which speed up ML (computational complexity)
+-- ML applications on NISQ devices
+- circuit-based QC: predict a QML model, trained classically
+-- see Circuit-centric quantum classifiers
+-- Fast quantum learning with statistical guarantees.
+- qu annealers: optimise a classical model 
+
+\paragraph{Quantum circuits as trainable models}
+- ML model can be understood as function depending on input x and tunable
+  parameters $\theta$
+- one measurement of a quantum circuit is a probabilistic procedure. many
+  measurements (shots) are deterministic and determine the expectation value
+- quantum model defined by shots of quantum circuit
+- parameters and input are decoded into the quCircuit by rotations of qbits
+  (physical operation)
+-- profound conceptual differences between free para and input - see paper 39
+- quCircuit is combination of all gates (encoded data, parameters) - measurement
+  expectation value depends on the model parameters
+- quCircuit wrapped in classical loop to optimise parameters such that model
+  describes data best
+-- measured with loss function
+-- called variational or parameterized or QNN.
+-- use gradient free or finite-difference based opt. methods
+- important recent result: gradient can be calculated by using macroscopic
+  "finite differences" (compare to Xanadu talk method). 
+-- can thereby compute gradients in variational circuits
+-- differentiable programming
+- probabilistic nature of quantum circuits - use as ansatz for generative
+  adversial networks!
+
+\paragraph{Quantum annealers as optimisers}
+- quantum part not used for prediction but for training (tuning parameters)
+-- problem is to rephrase problem (i.e. loss function) into QUBO format
+- first application: simple perceptron ensembles can be rephrased as QUBO!
+-- QBoost algorithm! check it out.
+- QA as samplers for RBM - qRBM. :)
+
+- examples: diphoton classification and RBM training
+
+\paragraph{RBM}
+- generative model approximating a target distribution
+- set of visible variables and set of hidden variables
+- trained with gradient descent by updating weights and biases
+
+
+\paragraph{Quantum Circuit Applications}
+- VQC, QCL
+
+
+Q:
+- Why does the maximum speed of evolution decrease with system size? (p4)
+
+- what is learning theory in quantum setting (p4)
+see 29 \& 30
+
+- Discuss gradient-free/finite difference methods. why not gradient? understand
+  again Xanadu example (p6)
+
+- what's differentiable programming? (p6)
+
+- clamped and unclamped values? (p10)
+
+- why input, edge and node NETWORK, not just layer? (p12)
+
+- what's a Tree Tensor Network (p12)
+
+- any info on ADAM optimiser (p13)?
+
+
+
+
+%Notes from Quantum Application Workshop
+Quantum Applications at DWave
+
+Which problems can be solved?
+Optimisation - Traffic rutng, Graph partitioning
+Probabilistic ML - Clustering, RBM
+Constraint Satisfaction Problem - Scheuliungm Resource allocation
+
+Early APplication
+- Materials properties, opt., ML, cyber security
+
+
+A case for QA for regression
+- Roman Krems
+- focus on small data
+- probabailistic learning base of bayesian inference
+
+
+1Qbit
+- Phase estimation algorithms (PEA) - less measurements
+- VQE (less qubits and shallower circuits)
+
+\paragraph{Quantum Autoencoders to denoise quantum data}
+%arXiv:1910.09169v1
+A key to computational advantage with QC is the creation and manipulation of 
+entangled states. Experimental noise is a limiting factor. Autoencoders are known 
+classical NN architectures which allow to denoise classical data in an unsupervised manner.
+This paper constructs a quantum AE from quantum NNs to denoise quantum data.\\
+Denoising protocols for quantum states are hard to come up with, they require
+knowledge of all noise sources and correction methods which do not change the 
+characteristics of the original state. Also, often no denoised references are available.
+Chosen QNN is open source, computational complexity scales linearly with depth per epoch, 
+cost function has clear operational meaning.  
+The layer in the AE where inputs are mapped to the latent space is called bottleneck in this paper.
+
+%Stuff to discuss
+- BirdNET app for birdsong identification
+- discuss expression 1
+- What's the meaning of the fidelity (wiedergabetreue)?  
+- p2, probability for spin flip - 
+
+
+\subsection{An efficient qu algorithm for generative machine learning}
+
+Questions:
+What is the reasonable assumption on complexity theory?
+How does the training work?
+What's a generic form of correlator?
+
+Paper summary: Standard generative models can be expressed as factor graphs,
+with vertices variables and functions. The quantum version of that is the Tensor
+Network state - with hidden and visible variables. 
+Translate this TNS to their model - the QGM.
+
+The Zist: they prepare a network state Q(Z) by applying invertible,
+parameterised operations on qbits and then measure a subset of them. this can
+model a probability distribution. This can be trained efficiently.
+
+They show:
+- any factor graph is a special case of QGM. 
+- QGM is exponentially more powerful than factor graphs for representing pdfs
+- there are problems for which the QGM scales polynomial while classical
+algorithms don't
+
+\section{Quantum Boltzmann Machine}
+%arXiv:1601.02036v1
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ba}{\begin{eqnarray}}
+\newcommand{\ea}{\end{eqnarray}}
+\renewcommand{\bf}{\mathbf}
+
+\newcommand{\nn}{\nonumber \\}
+\def\p{\partial}
+\def\tr{\text{Tr}}
+Introduction
+
+Machine learning aims to learn data distribution by adjusting parameters in a
+model. If model distribution is sufficiently similar to data distribution, one
+can sample from it to generate examples following the data distribution.
+
+Quantum Machine learning algorithm are only used to facilitate training, i.e.
+the model is classical, the training is sped up. The QBM
+actually incorporates quantum effects in the model - a \emph{quantum
+probabilistic model}. It does this by using the Boltzmann Distribution of a Hamiltonian describing a quantum
+system.
+\subsection{Boltzmann Machine}
+
+A classical Boltzmann Machine consists of visible and hidden nodes $z_a$. It's
+Energy is given by 
+\ba
+E_{\bf z} = - \sum_{a} b_a z_a - \sum_{a,b} w_{ab} z_a z_b. \label{Ising}
+\ea
+
+This is an Ising model and it is defined by the quadratic energy function over binary units. 
+The marginal distribution
+  \be\label{PV}
+  P_{\bf v} = Z^{-1} \sum_{\bf h} e^{- E_{\bf z}},\ \qquad Z = \sum_{\bf z} e^{-E_{\bf z}},
+  \ee
+
+Training goal: determine the parameters of the BM (bias, weights) such that
+model an data distribution as close as possible. This is a minimisation of the
+avergae negative log-likelihood.
+\ba 
+{\cal L} = -\sum_{\bf v} P_{\bf v}^{\rm data} \log P_{\bf v}\\
+{\cal L} = -\sum_{\bf v} P_{\bf v}^{\rm data} \log {\sum_{\bf h} e^{-E_{\bf z}} \over \sum_{\bf z'} e^{-E_{\bf z'}}}
+\ea
+
+\ba
+\p_\theta {\cal L}
+&=&   \sum_{\bf v} P_{\bf v}^{\rm data} {\sum_{\bf h} \p_\theta E_{\bf z} e^{-E_{\bf z}} \over {\sum_{\bf h} e^{-E_{\bf z}} }} - {\sum_{\bf z} \p_\theta E_{\bf z} e^{-E_{\bf z}} \over \sum_{\bf z} e^{-E_{\bf z}}} \nn
+&=&  \left[ \sum_{\bf v} P_{\bf v}^{\rm data} \langle \p_\theta E_{\bf z}\rangle_{\bf v} - \langle \p_\theta E_{\bf z} \rangle \right], \nn
+&=&  \overline{\langle \p_\theta E_{\bf z}\rangle_{\bf v}}
+- \langle \p_\theta E_{\bf z} \rangle,
+\ea
+
+\textbf{Clamping} refers to fixing the visible variables to data in the averaging.
+\ba
+\delta b_a &=&  \eta \left( \overline{\langle z_a \rangle_{\bf v}} - \langle z_a \rangle \right),\\
+\delta w_{ab} &=&  \eta \left( \overline{\langle z_az_b \rangle_{\bf v}} - \langle z_az_b \rangle \right).
+\ea
+
+The parameter gradients are expressed in terms of differences between clamped
+(visible vars fixed to data) and unclamped, free averages - unclamped and
+clamped terms are also called positive and negative phase. Estimating these
+averages is done through sampling! Efficient way of sampling = efficient way of
+training.
+
+\subsection{Quantum Boltzmann Machine}
+Now the Energy function in \ref{me} is replaced by a Hamiltonian describing a
+N-qubit system with two states, i.e. dimensionality $2^N$.
+THe diagonal entries of this Hamiltonian are exactly the energy values of all
+possible $2^N$ states of the binary units. 
+For that, the $z_a$ are replaced by $2^N\times2^N$ matrices
+\be
+\sigma^z_a \equiv \overbrace{I\otimes ... \otimes I}^{a-1}\otimes \sigma_z \otimes \overbrace{I \otimes... \otimes I}^{N-a} \label{sigma_def}
+\ee
+
+$I$ is the identity matrix, $\sigma_Z$ is the Pauli-Z Gate introducing a phase
+flip. 
+This is a fully connected BM where each visible and hidden node is connected
+with each other and amongst themselves. 
+Eigenstates of this are denoted as $\ket{\bf v,h}$
+Then define density matrix, marginal B probability, prpojection operator and add
+transverse field. This transverse field adds transverse spin components. 
+The new H now has eigenstates which are superpositions of the initial $\ket{\bf v,h}$.
+Wirth this new H, the parameters are trained again to match visible distribution
+to data. A complication arises as the Operators in the do not commute anymore
+and therefore can't be obtained like seen in the classical case.
+One of the resulting terms can be reexpressed and sampled. The other term not.
+Instead of minimising the NLL, the minimisation target is an upper bound on the
+NLL. 
+
+\subsection{Introducing upper bound}
+Using the Golden-Johnson inequality, the trace in the NLL derivatives can be
+reexpressed. The new form introduces a clamped Hamiltonian $\mathbf{H_v}$. 
+With this upper bound a new optimisation target is defined. The paper then shows
+examples on how this compares. The transverse field cannot be learned with this
+upper bound.
+
+\subsection{(Semi)Restricted QBM}
+The positive phase calculation requires clamping of visible variables to data
+and thenn sampling. This can become expensive. If however, the hidden variables
+are not connected to each other, the calculations can be carried out exactly,
+i.e. expectation values can be computed exactly.
+
+\subsection{QBM on a Quantum Annealer}
+Time dependent Hamiltonian implemented on QA:
+\be
+{\cal H}(s) = - A(s)\sum_{a}\sigma^x_a + B(s)[\sum_{a}h_i\sigma^z_a {+}
+\sum_{a,b} J_{ab}\sigma^z_a\sigma^z_b ], \label{HP}
+\ee
+In general: a quantum annealer with a linear annealing schedule does not return
+a BM distribution. But with certain modification to the annealing schedule, a BM
+distr. can be achieved. The dynamical slow-down and freeze-out need to happen in
+a short time.
+
+Notation:
+$z_a=(z_v,z_i)$
+with v for visible, i for hidden.
+$z_a\in\{-1,+1\}$
+with $a=1,...,N$
+Vector
+notation $\mathbf{v,h,z}$ denoting a visible, hidden, BM state respectively.
+
+Hamiltonian Parameters $\theta\in{b_a,w_{a,b}}$
+
+Questions/Key Points:
+- How is Quantum advantage encoded in the model?
+- In what sense is Boltzmann distribution used on top of a quantum Hamiltonian?!
+- What's a Boltzmann average?
+- The translation of the z to sigma z - why?
+- Why is the transverse field added?
+- How does sampling step actually work?
+
+TODO: 
+- Calculate Equation 6
