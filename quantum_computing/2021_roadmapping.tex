@@ -1,0 +1,146 @@
+%!TEX root =../main/main.tex 
+This section is a summary of the reading done for the Quantum BC Roadmapping
+workshop. Purpose of this workshop is to lay out a plan for the future
+development of Quantum Computing in BC. Together with the participants, a
+discussion will be held to define goals and clarify the current state. The
+following subsections are to facilitate the discussion.
+
+\subsection{QML - Definition}
+Defined as the integration of quantum algorithms in the sector of machine
+learning. Machine learning tasks are solved sing quantum algorithms. There are
+overall 4 different approaches to combine these domains, as depicted in
+\ref{fig:algvsdata}. QML is currently limited by the amount of data which can be
+processed. As opposed to the classical counterpart, qbits and q gates are
+utilised to:
+\begin{itemize}
+    \item speed up certain parts of the algorithm's computations
+    \item improve data storage access
+    \item enhance model expressability
+\end{itemize}
+QML algorithms include hybrid approaches, which utilise classical processing and
+outsource computationally expensive parts to QPUs. 
+
+Careful, there are other definitions and aspects which are part of QML, which
+are \textbf{not} part of this discussion:
+\begin{itemize}
+    \item classical ML of quantum data
+    \item quantum learning theory, the connection between learning theory and
+    quantum information
+    \item research on similarities between learning and physical systems
+\end{itemize}
+
+\begin{figure}[ht!]
+     \centering
+    \includegraphics[scale=0.9]{figz/QML_approaches}
+     \caption{}
+  \label{fig:algvsdata} \end{figure}
+\clearpage
+
+\subsection{Basic Concepts}
+Core procedure:
+\begin{itemize}
+    \item Encode data into quantum information processable form, such that it
+    can be used on a QPU. 
+    \item process information  by running algorithm
+    \item result is given by measurement of final qbit states
+\end{itemize}
+
+\subsection{Advantages}
+- quantum feature maps
+Furthermore, to eventually obtain any quantum advantage, 
+one should search from the set of classically intractable feature maps
+
+\subsection{Supervised Learning}
+\subsubsection{Classification}
+The most prominent methods are quantum kernel estimates and variational quantum
+classifiers.
+
+\subsection{Unsupervised Learning}
+\dots
+
+\subsection{Taxonomy}
+
+\paragraph{Quantum State Amplitudes} can be used to compactly encode exponential
+number of information. A state with $n$ qbits has $2^n$ complex amplitudes,
+allowing to design algorithms, which grow polynomially in $n$, which corresponds
+to logarithmic growth in the number of amplitudes. Many of these are based on
+the \textbf{HHL-algorithm}, a q-alg for solving linear systems of equations. In
+a nutshell, this allows for matrix inversion which grows logarithmically as
+opposed to quadratically, the most efficient known classical method. The
+inversion of matrices can be used for any machine learning task relying on
+solving a system of linear equations, like the least-squares versions of
+\textbf{SVMs, linear regressors, Gaussian processes}. Challenges: State
+preparation.
+
+\paragraph{Grover Search} is a quantum search algorithm, which provides a
+quadratic speed up of unstructured search problems. It's generalisation is
+amplitude amplification. These can be used to speed up ML algorithms which are
+based on such unstructured searches, eg. k-medians and k-nearest neighbour
+algorithms, quantum perceptron.
+
+\paragraph{Reinforcement Learning} depends on an agent which interacts with the
+environment and receives rewards depending on its actions. In the q-realm, this
+agent either possess quantum processing capabilities or probes the (classical)
+environment through superposition, which both can lead to quantum speed ups. 
+
+\paragraph{Quantum Annealing}  is a technique to determine minima of an
+optimisation problem.   A problem is encoded into a Hamiltonian of a system.
+This system is evolved over time; it follows the Schroedinger equation in its
+time evolution. Initially, the system starts as equal superposition of all
+states. Over time, it evolves into the ground state. The crux is to formulate
+the problem at hand such that the ground state reflects the solution to a (ML)
+problem. In particular, the form of problem must be a QUBO. 
+
+\paragraph{Quantum Sampling} can speed up computationally hard sampling
+procedures, which are at the core of many ML applications - Boltzmann Machines
+as a particularly well-known example. The task is to estimate averages over
+probabilistic distributions, which can be a hard task for generic probabilistic
+models and is usually solved with Markov chain Monte Carlo (MCMC). Quantum
+Annealing offers a different approach, here samples are drawn reluying on an
+actual pysical process like quantum annealing, which naturally provides samples
+following the Boltzmann distribution. 
+Aside from Annealing a universal QC can also be used for probabilistic sampling:
+a "thermal state" is prepared on the QPU and then measured, resulting in a BM
+sample. This state is prepared using quantum enhanced Markov logic networks.
+
+\paragraph{Quantum Neural Network} describes a class of algorithms combining
+aritifical neural networks with quantum information advantages to gain speed up
+and higher efficiency. Most of these are implemented as feed-forward
+architectures.
+Examples of QNN models are: 
+\begin{itemize}
+    \item Quantum perceptrons: the qbits take the place of neurons. The main
+    problem here is the non-linearity required for neural activation. Quantum
+    theory is linear. A practical implementation has been proposed using circuit
+    based on variational quantum circuits and quantum phase estimation.
+    \item Quantum Networks: theoretically generalisation of the classical neuron
+    leads to general form of unitary gates. This can then be applied to a
+    variety of different qbits. The learning is then still based on VQC. 
+    \item Quantum Networks for algorithm design: keep the interactions between
+    qbits as learnable parameter - use ML to learn the best algorithm!
+    \item Quantum Associative Memory: a circuit based quantum ciomputer,
+    simulating associative memory - based on Grover-like quantum search
+    algorithm. The search retrieves the strate closest to the given input. Not a
+    neural network in the Hopfield sense.
+\end{itemize}
+
+\paragraph{Hidden Quantum Markov Models} are the quantum equivalent to Hidden
+Markov Models, a technique to learn sequential data. Density matrices are used
+to express probabilities. They are tied to Bayesian Inference, which is an
+interesting connection.
+
+\paragraph{Quantum Quantum Learning} refers to the system and the computation
+device being quantum states. Examples are "learning" a quantum state without
+finding a classical description first. Clustering is another example allowing a
+complete quantum implementation.
+
+\subsection{Challenges}
+\subsubsection{HHL-based algorithms}
+\textbf{State preparation} is a crucial bottleneck for any algorithm based on
+quantum state amplitude manipulation. This relates to \textbf{qRAM}.
+
+\subsubsection{Quantum Sampling}
+\textbf{State preparation} for non-annealing based sampling, "thermal state
+preparation protocol". 
+
+\subsection{Local Projects}
