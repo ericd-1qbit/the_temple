@@ -174,3 +174,86 @@ Canonical example is the detection of credit card fraud.
   \item Dropout of 0.2 means 20\% of nodes in a layer are deactivated randomly
 
 \end{itemize}
+
+
+\paragraph{ML Overview from evernote}
+
+  
+
+Supervised learning
+
+ - classification
+
+    predict probability of x being in class i 
+
+- regression
+
+predict mean value of continuous label y
+
+  
+
+Unsupervised learning:
+
+ - learn structure in data:
+
+methods:
+
+clustering
+
+density estimation
+
+anomaly detection
+
+PCA
+
+  
+
+semi-supervised: 
+
+noisy labels
+
+weakly supervised
+
+  
+
+generative models
+
+- attempt to learn data distribution
+
+- GANs, VAE
+
+I. Goodfellow taxonomy
+
+  
+
+Reinforcement learning
+
+no data!
+
+agent to perform action on environment - receive rewards
+
+Q_learning
+
+DQN
+
+SARSA
+
+inverse reinforcement learning
+
+  
+
+  
+
+Reinforcement learning: qbit ontol, jet grooming through reinforcement learning
+
+  
+
+COnsiderations before probl;em to ML?
+
+task mapping to ML paradigm?
+
+model be written analytically>?
+
+dimensionality of data?
+
+data suze?
