@@ -12,3 +12,9 @@ https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf (bonus slides)
 
 Huge Datasets and Parallel/Distributed Computation
 https://www.cs.ubc.ca/~schmidtm/Courses/340-F19/L2.pdf 
+
+\subsection{Hands-On Material Collection}
+
+Google colab-notebooks:\\
+
+\url{https://drive.google.com/drive/folders/1ZXlzYVJnBa_QTS4uAa6JGO-KFzR9HQXk}
