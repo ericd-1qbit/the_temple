@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/approaches/Unsupervised Learning.md",
+            "file": "optimisation/Gurobi.md",
             "mode": "source",
             "source": false
           }
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/approaches/Unsupervised Learning.md",
+                "file": "optimisation/Gurobi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +110,7 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "optimisation/Gurobi.md",
     "machine_learning/approaches/Unsupervised Learning.md",
     "machine_learning/approaches/Supervised Learning.md",
     "machine_learning/approaches/Deep Learning.md",
@@ -118,7 +119,6 @@
     "machine_learning/approaches/Generative Models.md",
     "machine_learning/overview.md",
     "machine_learning/approaches/Reinforcement Learning.md",
-    "machine_learning/Untitled.md",
-    "machine_learning/approaches/Semi-Supervised Learning.md"
+    "machine_learning/Untitled.md"
   ]
 }
