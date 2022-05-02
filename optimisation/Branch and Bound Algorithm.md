@@ -36,6 +36,12 @@ Nodes with a solution but less optimal value than the current incumbent node can
 
 #### Bounds
 The objective function's value for an incumbent gives certain bounds to the original MIP.
+
 ##### Upper Bound
 If we have a minimisation problem, then any given incumbent node forms an upper bound on the final solution's objective value.
-####
+
+##### Lower/Best Bound
+The minimum objective value taken across all *leaf* nodes (eg. not all constraints applied?)
+
+##### Gap
+Difference between upper and lower bound. If the gap is zero, the optimal solution has been found.
