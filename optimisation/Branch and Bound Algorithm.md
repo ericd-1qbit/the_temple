@@ -7,7 +7,20 @@
 	- if not: pick integer restricted variable whose solution in LP is fractional
 3. Impose a restriction on the relaxed LP which EXCLUDES the fractional value.
 	- eg. $x=1.337$ then imposeboth restrictions $1\leq x$ and $x \geq 2$
+		- original MIP $P_0$
+		- first restriction - new MIP:  $1\leq x \rightarrow P_1$
+		- second restriction - new MIP:  $x \geq 2 \rightarrow P_2$
+	- *branch variable* $x$
+	- *branched* at x producing *sub-MIPs* $P_1,P_2$ 
+4. Calculate optimal solution for $P_{1/2}$. Choose solution which is better for $P_0$ or continue with branching.
 
-
+##### Search Tree
+The continuous splitting generates a tree:
+- *nodes* of this tree are the generated MIPs
+- *root node* is $P_0$
+- *leaves*: not yet branched MIPs
 
 ![[Pasted image 20220502121755.png]]
+
+##### Fathomed Nodes
+Nodes which fulfill all the integrality requirements of the original MIP. No further branching is necessary.
