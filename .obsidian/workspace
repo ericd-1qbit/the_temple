@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "optimisation/Gurobi.md",
+            "file": "optimisation/Integer Programming.md",
             "mode": "source",
             "source": false
           }
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "optimisation/Gurobi.md",
+                "file": "optimisation/Integer Programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +110,8 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "optimisation/Integer Programming.md",
+    "optimisation/Mixed Integer Programming.md",
     "optimisation/Gurobi.md",
     "machine_learning/approaches/Unsupervised Learning.md",
     "machine_learning/approaches/Supervised Learning.md",
@@ -117,8 +119,6 @@
     "machine_learning/Exploratory Data Analysis.md",
     "machine_learning/glossary.md",
     "machine_learning/approaches/Generative Models.md",
-    "machine_learning/overview.md",
-    "machine_learning/approaches/Reinforcement Learning.md",
-    "machine_learning/Untitled.md"
+    "machine_learning/overview.md"
   ]
 }
