@@ -70,56 +70,6 @@ $$
 
 
 ## Unsorted Notes
-
-\paragraph{Random
-
-\begin{itemize
-
-  \item GAN - generate Ising model
-
-  \item translate to QA??
-
-  \item what's a feedforward NN backpropagation?
-
-  \item I. Goodfellow has a great many taxonomies
-
-  \item automatic differentiation - computing derivatives with se compuhda
-
-  \item Recurrence: The output of a layer goes back to input.
-
-  \item Hough transform: Image analysis technique which isolates features of a particular shape in an image.
-
-  \item Dropout of 0.2 means 20\% of nodes in a layer are deactivated randomly
-
-\end{itemize
-
-
-\paragraph{ML Overview from evernote
-
-  
-
-Unsupervised learning:
-
- - learn structure in data:
-
-methods:
-
-clustering
-
-density estimation
-
-anomaly detection
-
-PCA  
-
-semi-supervised: 
-
-noisy labels
-
-weakly supervised
-
-  
-
 generative models
 
 - attempt to learn data distribution

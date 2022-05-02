@@ -1,5 +1,9 @@
 \section{Semisupervised or weakly supervised Learning}
+semi-supervised: 
 
+noisy labels
+
+weakly supervised
   
 
 \paragraph{Sources}

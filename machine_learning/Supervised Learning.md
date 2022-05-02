@@ -5,15 +5,6 @@ Formulate a problem as supervised learning if we have the following ingredients:
 
 **Goal**: Find model which predicts accurately a class label given a new example.
 
-**Classification**: Focus on **categorical labels** - predict probability of x being in class i 
+**Classification**: Focus on **categorical labels** - predict probability of $x$ being in class $i$ 
 
-
-Supervised learning
-
- - classification
-
-
-
-- regression
-
-predict mean value of continuous label y
+**Regression**: Predict mean value of continuous label $y$
