@@ -22,5 +22,20 @@ The continuous splitting generates a tree:
 
 ![[Pasted image 20220502121755.png]]
 
-##### Fathomed Nodes
-Nodes which fulfill all the integrality requirements of the original MIP. No further branching is necessary.
+#### Fathomed Nodes
+Nodes which fulfill all the integrality requirements of the original MIP. No further branching is necessary - a *permanent leaf* of the search tree.
+
+##### Incumbent Node
+Fathomed node with best objective function value found at any point in the search.
+
+##### Infeasible Nodes
+Restriction applied by a branch to the current node is infeasible with the relaxation of the original MIP.
+
+##### Less Optimal Nodes
+Nodes with a solution but less optimal value than the current incumbent node can be fathomed, as their branching will not result in a better objective value.
+
+#### Bounds
+The objective function's value for an incumbent gives certain bounds to the original MIP.
+##### Upper Bound
+If we have a minimisation problem, then any given incumbent node forms an upper bound on the final solution's objective value.
+####
