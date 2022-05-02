@@ -3,13 +3,26 @@
 -   [Mark Schmidt Course Overview](https://www.cs.ubc.ca/~schmidtm/Courses/LecturesOnML/overview.pdf)
 
 ### Machine Learning
+⚠️⚠️⚠️⚠️
+[[Common Problems]]
+[[Supervised Learning]]
+[[Exploratory Data Analysis]]
+[[sources]]
 
 #### Formal Definition
 A formal definition given by Mitchel (1997)
 
 > A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if the performance at tasks in $T$, as measured by $P$, improves with $E$.
 
-#### Types of ML
+Data Mining and Machine Learning closely related
+
+![[Pasted image 20220426084752.png]]
+
+Deep learning is a subset of Machine Learning which is a subset of Artifical Intelligence.
+![[Pasted image 20220426084859.png]]
+
+
+#### Types of Machine Learning algorithms 
 
 One can distinguish three different types of ML approaches, defined by the kind of input provided to the algorithm.
 
@@ -21,14 +34,27 @@ P(x)=\prod_{i=1}^mP(x_i|x_1,\ldots,x_{i-1})
 $$
 - **[[Reinforcement Learning]]** does not rely on any dataset. The algorithm generates it's own data and updates the generative process according to a rules/reward functions.
 
+#### Types of Machine Learning problems 
 
-## Unsorted Notes
-Data Mining and Machine Learning closely related
+- [[Classification tasks]] are mapping input data onto a discrete set of classes by learning a function $$ h:\mathbb{R^m\rightarrow{1,2,...,t}}$$
+	-  Canonical example is to classify dog or cat in picture.
+	
+- [[Regression tasks]]  predict a value for given input by learning a function $$
+h:\mathbb{R^m}\rightarrow\mathbb{R}
+$$
+	- Canonical example is the cost of a house given various external parameters (size, location, etc).\
+	
+- [[Anomaly detection]] is for identifying deviations from the bulk behaviour of data. 
+	- Canonical example is the detection of credit card fraud.
 
-![[Pasted image 20220426084752.png]]
+- [[Denoising tasks]] take a noisy input $\tilde{x}\in\mathbb{R^m}$ and map it to noise-free data $x\in\mathbb{R^m}$ by learning the underlying features.
 
-Deep learning is a subset of Machine Learning which is a subset of Artifical Intelligence.
-![[Pasted image 20220426084859.png]]
+
+##### Which Considerations to take before translating your problem to ML?
+1. Does my task map to any ML paradigm?
+2. Can I write down my model analytically?
+3. What's the dimensionality of my data?
+4. What are my data sample sizes? Do I have sufficient data?
 
 #### Applications:
 - spam filtering
@@ -42,67 +68,8 @@ Deep learning is a subset of Machine Learning which is a subset of Artifical Int
 - sports analytics
 - ...
 
-⚠️⚠️⚠️⚠️
-[[Common Problems]]
 
-[[Supervised Learning]]
-
-[[Exploratory Data Analysis]]
-
-[[sources]]
-
-
-Machine Learning can be separated into four areas of concern:
-
-\paragraph{Classification tasks are mapping input data onto a discrete set of
-
-classes by learning a function $$ h:\mathbb{R^m\rightarrow{1,2,...,t
-
-$$
-Canonical example is to classify dog or cat in picture.
-
-  
-
-\paragraph{Regression tasks  predict a value for given input by learning a function $$
-
-h:\mathbb{R^m\rightarrow\mathbb{R
-
-$$
-
-Canonical example is the cost of a house given various external parameters (size, location, etc).
-
-  
-
-\paragraph{Anomaly detection is for identifying deviations from the bulk behaviour of data. 
-
-Canonical example is the detection of credit card fraud.
-
-\paragraph{Denoising tasks take a noisy input $\tilde{x\in\mathbb{R^m$ and map it to noise-free data $x\in\mathbb{R^m$ by learning the underlying features.
-
-
-
-\begin{itemize
-
-  \item Which Considerations to take before translating your problem to ML?
-
-  \begin{itemize
-
-    \item Does my task map to any ML paradigm?
-
-        \item Can I write down my model analytically?
-
-        \item What's the dimensionality of my data?
-
-        \item data sample sizes?
-
-  \end{itemize
-
-\end{itemize
-
-
-
-
-#### Unsorted Notes
+## Unsorted Notes
 
 \paragraph{Random
 
@@ -131,18 +98,6 @@ Canonical example is the detection of credit card fraud.
 
   
 
-Supervised learning
-
- - classification
-
-    predict probability of x being in class i 
-
-- regression
-
-predict mean value of continuous label y
-
-  
-
 Unsupervised learning:
 
  - learn structure in data:
@@ -155,9 +110,7 @@ density estimation
 
 anomaly detection
 
-PCA
-
-  
+PCA  
 
 semi-supervised: 
 
@@ -175,7 +128,6 @@ generative models
 
 I. Goodfellow taxonomy
 
-  
 
 Reinforcement learning
 
@@ -191,20 +143,4 @@ SARSA
 
 inverse reinforcement learning
 
-  
-
-  
-
 Reinforcement learning: qbit ontol, jet grooming through reinforcement learning
-
-  
-
-COnsiderations before probl;em to ML?
-
-task mapping to ML paradigm?
-
-model be written analytically>?
-
-dimensionality of data?
-
-data suze?
