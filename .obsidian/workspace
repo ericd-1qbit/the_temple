@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "optimisation/Integer Programming.md",
+            "file": "optimisation/Mixed Integer Programming.md",
             "mode": "source",
             "source": false
           }
@@ -65,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 192.5036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "optimisation/Integer Programming.md",
+                "file": "optimisation/Mixed Integer Programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,8 +110,8 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
-    "optimisation/Integer Programming.md",
     "optimisation/Mixed Integer Programming.md",
+    "optimisation/Integer Programming.md",
     "optimisation/Gurobi.md",
     "machine_learning/approaches/Unsupervised Learning.md",
     "machine_learning/approaches/Supervised Learning.md",
