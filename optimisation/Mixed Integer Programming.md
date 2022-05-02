@@ -11,6 +11,7 @@ $$
 &&&\mathbf{l}\leq\mathbf {x} \leq \mathbf {u} ,\\
 &{\text{and}}&&\mathbf {x} \in \mathbb {Z} ^{n}\,{\text{or}}\,\mathbf {x} \in \mathbb {R} ^{n}
 \end{aligned}$$
+	- generally solved using [[Branch and Bound Algorithm]]
 - **Mixed Integer Quadratic Programming (MIQP)**:
 	- quadratic objective $$
 \begin{aligned}
@@ -21,4 +22,10 @@ $$
 \end{aligned}$$
 - **Mixed Integer Quadratically Constrained Programming (MIQCP)**:
 	- quadratic constraints:
-		- 
+		- $$\begin{aligned}
+&{\text{minimize}}&&\mathbf {x}^T\mathbf {Q} ^{\mathrm {T} }\mathbf {x} +\mathbf {q}^{\mathrm {T}}\mathbf {x}\\
+&{\text{subject to}}&&A\mathbf {x} = \mathbf {b} ,\\
+&&&\mathbf{l}\leq\mathbf {x} \leq \mathbf {u} ,\\
+&&&\mathbf {x}^T\mathbf {Q_i} ^{\mathrm {T} }\mathbf {x} +\mathbf {q_i}^{\mathrm {T}}\mathbf {x}\leq b_i,\\
+&{\text{and}}&&\mathbf {x} \in \mathbb {Z} ^{n}\,{\text{or}}\,\mathbf {x} \in \mathbb {R} ^{n}
+\end{aligned}$$
