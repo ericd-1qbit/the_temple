@@ -9,7 +9,19 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/project_management.md",
+            "file": "machine_learning/approaches/Unsupervised Learning.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "5dba5323047959de",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "machine_learning/approaches/Supervised Learning.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/project_management.md",
+                "file": "machine_learning/approaches/Unsupervised Learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,13 +110,15 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
-    "project_management/project_management.md",
-    "machine_learning/sources.md",
+    "machine_learning/approaches/Unsupervised Learning.md",
+    "machine_learning/approaches/Supervised Learning.md",
+    "machine_learning/approaches/Deep Learning.md",
     "machine_learning/Exploratory Data Analysis.md",
-    "machine_learning/Supervised Learning.md",
-    "machine_learning/overview.md",
     "machine_learning/glossary.md",
-    "machine_learning/Common Problems.md",
-    "README.md"
+    "machine_learning/approaches/Generative Models.md",
+    "machine_learning/overview.md",
+    "machine_learning/approaches/Reinforcement Learning.md",
+    "machine_learning/Untitled.md",
+    "machine_learning/approaches/Semi-Supervised Learning.md"
   ]
 }

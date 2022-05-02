@@ -1,7 +1,3 @@
-\section{Unsupervised Learning}
-
-\begin{itemize}
-
   \item learn structures in data
 
   \item learn specific data distribution, not know a priori
