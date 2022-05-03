@@ -37,11 +37,12 @@ Collection of strategies to reduce a given problem in size and complexity prior 
 
 - **Size/LP-presolve reduction**: substitute variables by applying constraints for example. The validity does not depend on integrality restrictions.
 	$$\begin{align}
-	x_1+x_2+x_3\geq15\\
-	\text{impose}\; x_1\leq7\;x_2\leq3;x_3\l
+	&x_1+x_2+x_3\geq15\\
+	\text{constraint:}\; &x_1\leq7,\;x_2\leq3,\;x_3\leq5\\
+	\text{reduction:}\; &x_1=7,\;x_2=3,\;x_3=5
 	\end{align}
 	$$
--  **MIP reduction**: reduce the number of feasible solutions to the LP relaxation. 
+-  **MIP reduction**: reduce the number of feasible solutions to the LP relaxation, while the set of feasible integer solutions (no relaxation) remains the same. Very important tool for MIP solution algori 
 
 ### Cutting Planes
 ### Heuristics

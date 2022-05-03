@@ -1,7 +1,7 @@
 
 ### Basic linear programming branch-and-bound
 
-1. relax the original MIP: remove all of the integrality restrictions, eg. allow variables to be non-integer
+1. **LP-relaxation** - relax the original MIP. Remove all of the integrality restrictions, eg. allow variables to be non-integer
 2. solve this LP
 	- does result fulfill all integrality restrictions? Lucky! Done.
 	- if not: pick integer restricted variable whose solution in LP is fractional
