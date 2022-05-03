@@ -1,6 +1,8 @@
 # Executive Summary
+- a summary of the key points in a project plan 
+- usually at *the beginning of a project*
 - Goal: 
-	- provide simplified, concise view of a project
+	- provide simplified, concise big-picture view of a project
 	- include all information necessary w/o nitty-gritty details
 	- bring clarity to people interested but not directly involved (stakeholders, cross-collaborators)
 
@@ -13,6 +15,8 @@
 - What is the purpose of this project?
 - What are the expected outcomes?
 - What are the client's expectations? 
+- Has there been previous research, input or related projects?
+- 
 ### 2. Solution Outline
 - How is the project solving the problem outlined in 1.?
 - What are the concrete goals and objectives?
