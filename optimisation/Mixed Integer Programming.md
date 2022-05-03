@@ -55,7 +55,8 @@ Collection of strategies to reduce a given problem in size and complexity prior 
 ### Cutting Planes
 - deep and extensive theory
 - most important contributor to computational MIP advances
-- 
+- basic idea: remove undesirable fractional solutions (like presolve) but during solution process w/o introducing sub-MIPs.
+- ![[Pasted image 20220503085406.png]]
 
 ### Heuristics
 ### Parallelism
