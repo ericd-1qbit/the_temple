@@ -9,19 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "optimisation/Branch and Bound Algorithm.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "5dba5323047959de",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "machine_learning/approaches/Supervised Learning.md",
+            "file": "optimisation/Mixed Integer Programming.md",
             "mode": "source",
             "source": false
           }
@@ -81,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "optimisation/Branch and Bound Algorithm.md",
+                "file": "optimisation/Mixed Integer Programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,8 +98,8 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
-    "optimisation/Branch and Bound Algorithm.md",
     "optimisation/Mixed Integer Programming.md",
+    "optimisation/Branch and Bound Algorithm.md",
     "optimisation/Integer Programming.md",
     "optimisation/Gurobi.md",
     "machine_learning/approaches/Unsupervised Learning.md",

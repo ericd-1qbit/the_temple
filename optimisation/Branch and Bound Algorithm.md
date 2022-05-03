@@ -45,3 +45,5 @@ The minimum objective value taken across all *leaf* nodes (eg. not all constrain
 
 ##### Gap
 Difference between upper and lower bound. If the gap is zero, the optimal solution has been found.
+
+
