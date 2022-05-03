@@ -56,15 +56,27 @@ Collection of strategies to reduce a given problem in size and complexity prior 
 - deep and extensive theory
 - most important contributor to computational MIP advances
 - basic idea: remove undesirable fractional solutions (like presolve) but during solution process w/o introducing sub-MIPs (unlike branching).
+	- example: *knapsack cover*
 $$\begin{align}
 &6x_1+5x_2+7x_3+4x_4+5x_5\leq15\\
 \text{constraint:}\; &x_i\in \{0,1\}\\
 \text{a LP-relaxed solution:}\; &x_1=0,x_2=1,x_{3,4,5}=\frac{3}{4}\\
 \text{observation:}\; &x_{3,4,5}=1\Rightarrow 7+4+5=16>15\;\\
 \text{new constraint:}\; &\Rightarrow x_3+x_4+x_5\leq2\\
-\text{removes solution:}\; &x_{3,4,5}=\frac{3}{4}\
+\text{removes solution:}\; &x_{3,4,5}=\frac{3}{4}
 \end{align}$$
 - ![[Pasted image 20220503085406.png]]
 
 ### Heuristics
+Good incumbent nodes (eg. approximations to the optimal solutions) are important, as it might suffice to use a non-optimal solution in some settings.
+Examnple of a heuristic approach: take a LP relaxed solution and try to find a solution with all integrality restrictions applied (by rounding for example). If the solution prooves to have a better objective value than the incumbent, replace and proceed with the branch and bound algorithm.
+Multiple such heuristics exist in Gurobi.
+
 ### Parallelism
+The search tree splits into sub-MIPs. Each can be solved in parallel. Especially effective for large search trees.
+
+### Others
+- mostly concerned with reduction of search tree size:
+	- branch variable selection techniques
+	- node presolve
+	- symmetry detection 
