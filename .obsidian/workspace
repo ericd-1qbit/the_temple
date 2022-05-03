@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/End Of Project Summary.md",
+            "file": "optimisation/Integer Programming.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/End Of Project Summary.md",
+                "file": "optimisation/Integer Programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,13 +98,13 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "optimisation/Integer Programming.md",
+    "optimisation/Gurobi.md",
     "project_management/End Of Project Summary.md",
     "project_management/Executive Summary.md",
     "project_management/project_management.md",
-    "optimisation/Gurobi.md",
     "optimisation/Mixed Integer Programming.md",
     "optimisation/Branch and Bound Algorithm.md",
-    "optimisation/Integer Programming.md",
     "machine_learning/approaches/Unsupervised Learning.md",
     "machine_learning/approaches/Supervised Learning.md",
     "machine_learning/approaches/Deep Learning.md"
