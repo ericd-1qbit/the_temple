@@ -55,7 +55,12 @@ Collection of strategies to reduce a given problem in size and complexity prior 
 ### Cutting Planes
 - deep and extensive theory
 - most important contributor to computational MIP advances
-- basic idea: remove undesirable fractional solutions (like presolve) but during solution process w/o introducing sub-MIPs.
+- basic idea: remove undesirable fractional solutions (like presolve) but during solution process w/o introducing sub-MIPs (unlike branching).
+$$\begin{align}
+&6x_1+5x_2+7x_3+4x_4+5x_5\leq15\\
+\text{constraint:}\; &x_1,x_5\in \{0,1\}\\
+\text{LP-relaxed solution:}\; &x_1=0,x_2=1,x_{3,4,5}=\frac{3}{4} \text{(undesirable, as }x_5\;\text{}\\
+\end{align}$$
 - ![[Pasted image 20220503085406.png]]
 
 ### Heuristics
