@@ -58,8 +58,11 @@ Collection of strategies to reduce a given problem in size and complexity prior 
 - basic idea: remove undesirable fractional solutions (like presolve) but during solution process w/o introducing sub-MIPs (unlike branching).
 $$\begin{align}
 &6x_1+5x_2+7x_3+4x_4+5x_5\leq15\\
-\text{constraint:}\; &x_1,x_5\in \{0,1\}\\
-\text{LP-relaxed solution:}\; &x_1=0,x_2=1,x_{3,4,5}=\frac{3}{4} \text{(undesirable, as }x_5\;\text{}\\
+\text{constraint:}\; &x_i\in \{0,1\}\\
+\text{a LP-relaxed solution:}\; &x_1=0,x_2=1,x_{3,4,5}=\frac{3}{4}\\
+\text{observation:}\; &x_{3,4,5}=1\Rightarrow 7+4+5=16>15\;\\
+\text{new constraint:}\; &\Rightarrow x_3+x_4+x_5\leq2\\
+\text{removes solution:}\; &x_{3,4,5}=\frac{3}{4}\
 \end{align}$$
 - ![[Pasted image 20220503085406.png]]
 
