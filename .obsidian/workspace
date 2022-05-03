@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "optimisation/Integer Programming.md",
+            "file": "optimisation/solvers.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "optimisation/Integer Programming.md",
+                "file": "optimisation/solvers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,15 +98,15 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "optimisation/solvers.md",
+    "project_management/End Of Project Summary.md",
+    "optimisation/overview.md",
+    "optimisation/non-convex optimisation.md",
+    "optimisation/convex optimisation.md",
     "optimisation/Integer Programming.md",
     "optimisation/Gurobi.md",
-    "project_management/End Of Project Summary.md",
     "project_management/Executive Summary.md",
     "project_management/project_management.md",
-    "optimisation/Mixed Integer Programming.md",
-    "optimisation/Branch and Bound Algorithm.md",
-    "machine_learning/approaches/Unsupervised Learning.md",
-    "machine_learning/approaches/Supervised Learning.md",
-    "machine_learning/approaches/Deep Learning.md"
+    "optimisation/Mixed Integer Programming.md"
   ]
 }
