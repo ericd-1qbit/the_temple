@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "optimisation/solvers.md",
+            "file": "project_management/End Of Project Summary.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "optimisation/solvers.md",
+                "file": "project_management/End Of Project Summary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,8 +98,8 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
-    "optimisation/solvers.md",
     "project_management/End Of Project Summary.md",
+    "optimisation/solvers.md",
     "optimisation/overview.md",
     "optimisation/non-convex optimisation.md",
     "optimisation/convex optimisation.md",

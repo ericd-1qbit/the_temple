@@ -20,3 +20,6 @@ deliver your report as soon as possible after your project work is complete.
 	- results
 	- acceptance
 	-
+-   Attests what the project team delivered.
+-   Provides an evaluation of the project in terms of quality of work.
+-   Evaluates the budget and program performance.
