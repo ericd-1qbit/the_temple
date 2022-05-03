@@ -42,8 +42,20 @@ Collection of strategies to reduce a given problem in size and complexity prior 
 	\text{reduction:}\; &x_1=7,\;x_2=3,\;x_3=5
 	\end{align}
 	$$
--  **MIP reduction**: reduce the number of feasible solutions to the LP relaxation, while the set of feasible integer solutions (no relaxation) remains the same. Very important tool for MIP solution algori 
+-  **MIP reduction**: reduce the number of feasible solutions to the LP relaxation, while the set of feasible integer solutions (no relaxation) remains the same. Very important tool for MIP solution algorithms!
+	 	$$\begin{align}
+	&2x_1+2x_2\leq1\\
+	\text{constraint:}\; &x_1,x_2\in \mathbb{N}_0\\
+	\text{reduction:}\; &x_1+x_2\leq\frac{1}{2}\\
+	\text{integrality} &\Rightarrow x_1+x_2\leq0\\
+	\text{non-negativity}&\Rightarrow x_1=x_2=0\;
+	\end{align}
+	$$
 
 ### Cutting Planes
+- deep and extensive theory
+- most important contributor to computational MIP advances
+- 
+
 ### Heuristics
 ### Parallelism
