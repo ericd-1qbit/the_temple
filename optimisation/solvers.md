@@ -11,3 +11,5 @@ CBC (COIN-OR Branch and Cut) https://coin-or.github.io/Cbc/intro.html
 SCIP (Solving Constraint Integer Programs) https://www.scipopt.org/
 APOPT 
 	- with open source interface [https://gekko.readthedocs.io/en/latest/](https://gekko.readthedocs.io/en/latest/)
+	- can easily solve problems like
+	- ![[Pasted image 20220503150300.png]]
