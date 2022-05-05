@@ -58,6 +58,7 @@
 
 ## Step-by-Step Guide
 - tags
+- costs=manpower, computing time
 
 ##### Document Label
 
@@ -74,26 +75,36 @@
 	- listing responsibles - easier for follow ups
 
 ##### Project Overview
+- summary statement: What is **this report** about, content
 - general overview of the whole project - summary statement
 	- brief description of **what** the project was about
-	- what needed to be done during the project
+	- purpose
+	- what needed to be done during the project, required procedures
 	- how was that actually done
 - additionally: 
-	- Opportunity/Problem,Goal, and Objective, Success Criteria and any risks or assumptions about the project.
-
-On the other hand, the summary statement of the project in a Project Closure report will be looking at the overall summary of what’s in the report. One important thing to note is the key difference between the project overview and the summary statement. The overview is about the project, its scope, and the activities that were done and the summary statement is about the report itself and things contained in the report.
-A project overview usually includes the project's purpose, the required procedures and how those procedures were followed. It also includes a brief look at the issue or opportunity that was addressed, the project objectives and success metrics. Your overview can also include a summary statement at the end that gives a general idea of what the report includes.
-
+	- Opportunity/Problem
+	- Goal and Objective
+	- Success Criteria 
+	- any risks or assumptions
 
 ##### Project scope
-This step is closely related to the above but independent in its own way when it comes to your project closure report. Defined, the project scope is the part of a project where you document the specific goals, deliverables, features, deadlines, and the tasks of a project. It looks at everything that’s needed to get a project through from beginning to completion. This part of the Project Closure Report will look at the overall [scope](https://www.projectpractical.com/10-steps-to-writing-a-project-scope-management-plan/) of the Project in relation to the actual project schedule and ultimately the cost.
-
-When a Scope analysis is initially done, everything including the project costs is factored into the initial analysis. These figures, however, will vary and shift as the project goes which is why it’s important to do such a comparison of the actual vs the targeted costs to see whether you ended up going over budget or remained under budget.
-
-A project's scope explains the specific goals, deliverables, features of the product or service, tasks and deadlines. It also describes everything that went into completing the project from beginning to end. You can analyze and compare the scope to the project's actual timeline and cost to see variances in deadlines, cost or resources. This portion of the report goes into more depth about the details of the project listed in the overview statement.
+- scope of the project in realtion to schedule and cost
+- documentation of specifics of the project from beginning to completion:
+	- goals
+	- deliverables
+	- features
+	- deadlines
+	- the tasks
+	- costs/ressources
+- are there variances between targeted vs actual specifics listed above?
 
 ##### Results and Outcomes
-Before you set out to do your project, chances are, you first wrote down your key performance and indicators and key targets. In addition to the KPI’s, another thing you probably had was outcome targets. On this section, the goal is to look at the whole project in relation to the Key Performance Indicators that you would have set and see the outcomes achieved from that.
+- key performance indicators (KPI): 
+	- client satisfaction
+	- project cost
+	- project quality
+	- (reusability)
+- how did the whole project perform wrt set KPI?
 
 What are the project outcomes? Project outcomes refer to the level of performance or achievement that would have occurred due to the activities of the teams on the project. However, measuring project outcomes correctly is not an easy task. There are three [metrics](https://www.projectpractical.com/5-ways-to-measure-project-success-what-metrics-to-use/) that you can use to determine if your project outcomes were positive or negative. The metrics are stakeholder satisfaction, project cost, and overall quality of the project.
 In a section below the overview, you can explain what key performance indicators (KPIs) the team used to measure success, the outcome targets and any achievements from hitting those targets. Consider listing the outcome targets in a table that describes what the target was, the projected completion date and the actual completion date. This section analyzes the whole project in relation to these success metrics and recounts what caused each positive or negative outcome.
