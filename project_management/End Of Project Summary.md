@@ -1,14 +1,28 @@
 # End of Project Summary
 - should refer to any points made in [[Executive Summary]]
-
+- short document that can inform the reader about the main points of interest.
 ## Guidelines
 - deliver your report as soon as possible after your project work is complete.
-### **Clarity.**
-The report is a short document that can inform the reader about the main points of interest. It is unlikely that the entire development of the project will be told in such a report. As a rule, it is necessary to remember that the goal is to present how the project was successful and select the relevant information accordingly.
+- 
+### Clarity
+- clear, concise summary 
+- no jargon
+- no in-depth details: remember purpose & target audience - outstanders who require an overview and would like to understand the learned lessons
 
-2) **Structure.** Reports must have a clear structure that will be used as a model. Moreover, they should clearly identify the targets set for the specific time period and demonstrate how they were achieved or not. In the event that something has not gone as planned, the report should provide clear information to understand what has happened and how the organization has addressed the problem.
+### Structure
+- clear templated structure
+- identify targets set for specific time periods
+- demonstrate how targets were achieved
+- in case things went not as planned: 
+	- what was the root cause? 
+	- list all relevant information to understand the issue
+	- What could be done to avoid this in the future?
 
-3) **Lessons learned.** A good project final report always has a section dedicated to a critical evaluation of the project as a whole. This part is important because it indicates what the organization has learned and communicates how in the future it is possible to develop further projects drawing on what has been learned.
+### Lessons learned
+- critical evaluation of the project as a whole
+- what has been learned?
+- how can future projects draw from what has been learned?
+
 ## Purpose
 - inform non-actively engaged parties about the project and process
 - document deviations from plans - budget, schedule, initial goals and objectives
@@ -42,27 +56,26 @@ The report is a short document that can inform the reader about the main points 
 	-   A request for project closure approval
 	
 
+## Step-by-Step Guide
+- tags
 
-## **1. Give The Project Overview Including A Summary Statement**
-
-The first step to writing this project closing document is to give your general overview of the whole project and the summary statement. An overview statement is a brief description of what the project was about. It looks at the ‘what’ side of a project. It looks at what needed to be done during the project and how it was actually done. In addition, an overview looks into and describes things like the Opportunity/Problem, Goal, and Objective, Success Criteria and any risks or assumptions about the project.
+##### Document Label
+##### Project Overview
+he first step to writing this project closing document is to give your general overview of the whole project and the summary statement. An overview statement is a brief description of what the project was about. It looks at the ‘what’ side of a project. It looks at what needed to be done during the project and how it was actually done. In addition, an overview looks into and describes things like the Opportunity/Problem, Goal, and Objective, Success Criteria and any risks or assumptions about the project.
 
 On the other hand, the summary statement of the project in a Project Closure report will be looking at the overall summary of what’s in the report. One important thing to note is the key difference between the project overview and the summary statement. The overview is about the project, its scope, and the activities that were done and the summary statement is about the report itself and things contained in the report.
 
-
-## **2. Describe The Results And Outcomes Of The Project**
-
-Before you set out to do your project, chances are, you first wrote down your key performance and indicators and key targets. In addition to the KPI’s, another thing you probably had was outcome targets. On this section, the goal is to look at the whole project in relation to the Key Performance Indicators that you would have set and see the outcomes achieved from that.
-
-What are the project outcomes? Project outcomes refer to the level of performance or achievement that would have occurred due to the activities of the teams on the project. However, measuring project outcomes correctly is not an easy task. There are three [metrics](https://www.projectpractical.com/5-ways-to-measure-project-success-what-metrics-to-use/) that you can use to determine if your project outcomes were positive or negative. The metrics are stakeholder satisfaction, project cost, and overall quality of the project.
-
-## **3. Describe The Project Scope, Project Schedule, And Project Cost**
-
+##### Project scope
 This step is closely related to the above but independent in its own way when it comes to your project closure report. Defined, the project scope is the part of a project where you document the specific goals, deliverables, features, deadlines, and the tasks of a project. It looks at everything that’s needed to get a project through from beginning to completion. This part of the Project Closure Report will look at the overall [scope](https://www.projectpractical.com/10-steps-to-writing-a-project-scope-management-plan/) of the Project in relation to the actual project schedule and ultimately the cost.
 
 When a Scope analysis is initially done, everything including the project costs is factored into the initial analysis. These figures, however, will vary and shift as the project goes which is why it’s important to do such a comparison of the actual vs the targeted costs to see whether you ended up going over budget or remained under budget.
 
-## **4. Project Performance Analysis**
+##### Results and Outcomes
+Before you set out to do your project, chances are, you first wrote down your key performance and indicators and key targets. In addition to the KPI’s, another thing you probably had was outcome targets. On this section, the goal is to look at the whole project in relation to the Key Performance Indicators that you would have set and see the outcomes achieved from that.
+
+What are the project outcomes? Project outcomes refer to the level of performance or achievement that would have occurred due to the activities of the teams on the project. However, measuring project outcomes correctly is not an easy task. There are three [metrics](https://www.projectpractical.com/5-ways-to-measure-project-success-what-metrics-to-use/) that you can use to determine if your project outcomes were positive or negative. The metrics are stakeholder satisfaction, project cost, and overall quality of the project.
+
+##### Performance Analysis
 
 The project performance analysis can easily qualify as the most important step of the whole project closure report. The performance analysis expands on step 3 and really dives deep into the [budget](https://www.projectpractical.com/19-best-practices-to-keep-your-project-budget-under-control/) and compare the actual costs and schedule of the project with the set baseline. To be effective, the performance analysis has to be subdivided into three parts namely, the Goals and Objective Performance, the Success Criteria Performance and the Schedule and Budget Performance.
 
@@ -81,6 +94,18 @@ The success Criteria is the one that deals directly with the KPI’s. One thing 
 Lastly, under performance analysis, you will have to look at your [Schedule](https://www.projectpractical.com/8-steps-for-creating-a-project-schedule-that-drive-project-success/) and Budget Performance. On your project Scope, what were the set deadlines? Did you meet those deadlines? If not, what were the main reasons for the failure to meet the deadlines? The same questions will apply when you look at your budget. Was it enough or did you have to go to the bank or client for more funding?
 
 In any case, the key thing would be to analyze and compare your actual performance with your set targets.
+##### Challenges and Risks
+##### Lessons learned, future suggestions, project management comments
+##### Financial Summary
+##### Transfer of Operations/Delivery
+##### Project Closure Approval
+##### Appendices
+
+
+
+
+## **4. Project Performance Analysis**
+
 
 ## **5. Project Highlights (Important Aspects Of The Project)**
 
@@ -111,9 +136,6 @@ The reason why it’s important to note down the lessons learned in this project
 The final part would be writing the recommendations. Recommendations can be anything from the proposed [improvements](https://www.projectpractical.com/10-business-process-improvement-best-practices/) to the maintenance schedule for the final product. In addition when writing the [lessons learned](https://www.projectpractical.com/12-steps-to-writing-an-effective-lessons-learned-report/), if there are some things on the lessons that affect the project directly, then such lessons should go with their recommendations for easy referencing.
 
 
-## How to create a project closure report
-
-Here is a list of steps to help you create a closure report for your next project:
 
 ### 1. Label the document
 
