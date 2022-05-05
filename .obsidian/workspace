@@ -14,6 +14,18 @@
             "source": false
           }
         }
+      },
+      {
+        "id": "7392dccc64ec346d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "project_management/End Of Project Summary.md",
+            "mode": "source",
+            "source": false
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -53,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 192.5036334991455
+    "width": 192.5036334991455,
+    "collapsed": true
   },
   "right": {
     "id": "30df5576b1c2db9c",

@@ -3,50 +3,44 @@
 
 ## Guidelines
 - deliver your report as soon as possible after your project work is complete.
-## Purpose
--  inform non-actively engaged parties about the project and process
-- document deviations from plans - budget, schedule, initial goals and objectives
-- help to 
--   Documenting any [variances from the planned budget](https://blog.planview.com/top-surprises-thatll-blow-your-budget) or schedule, along with explanations as to why the variances occurred. This can help you draft a more accurate project plan when you manage similar projects in the future, and can also help other project managers plan their own projects.
-- -   Recognizing the efforts of the employees who worked on the project, especially those who contributed more than was expected of them. This type of formal recognition can go a long way toward [building and maintaining employee engagement.](https://blog.planview.com/four-ways-to-improve-employee-engagement)
-
-- problem description
-- proposed solution
-- details on timeline
-- summary of project execution
-- factors that affected outcome
-- benefits the project will provide
-- attachments of important documents
-	- project documentation
-	- project plan
-	- results
-	- acceptance
-	-
--   Attests what the project team delivered.
--   Provides an evaluation of the project in terms of quality of work.
--   Evaluates the budget and program performance.
-- -   A description of the process with which the project was approved and the reason why it started.
--   A summary of the project execution with the specification if the project has achieved its goals.
--   Details on the project budget performance.
--   A list of factors that influenced the project results.
--   If possible, a description of the financial impact or other benefits that the project will provide on the organization.
--   Annexes containing summaries of important project documents, such as the scope document, the project plan, the test results and the final approval / acceptance.
--   The original project guidelines, including stakeholder requests, budget and timeline    
--   Proof that objective goals were met
--   Proof that the clients have received their deliverables    
--   Invoices from suppliers, stakeholders or other sources
--   Release or transfer records of remaining resources    
--   Detailed performance reviews on each phase of the project
--   Feedback from senior management, team members and stakeholders
--   A separate folder with all project files and communication for archival purposes
--   A request for project closure approval
-
-
-1) **Clarity.** The report is a short document that can inform the reader about the main points of interest. It is unlikely that the entire development of the project will be told in such a report. As a rule, it is necessary to remember that the goal is to present how the project was successful and select the relevant information accordingly.
+### **Clarity.**
+The report is a short document that can inform the reader about the main points of interest. It is unlikely that the entire development of the project will be told in such a report. As a rule, it is necessary to remember that the goal is to present how the project was successful and select the relevant information accordingly.
 
 2) **Structure.** Reports must have a clear structure that will be used as a model. Moreover, they should clearly identify the targets set for the specific time period and demonstrate how they were achieved or not. In the event that something has not gone as planned, the report should provide clear information to understand what has happened and how the organization has addressed the problem.
 
 3) **Lessons learned.** A good project final report always has a section dedicated to a critical evaluation of the project as a whole. This part is important because it indicates what the organization has learned and communicates how in the future it is possible to develop further projects drawing on what has been learned.
+## Purpose
+- inform non-actively engaged parties about the project and process
+- document deviations from plans - budget, schedule, initial goals and objectives
+- help drafting more accurate project plan next time
+- recognize effort of employees, in particular outstanding contributions
+- Attests what the project team delivered.
+- Provides an evaluation of the project in terms of quality of work.
+- Evaluates the budget and program performance.
+- A summary of the project execution with the specification if the project has achieved its goals.
+- Details on the project budget performance.
+## Contents
+- problem description
+- A description of the process with which the project was approved and the reason why it started.
+- proposed solution
+- details on timeline
+- summary of project execution
+- factors that affected outcome
+- benefits the project provides - plans, actual - financial impact or other benefits 
+- attachments of all important documents
+	- project documentation
+	- project plan -  original project guidelines, including stakeholder requests, budget and timeline  
+	- results -  Proof that objective goals were met
+	- client acceptance final approval / acceptance
+	- scope document
+	- Proof that the clients have received their deliverables    
+	- Invoices from suppliers, stakeholders or other sources
+	-   Release or transfer records of remaining resources    
+	-   Detailed performance reviews on each phase of the project
+	-   Feedback from senior management, team members and stakeholders
+	-   A separate folder with all project files and communication for archival purposes
+	-   A request for project closure approval
+	
 
 
 ## **1. Give The Project Overview Including A Summary Statement**
