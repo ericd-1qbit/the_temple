@@ -7,8 +7,12 @@
         "id": "7611031e335e02d2",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "project_management/End Of Project Summary.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "project_management/End Of Project Summary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,11 +98,11 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "project_management/End Of Project Summary.md",
     "Regression tasks.md",
     "optimisation/solvers.md",
     "optimisation/overview.md",
     "optimisation/non-convex optimisation.md",
-    "project_management/End Of Project Summary.md",
     "optimisation/convex optimisation.md",
     "optimisation/Integer Programming.md",
     "optimisation/Gurobi.md",
