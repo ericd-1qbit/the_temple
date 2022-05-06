@@ -106,12 +106,18 @@
 	- (reusability)
 - how did the whole project perform wrt set KPI?
 
-What are the project outcomes? Project outcomes refer to the level of performance or achievement that would have occurred due to the activities of the teams on the project. However, measuring project outcomes correctly is not an easy task. There are three [metrics](https://www.projectpractical.com/5-ways-to-measure-project-success-what-metrics-to-use/) that you can use to determine if your project outcomes were positive or negative. The metrics are stakeholder satisfaction, project cost, and overall quality of the project.
-In a section below the overview, you can explain what key performance indicators (KPIs) the team used to measure success, the outcome targets and any achievements from hitting those targets. Consider listing the outcome targets in a table that describes what the target was, the projected completion date and the actual completion date. This section analyzes the whole project in relation to these success metrics and recounts what caused each positive or negative outcome.
+- level of performance 
+- how to measure success?
+- outcome targets vs achievements from hitting the targets
+	- projected completion date vs actual
+	- recount causes of postivie, negative deviations
 
 ##### Performance Analysis
 
-The project performance analysis can easily qualify as the most important step of the whole project closure report. The performance analysis expands on step 3 and really dives deep into the [budget](https://www.projectpractical.com/19-best-practices-to-keep-your-project-budget-under-control/) and compare the actual costs and schedule of the project with the set baseline. To be effective, the performance analysis has to be subdivided into three parts namely, the Goals and Objective Performance, the Success Criteria Performance and the Schedule and Budget Performance.
+- most important step of the whole project closure report
+- dive deep into the budget:
+	- compare the actual costs with baseline
+	- schedule of the project with the set baseline. To be effective, the performance analysis has to be subdivided into three parts namely, the Goals and Objective Performance, the Success Criteria Performance and the Schedule and Budget Performance.
 
 **i. Goals and Objectives Performance**
 
