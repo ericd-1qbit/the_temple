@@ -3,7 +3,7 @@
 - short document that can inform the reader about the main points of interest.
 ## Guidelines
 - deliver your report as soon as possible after your project work is complete.
-- 
+- make highlight report at end of each week of project
 ### Clarity
 - clear, concise summary 
 - no jargon
@@ -145,29 +145,26 @@
 
 
 ##### Project Highlights
-Important Aspects Of The Project
-The project Highlight Section looks at the highlights of the whole project throughout the whole timeline. It usually includes high-level project information such as the requests and any other issues that arose within the project.
-
-Compiling the highlight report and adding it to the project closure report should not be hard. It is recommended that you should at least make a highlight report at the end of each week throughout the course of a project updating the different [stakeholders](https://www.projectpractical.com/stakeholder-management-strategy-and-how-to-develop-a-solid-plan/) involved in the project of the project’s current progress.
-
-If you have those reports, then you can just refer to them and pick the key points from each of the weekly reports to combine them into one master report to include in your final Project Closure Report.
+- highlights throughout the whole timeline
+- high-level project information:
+	- requests
+	- issues
+- pick key points of weekly highlight reports if created
 
 ##### Challenges and Risks
-Every Project has its challenges and [risks.](https://www.projectpractical.com/a-detailed-guide-to-prepare-a-risk-management-plan-free-template/) This section will enable you to highlight all the challenges that might have been faced throughout the course of the project. One thing about challenges especially in relation to projects and [project management](https://www.projectpractical.com/10-project-management-skills-all-project-managers-need-to-master/) is that they can be difficult to foresee. Apart from that, no matter how carefully you plan at the inception of the project, you can never plan around every potential challenge.
-
-For future reference and presentation to stakeholders, you should use this section to highlight every challenge you faced throughout the course of the project. In addition to listing down the challenges, you should also highlight how the challenge affected other aspects of your project including your budget and schedule.
-
-Besides the challenges, you should also highlight the risks faced. Risks can be anything from the weather, workplace safety, or even money. 
-
-This section details the challenges and risks faced throughout the project timeline and includes information like how these challenges affected other areas of the project, such as the budget and timetable. You can also list risks, such as working conditions or budget limitations. This can be helpful for future reference when planning other projects.
-
+- challenges over the course of the project
+	- could they have been mitigated?
+	- how did they affect other aspects of the project (budget, schedule)
+#TODO what could that be for 1qbit projects
+- risks 
 
 ##### Lessons learned
-One source of valuable lessons for any project are the challenges. When you overcome the challenges faced when doing a process, chances are, you will learn one or two things. Use this section of your Project Closure Report to highlight what you learned.
-
-During the course of the project, you will also be working with different stakeholders from different industries. Sometimes these stakeholders can teach you different techniques to help work get done faster which is valuable. If you learned such techniques from the various stakeholders you would have worked with throughout the project implementation, then you should use this section to highlight those lessons.
-
-The reason why it’s important to note down the lessons learned in this project closing document is that later on when doing another project, you can always reference the report of your previous project to look for common pitfalls and how you can avoid those pitfalls.
+- highlight what was learned 
+	- in overvcoming challenges
+	- techniques
+- what was valuable, what was not?
+- common pitfalls and how to avoid
+- tips from clients, dealing with clients or other exterieur sour
 
 Listing the challenges that the team overcame during the project and what members learned in the process can be helpful for future reference. Teams working on future projects can look at this information to avoid the same challenges. The team may also have learned tips from senior management or stakeholders, and including this information can be helpful to other teams.
 
