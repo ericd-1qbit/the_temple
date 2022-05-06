@@ -164,21 +164,19 @@
 	- techniques
 - what was valuable, what was not?
 - common pitfalls and how to avoid
-- tips from clients, dealing with clients or other exterieur sour
-
-Listing the challenges that the team overcame during the project and what members learned in the process can be helpful for future reference. Teams working on future projects can look at this information to avoid the same challenges. The team may also have learned tips from senior management or stakeholders, and including this information can be helpful to other teams.
+- tips from clients, dealing with clients or other exterieur sources
+	- technical knowledge on tools?
 
 ##### Future Suggestions
 
-The final part would be writing the recommendations. Recommendations can be anything from the proposed [improvements](https://www.projectpractical.com/10-business-process-improvement-best-practices/) to the maintenance schedule for the final product. In addition when writing the [lessons learned](https://www.projectpractical.com/12-steps-to-writing-an-effective-lessons-learned-report/), if there are some things on the lessons that affect the project directly, then such lessons should go with their recommendations for easy referencing.
-
-- project management comments
-
-
-You may also list future recommendations for implementing or completing projects based on the experiences of the project for which you're reporting. The team, project manager and stakeholders can find it useful to leave comments on the final product or deliverable. These recommendations can improve the overall completion and reception of other projects. Recommendations can include timeline suggestions, comments on the use of resources or budget adjustments for similar projects.
-
-Related: [5 Phases of the Project Management Life Cycle](https://www.indeed.com/career-advice/career-development/phases-of-project-management-life-cycle)
-
+- recommendations about the final product
+- proposed improvements, maintenance schedule
+- can relate to any lesson mentioned previously
+- comments on final product which might help with future projects
+- suggestions from a project management perspective
+	- timeline
+	- budget adjustment
+	- use of ressources
 
 ##### Financial Summary
 
@@ -193,3 +191,4 @@ You can describe the transfer of operations by listing ongoing tasks and how to 
 The last step in creating a project closure report is requesting closure approval, where senior management and stakeholders can allow a project's official termination. You can also format this section as a table with sections, including labels for each role, spaces for signatures and the current date. This section is important because it signifies that all project management processes are complete and all relevant parties approve of the final product.
 
 ##### Appendices
+- relevant documents
