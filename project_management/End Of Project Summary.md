@@ -131,8 +131,7 @@
 
 - deals directly with the KPI
 - success crtieria need to be defined prior to project
-- check whether success was achieved
-- 
+- check whether success was achieved 
 
 ###### Schedule and Budget Performance
 
@@ -180,15 +179,24 @@
 
 ##### Financial Summary
 
-The financial summary of the project closure report lists the cost of each resource, ongoing costs, the projected budget and the actual money spent. You can format this section as two tables separated by the resources' costs and ongoing costs to improve readability and effectively organize the project's financial information. The bottom of the table can also include a notes section to explain any variances in cost or additional reasons for requesting more funds if you needed them to complete the project.
-
-Related: [What Are Financial Statements?](https://www.indeed.com/career-advice/career-development/what-are-financial-statements)
+- cost of each resource
+- ongoing costs
+- the projected budget
+- actual money spent
+	- maybe use table format
 
 ##### Transfer of Operations/Delivery
-You can describe the transfer of operations by listing ongoing tasks and how to transfer them to operations, including identifying operational roles. List each task and brief details related to it, the operations role, the name of the person in that role and the date of the transition. This section provides documentation for official records.
+- transfer of operations:
+	- ongoing tasks and how to transfer them to operations
+	- including identifying operational roles, names
+	- date of transition
+	- List each task and brief details related to it
+	- the operations role, the name of the person in that role and the date of the transition. 
+- documentation for official records.
 
 ##### Project Closure Approval
-The last step in creating a project closure report is requesting closure approval, where senior management and stakeholders can allow a project's official termination. You can also format this section as a table with sections, including labels for each role, spaces for signatures and the current date. This section is important because it signifies that all project management processes are complete and all relevant parties approve of the final product.
+- requesting closure approval, where senior management and stakeholders can allow a project's official termination.
+-  You can also format this section as a table with sections, including labels for each role, spaces for signatures and the current date. This section is important because it signifies that all project management processes are complete and all relevant parties approve of the final product.
 
 ##### Appendices
 - relevant documents
