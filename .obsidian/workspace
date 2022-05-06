@@ -65,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 192.5036334991455,
-    "collapsed": true
+    "width": 192.5036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -112,6 +111,7 @@
   "active": "7392dccc64ec346d",
   "lastOpenFiles": [
     "project_management/End Of Project Summary.md",
+    "project_management/Generic End of Project Template.md",
     "Regression tasks.md",
     "optimisation/solvers.md",
     "optimisation/overview.md",
@@ -119,7 +119,6 @@
     "optimisation/convex optimisation.md",
     "optimisation/Integer Programming.md",
     "optimisation/Gurobi.md",
-    "project_management/Executive Summary.md",
-    "project_management/project_management.md"
+    "project_management/Executive Summary.md"
   ]
 }
