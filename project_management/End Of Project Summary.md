@@ -115,37 +115,34 @@
 ##### Performance Analysis
 
 - most important step of the whole project closure report
-- dive deep into the budget:
-	- compare the actual costs with baseline
-	- schedule of the project with the set baseline. To be effective, the performance analysis has to be subdivided into three parts namely, the Goals and Objective Performance, the Success Criteria Performance and the Schedule and Budget Performance.
+- dive deep into comparison to baseline:
+	- compare the actual costs
+	- schedule of the project
+- can be subdivided into three parts namely:
 
-**i. Goals and Objectives Performance**
+###### Goals and Objectives Performance
+- project outline: what were the set goals and objectives for the project?
+- What did you hope to have achieved by the end of the project? 
+- How many of those goals have actually been achieved?
+- In addition, how many of those have had to be revised as the conditions on the ground changed?
+- adjustment of goals
 
-Before you began the project, in the project outline, what were the set goals and objectives for the project? What did you hope to have achieved by the end of the project? How many of those goals have actually been achieved? In addition, how many of those have had to be revised as the conditions on the ground changed?
+###### Success Criteria Performance
 
-The questions above are some of the key questions that should be asked when looking at the Goals and Objectives Performance Analysis of the project.
+- deals directly with the KPI
+- success crtieria need to be defined prior to project
+- check whether success was achieved
+- 
 
-**ii. Success Criteria Performance**
+###### Schedule and Budget Performance
 
-The success Criteria is the one that deals directly with the KPI’s. One thing great project managers do before they embark on a new project is to define success before the project begins. The definition of success for a project can differ from one project to the next. Therefore, you have to look at how you defined the success of your project and check to see whether you got there.
+- schedule:
+	- set deadlines vs actual
+	- reasons for deviation
+- budget:
+	- target vs actual
+	- reasons for deviation
 
-**iii. Schedule and Budget Performance**
-
-Lastly, under performance analysis, you will have to look at your [Schedule](https://www.projectpractical.com/8-steps-for-creating-a-project-schedule-that-drive-project-success/) and Budget Performance. On your project Scope, what were the set deadlines? Did you meet those deadlines? If not, what were the main reasons for the failure to meet the deadlines? The same questions will apply when you look at your budget. Was it enough or did you have to go to the bank or client for more funding?
-
-In any case, the key thing would be to analyze and compare your actual performance with your set targets.
-
-
-The performance analysis of the project is one of the most important parts of the report because it expands on the scope and provides information on the budget, schedule, objectives and success. Here are the main three sections you can include in this portion of the report:
-
-1.  Goals and objective performance: This explains the initial goals of the project, how many of those goals you achieved and what objectives you adjusted during the course of the project.
-    
-2.  Success criteria performance: This section refers to your KPIs, performance metrics and how you defined success for this specific project. Explain how, when or if the project achieved its performance goals.
-    
-3.  Schedule and budget performance: You can describe the schedule and budget set for the project and if the team stayed within those limits in this section. If the team didn't stay within those limits, list the reasons why.
-    
-
-Related: [6 Types of Performance Reports for Projects](https://www.indeed.com/career-advice/career-development/performance-reporting)
 
 ##### Project Highlights
 Important Aspects Of The Project
