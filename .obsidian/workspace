@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/End Of Project Summary.md",
+            "file": "machine_learning/algorithms/deeplift.md",
             "mode": "source",
             "source": false
           }
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/End Of Project Summary.md",
+                "file": "machine_learning/algorithms/deeplift.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,8 +108,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7392dccc64ec346d",
+  "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "machine_learning/algorithms/deeplift.md",
     "project_management/End Of Project Summary.md",
     "project_management/Generic End of Project Template.md",
     "Regression tasks.md",
@@ -118,7 +119,6 @@
     "optimisation/non-convex optimisation.md",
     "optimisation/convex optimisation.md",
     "optimisation/Integer Programming.md",
-    "optimisation/Gurobi.md",
-    "project_management/Executive Summary.md"
+    "optimisation/Gurobi.md"
   ]
 }
