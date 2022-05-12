@@ -1,24 +1,23 @@
 # DeepLift - Learning Important Features through propagation of activation differences
 
-
 Reading arXiv:1704.02685v2
 
 ## Summary
-  \item provide interpretability of NN output
+- provide interpretability of NN output
 
-  \item associate output to input features by backproping through all neurons 
+- associate output to input features by backproping through all neurons 
 
-  \item contribution scores of each neuron by comparing activation of n to a reference 
+- contribution scores of each neuron by comparing activation of n to a reference 
 
 ## Other Methods
-  \item Perturbation-based fwd prop approach: Observe impact on output after perturbing input or neurons
+- Perturbation-based fwd prop approach: Observe impact on output after perturbing input or neurons
 
  Problem here is that once input contribution has saturated the impact on output, impact of input on importance not attributed any further.
   Also computationally expensive due to additional fwd prop. 
- \item Guided backpropagation - Combination of Gradients and deconvolutional networks. Saliency Maps
- \item Gradient x Input - elementwise product. layerwise relevance propagation
- \item integrated gradients
- \item grad/guided CAM
+- Guided backpropagation - Combination of Gradients and deconvolutional networks. Saliency Maps
+- Gradient x Input - elementwise product. layerwise relevance propagation
+- integrated gradients
+- grad/guided CAM
   
 
 ## DeepLIFT
@@ -57,6 +56,6 @@ Problem dependent. Differences measured against what? 
 
 ## Claimed Advantages
 
-  \item zero gradients still allow for propagation of importance score
-  \item avoid discontinuity artifacts in gradient calculations
-  \item positive and negative contributions to importance separated - reveal dependencies missed by other methods 
+- zero gradients still allow for propagation of importance score
+- avoid discontinuity artifacts in gradient calculations
+- positive and negative contributions to importance separated - reveal dependencies missed by other methods 

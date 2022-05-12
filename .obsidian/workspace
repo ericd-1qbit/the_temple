@@ -9,19 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/algorithms/deeplift.md",
-            "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "7392dccc64ec346d",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "project_management/End Of Project Summary.md",
+            "file": "machine_learning/algorithms/Linear Regression.md",
             "mode": "source",
             "source": false
           }
@@ -81,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/algorithms/deeplift.md",
+                "file": "machine_learning/algorithms/Linear Regression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +98,7 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "machine_learning/algorithms/Linear Regression.md",
     "machine_learning/algorithms/deeplift.md",
     "project_management/End Of Project Summary.md",
     "project_management/Generic End of Project Template.md",
@@ -118,7 +107,6 @@
     "optimisation/overview.md",
     "optimisation/non-convex optimisation.md",
     "optimisation/convex optimisation.md",
-    "optimisation/Integer Programming.md",
-    "optimisation/Gurobi.md"
+    "optimisation/Integer Programming.md"
   ]
 }

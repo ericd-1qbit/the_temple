@@ -1,41 +1,37 @@
-\subsection{Linear Regression}
-
-  
+# Linear Regression
 
 \paragraph{Regression}
 
-\begin{itemize}
+- modelling target value given independent (from each other) predictors
 
-  \item modelling target value given independent (from each other) predictors
+- used in forecasting/cause and effect analyses between variables
 
-  \item used in forecasting/cause and effect analyses between variables
+- find exact relationship between independent variable set x and dependent variable y
 
-  \item find exact relationship between independent variable set x and dependent variable y
 
-\end{itemize}
 
 \paragraph{Linear Regression}
 
-\begin{itemize}
 
-  \item relationship in question is linear
 
-  \item relies on \textbf{cost function}
+- relationship in question is linear
 
-  \item measures difference between prediction and actual value y
+- relies on \textbf{cost function}
 
-  \item goal: find minimum of this cost function
+- measures difference between prediction and actual value y
 
-  \item minimisation procedure: \emph{gradient descent} - update parameters iteratively
+- goal: find minimum of this cost function
 
-  \item stepwise approach minimum - number of steps corresponds to learning rate
+- minimisation procedure: \emph{gradient descent} - update parameters iteratively
 
-  \item using partial derivatives to calculate updated parameters, eg. for parameters $a,b$ and learning
+- stepwise approach minimum - number of steps corresponds to learning rate
+
+- using partial derivatives to calculate updated parameters, eg. for parameters $a,b$ and learning
 
  rate $\alpha$:
 
-\end{itemize}
 
+$$
 \begin{align}
 
   a&=a-\alpha\frac{\delta J}{\delta a}\\
@@ -43,29 +39,26 @@
   b&=b-\alpha\frac{\delta J}{\delta b}\\
 
 \end{align}
+$$
 
 \paragraph{Logistics Regression}
 
-\begin{itemize}
+- relationship in question is linear
 
-  \item relationship in question is linear
+- relies on \textbf{cost function}
 
-  \item relies on \textbf{cost function}
+- measures difference between prediction and actual value y
 
-  \item measures difference between prediction and actual value y
+- goal: find minimum of this cost function
 
-  \item goal: find minimum of this cost function
+- minimisation procedure: \emph{gradient descent} - update parameters iteratively
 
-  \item minimisation procedure: \emph{gradient descent} - update parameters iteratively
+- stepwise approach minimum - number of steps corresponds to learning rate
 
-  \item stepwise approach minimum - number of steps corresponds to learning rate
-
-  \item using partial derivatives to calculate updated parameters, eg. for parameters $a,b$ and learning
+- using partial derivatives to calculate updated parameters, eg. for parameters $a,b$ and learning
 
  rate $\alpha$:
-
-\end{itemize}
-
+ $$
 \begin{align}
 
   a&=a-\alpha\frac{\delta J}{\delta a}\\
@@ -73,3 +66,4 @@
   b&=b-\alpha\frac{\delta J}{\delta b}\\
 
 \end{align}
+$$
