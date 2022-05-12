@@ -1,41 +1,21 @@
-\section{Paper Notes - Why does deep and cheap learning work so well?}
+#  Why does deep and cheap learning work so well?
 
-1608.08225
+Reading: 1608.08225
 
 Deep Learning in AI is as well understood as learning in the human brain. We
-
 know that certain protocols result in fantastic results in certain tasks, just
-
 like we know that training the human brain with particular methods results in a
-
 specific skill set. But why that is, is not well understood.
 
-  
-
 At the core of the majority of ML algorithm lies the task of approximating an
-
 arbitrary function, i.e. learning a data distribution following some kind of
-
 structure. This gives three main aspects to shed light on:
 
-\begin{itemize}
-
-  \item[Expressibility] Which class of functions can the algorithm represent?
-
-  \item[Efficiency] Which ressources (ressources, free parameters,...) are
-
-        required to represent the a given function? How does this compare to the
-
-        space of overall available arrangements in that class of functions?
-
-  \item[Learnability] How quickly can my algorithm learn the function
-
-        approximation?
-
-\end{itemize}
+**Expressibility**: Which class of functions can the algorithm represent?
+ **Efficiency**: Which ressources (ressources, free parameters,...) are required to represent the a given function? How does this compare to the space of overall available arrangements in that class of functions?
+**Learnability**: How quickly can my algorithm learn the function approximation?
 
   
-
 Core question in this paper \emph{How is a NN able to learn and approximate
 
 functions efficiently, if the space of possible functions is exponentially
@@ -180,13 +160,3 @@ approximated by the layers in the NN.
         physical world: Would it not be possible to have a macro effect from
 
         non-local influences?
-
-\end{itemize}
-
-\subsection{Insights}
-
-\begin{itemize}
-
-  \item 
-
-\end{itemize}
