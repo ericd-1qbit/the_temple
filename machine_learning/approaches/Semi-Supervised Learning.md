@@ -13,19 +13,19 @@ Sources:
 
 ## CWoLa - Classification without Labels
 
-\paragraph{Sources}
-%  \item Presentation: {\verbatim /Users/drdre/Documents/MachineLearning/BOOST_CWoLa_Hunting.pdf}
+Sources
+%- Presentation: {\verbatim /Users/drdre/Documents/MachineLearning/BOOST_CWoLa_Hunting.pdf}
 Use Case:
 
-  \item extended the bump hunting with ML
-  \item classification problem unknown labels or class proportions
-  \item or unreliable simulations with statistical mixtures of the classes available
-  \item train directly on data
+- extended the bump hunting with ML
+- classification problem unknown labels or class proportions
+- or unreliable simulations with statistical mixtures of the classes available
+- train directly on data
 
 ### Notes
-\item Need some variable X (e.g. mJJ) in which bg is smooth and signal is localized
-\item Need some other variables {Y} (e.g. jet substructure) which may provide discriminating power which may be a-priori unknown.
-\item {Y} should not be strongly correlated with X over the X-width of the signal.Or decorrelate (e.g. if we can predict or measure the correlation, that can be subtracted away to create new uncorrelated variables).
-\item optimal CWola classifier same classifier as in fully-supervised ML
-\item The problem of learning from unknown mixed samples can be shown to be mathematically equivalent to the problem of learning with asymmetric random label noise
+- Need some variable X (e.g. mJJ) in which bg is smooth and signal is localized
+- Need some other variables {Y} (e.g. jet substructure) which may provide discriminating power which may be a-priori unknown.
+- {Y} should not be strongly correlated with X over the X-width of the signal.Or decorrelate (e.g. if we can predict or measure the correlation, that can be subtracted away to create new uncorrelated variables).
+- optimal CWola classifier same classifier as in fully-supervised ML
+- The problem of learning from unknown mixed samples can be shown to be mathematically equivalent to the problem of learning with asymmetric random label noise
 

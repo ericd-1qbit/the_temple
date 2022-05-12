@@ -36,15 +36,7 @@ Therefore we can calculate the posterior distribution using our prior beliefs an
 
   
 
-  
-
-  
-
-  
-
 \section{Bump hunts}
-
-  
 
 \subsection{(Un-) Conditional Fit}
 
