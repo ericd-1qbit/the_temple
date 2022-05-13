@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/Generic End of Project Template.md",
+            "file": "machine_learning/approaches/Unsupervised Learning.md",
             "mode": "source",
             "source": false
           }
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/Generic End of Project Template.md",
+                "file": "machine_learning/approaches/Unsupervised Learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,15 +110,15 @@
   },
   "active": "7611031e335e02d2",
   "lastOpenFiles": [
+    "machine_learning/approaches/Unsupervised Learning.md",
+    "statistics/overview.md",
+    "machine_learning/architectures/CNN.md",
+    "machine_learning/Exploratory Data Analysis.md",
+    "machine_learning/Common Problems.md",
     "project_management/Generic End of Project Template.md",
     "project_management/Allianz DQ End Of Project Summary Example.md",
     "project_management/End Of Project Summary.md",
-    "machine_learning/architectures/overview.md",
-    "machine_learning/architectures/CNN.md",
     "machine_learning/algorithms/Q-Learning.md",
-    "machine_learning/approaches/Unsupervised Learning.md",
-    "machine_learning/algorithms/Variational Autoencoder.md",
-    "machine_learning/approaches/Supervised Learning.md",
-    "machine_learning/approaches/Semi-Supervised Learning.md"
+    "machine_learning/algorithms/Variational Autoencoder.md"
   ]
 }
