@@ -12,9 +12,9 @@
 
 ##### Title page
 - 1qbit logo
+- project's name
 - name of its individual members
 - the project manager's name
-- project's name
 - the team's name
 - the executive sponsors
 - last updated date
