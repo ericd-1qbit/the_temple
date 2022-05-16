@@ -99,14 +99,14 @@
   "active": "3b08ed58cc6f3154",
   "lastOpenFiles": [
     "project_management/End Of Project Summary.md",
+    "project_management/Generic End of Project Template.md",
+    "project_management/project_management.md",
+    "project_management/Executive Summary.md",
+    "project_management/Allianz DQ End Of Project Summary Example.md",
     "machine_learning/approaches/Unsupervised Learning.md",
     "statistics/overview.md",
     "machine_learning/architectures/CNN.md",
     "machine_learning/Exploratory Data Analysis.md",
-    "machine_learning/Common Problems.md",
-    "project_management/Generic End of Project Template.md",
-    "project_management/Allianz DQ End Of Project Summary Example.md",
-    "machine_learning/algorithms/Q-Learning.md",
-    "machine_learning/algorithms/Variational Autoencoder.md"
+    "machine_learning/Common Problems.md"
   ]
 }

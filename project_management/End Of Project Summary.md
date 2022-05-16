@@ -33,6 +33,14 @@
 - Evaluates the budget and program performance.
 - A summary of the project execution with the specification if the project has achieved its goals.
 - Details on the project budget performance.
+- avoid that hard-won knowledge gets lost
+
+
+The project closure report is the final project management deliverable for a project and is 
+- final deliverable
+- used for senior management to assess the success of the project
+- .  The closure report records the final project sign off from the Sponsor, assesses success, and initiates a number of activities: identify and share best practices for future projects, identify and assign  items to be addressed (issues, future initiatives, future projects), appropriately close current contracts, provide final project communication to stakeholders, release project resources, and ensure appropriate operational transition. The closure report is part of the Portfolio Management Group’s closure process.
+
 ## Contents
 - problem description
 - A description of the process with which the project was approved and the reason why it started.

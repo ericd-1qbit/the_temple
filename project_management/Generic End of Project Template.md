@@ -1,10 +1,7 @@
 
 ##### Document Label
-
 - project's name
 - the team's name
-- name of its individual members
-- the project manager's name
 - the executive sponsors
 - current date at the top of the document
 
@@ -12,6 +9,15 @@
 	- organize many reports
 	- help senior management identify the project specifics
 	- listing responsibles - easier for follow ups
+
+##### Title page
+- 1qbit logo
+- name of its individual members
+- the project manager's name
+- project's name
+- the team's name
+- the executive sponsors
+- last updated date
 
 ##### Project Overview
 - summary statement: What is **this report** about, content
