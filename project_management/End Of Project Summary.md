@@ -34,14 +34,22 @@
 - A summary of the project execution with the specification if the project has achieved its goals.
 - Details on the project budget performance.
 - avoid that hard-won knowledge gets lost
-
-
-The project closure report is the final project management deliverable for a project and is 
 - final deliverable
 - used for senior management to assess the success of the project
-- .  The closure report records the final project sign off from the Sponsor, assesses success, and initiates a number of activities: identify and share best practices for future projects, identify and assign  items to be addressed (issues, future initiatives, future projects), appropriately close current contracts, provide final project communication to stakeholders, release project resources, and ensure appropriate operational transition. The closure report is part of the Portfolio Management Group’s closure process.
+- records the final project sign off from the Sponsor
+- assesses success
+- initiates a number of activities: 
+	- identify and share best practices for future projects
+	- identify and assign items to be addressed (issues, future initiatives, future projects)
+	- appropriately close current contracts
+	- provide final project communication to stakeholders
+	- release project resources
+	- ensure appropriate operational transition
+
+
 
 ## Contents
+
 - problem description
 - A description of the process with which the project was approved and the reason why it started.
 - proposed solution
@@ -62,10 +70,30 @@ The project closure report is the final project management deliverable for a pro
 	-   Feedback from senior management, team members and stakeholders
 	-   A separate folder with all project files and communication for archival purposes
 	-   A request for project closure approval
-	
+- Project documentation that should be referenced includes but is not limited to the project charter (scope, objectives and success criteria), project management plan, risks, issues, approved changes to the project, stakeholder register, contracts and statements of work, and lessons learned. 
+
+### Participants
+- input from project documentation, feedback from stakeholders, project participants
+- Feedback can be in the form of group meetings, interviews and surveys
+- The author is the Project Manager
+- The approver of the project closure report is the Sponsor
+- An approved closure represents final sign off on the project, the final deliverable, and agreement on project successes and improvement opportunities.  It also represents the sponsor’s agreement that the closure content is accurate and ready to be shared.
 
 ## Step-by-Step Guide
 - tags
 - costs=manpower, computing time
+
+1.	Review project information by reading documentation (such as charter, risks, issues, lessons learned, contracts and statements of work, stakeholder register, deliverable documentation, approved changes). 
+2.	Contact PMO to conduct satisfaction survey. Collect and document lessons learned.
+3.	Assess success of project based on the success criteria outlined in the charter and project management plan.  Perform required measurements for success criteria.  
+4.	Create the project closure report based on information from steps 1-4.  The green italic text contains instructions for filling out the template and can be removed for the final version of the document.
+5.	Review closure report with applicable stakeholders and sponsor for accuracy and completeness, if required.
+6.	Obtain appropriate approval for project closure to indicate agreement by the Sponsor.
+7.	Upload closure report to the Project Artifacts Library.
+8.	Share lessons learned with other Project Managers.
+
+Once the project closure has been approved, the project is closed.  
+Lessons learned should be shared with others.
+Schedule a closure meeting with PMG Management.
 
 [[Generic End of Project Template]]
