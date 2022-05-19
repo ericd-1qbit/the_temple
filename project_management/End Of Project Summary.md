@@ -1,22 +1,6 @@
 # End of Project Summary
-
-
-## Step-by-Step Guide
-- tags
-- costs=manpower, computing time
-
-1.	Review project information by reading documentation (such as charter, risks, issues, lessons learned, contracts and statements of work, stakeholder register, deliverable documentation, approved changes). 
-2.	Contact PMO to conduct satisfaction survey. Collect and document lessons learned.
-3.	Assess success of project based on the success criteria outlined in the charter and project management plan.  Perform required measurements for success criteria.  
-4.	Create the project closure report based on information from steps 1-4.  The green italic text contains instructions for filling out the template and can be removed for the final version of the document.
-5.	Review closure report with applicable stakeholders and sponsor for accuracy and completeness, if required.
-6.	Obtain appropriate approval for project closure to indicate agreement by the Sponsor.
-7.	Upload closure report to the Project Artifacts Library.
-8.	Share lessons learned with other Project Managers.
-
-Once the project closure has been approved, the project is closed.  
-Lessons learned should be shared with others.
-Schedule a closure meeting with PMG Management.
+## Ideas
+- use tags to easily search across documents
 
 ## Project Closure Report Scope
 
@@ -101,5 +85,19 @@ Schedule a closure meeting with PMG Management.
 - The approver of the project closure report is the Sponsor
 - An approved closure represents final sign off on the project, the final deliverable, and agreement on project successes and improvement opportunities.  It also represents the sponsor’s agreement that the closure content is accurate and ready to be shared.
 
+
+## Step-by-Step Guide
+1.	Review project information by reading documentation (such as charter, risks, issues, lessons learned, contracts and statements of work, stakeholder register, deliverable documentation, approved changes). 
+2.	Contact PMO to conduct satisfaction survey. Collect and document lessons learned.
+3.	Assess success of project based on the success criteria outlined in the charter and project management plan.  Perform required measurements for success criteria.  
+4.	Create the project closure report based on information from steps 1-4.  The green italic text contains instructions for filling out the template and can be removed for the final version of the document.
+5.	Review closure report with applicable stakeholders and sponsor for accuracy and completeness, if required.
+6.	Obtain appropriate approval for project closure to indicate agreement by the Sponsor.
+7.	Upload closure report to the Project Artifacts Library.
+8.	Share lessons learned with other Project Managers.
+
+Once the project closure has been approved, the project is closed.  
+Lessons learned should be shared with others.
+Schedule a closure meeting with PMG Management.
 
 [[Generic End of Project Template]]
