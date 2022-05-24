@@ -7,12 +7,8 @@
         "id": "0355a875e0446244",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "machine_learning/algorithms/Diffusion Models.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -70,7 +66,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/algorithms/Diffusion Models.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",

@@ -52,7 +52,6 @@
 ### Blog Entries
 
 - [Diffusion Model](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#nice) 
-- 
 
 #### Variational Methods
 #TODO this is more general
@@ -63,10 +62,8 @@
 #### Energy-Based Models
 - [Physics of Energy-Based Models](https://towardsdatascience.com/the-physics-of-energy-based-models-1121122d0d9)
 	- https://physicsofebm.github.io/
-- 
 
 - [PyTorch implementations of Generative Adversarial Networks.](https://github.com/eriklindernoren/PyTorch-GAN)
-
 
 
 # Score Based Generative Models
