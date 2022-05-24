@@ -1,6 +1,6 @@
 {
   "theme": "obsidian",
-  "translucency": true,
+  "translucency": false,
   "cssTheme": "Obsidian Nord",
   "baseFontSize": 12
 }
