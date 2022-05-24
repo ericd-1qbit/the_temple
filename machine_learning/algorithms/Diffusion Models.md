@@ -15,14 +15,12 @@
 - [Simple DDPM](https://github.com/lucidrains/denoising-diffusion-pytorch)
 - [Notebook DDPM](https://github.com/acids-ircam/diffusion_models)
 - [Diffusion-CLIP](https://github.com/gwang-kim/DiffusionCLIP)
-
+- [Palette](https://paperswithcode.com/paper/palette-image-to-image-diffusion-models-1)
 ##### Applications
 - [Image-to-Image Translation](https://github.com/weihaox/awesome-image-translation)
 - [Contrastive Unpaired Translation](https://github.com/taesungp/contrastive-unpaired-translation)
 	- State of the art image-to-image translation
 - [UNIT-DDPM: UNpaired Image Translation with Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2104.05358)
-
-
 
 ### Papers
 #### Diffusion Models
@@ -39,7 +37,23 @@
 	- https://paperswithcode.com/paper/palette-image-to-image-diffusion-models-1
 
 
+##### Related
+- [Ab-Initio Solution of the Many-Electron Schrodinger Equation with Deep Neural Networks](https://arxiv.org/abs/1909.02487)
+	- -   related optimization algorithm:
+    
+
+-   [http://proceedings.mlr.press/v37/martens15.html](http://proceedings.mlr.press/v37/martens15.html)
+    
+-   [https://github.com/alecwangcq/KFAC-Pytorch](https://github.com/alecwangcq/KFAC-Pytorch)
+    
+-   [https://paperswithcode.com/paper/optimizing-neural-networks-with-kronecker](https://paperswithcode.com/paper/optimizing-neural-networks-with-kronecker)
+- 
+
 ### Blog Entries
+
+- [Diffusion Model](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#nice) 
+- 
+
 #### Variational Methods
 #TODO this is more general
 - [Variational Bayes](https://blog.evjang.com/2016/08/variational-bayes.html)
@@ -52,4 +66,13 @@
 - 
 
 - [PyTorch implementations of Generative Adversarial Networks.](https://github.com/eriklindernoren/PyTorch-GAN)
-- 
+
+
+
+# Score Based Generative Models
+
+https://yang-song.github.io/blog/2021/score/
+- [Estimation of Non-Normalized Statistical Models by Score Matching](https://www.jmlr.org/papers/v6/hyvarinen05a.html)
+    
+-   score based models and DDBM
+-   https://yang-song.github.io/blog/2021/score/
