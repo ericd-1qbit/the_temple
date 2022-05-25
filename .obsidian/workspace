@@ -7,8 +7,12 @@
         "id": "0355a875e0446244",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "machine_learning/sources.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -36,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\\sub",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -45,12 +49,12 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 379.5036334991455,
-    "collapsed": true
+    "width": 379.5036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -66,6 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "machine_learning/sources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,15 +99,15 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "machine_learning/sources.md",
+    "machine_learning/approaches/Deep Learning.md",
+    "statistics/overview.md",
     "machine_learning/algorithms/Diffusion Models.md",
     "project_management/End Of Project Summary.md",
     "project_management/Generic End of Project Template.md",
     "project_management/Executive Summary.md",
     "project_management/Waterloo IT Project Closure Template.md",
     "machine_learning/approaches/Time Series.md",
-    "machine_learning/approaches/Deep Learning.md",
-    "project_management/Allianz DQ End Of Project Summary Example.md",
-    "project_management/project_management.md",
-    "machine_learning/approaches/Unsupervised Learning.md"
+    "project_management/Allianz DQ End Of Project Summary Example.md"
   ]
 }
