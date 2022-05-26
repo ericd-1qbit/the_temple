@@ -1,4 +1,12 @@
 - problem classes:
 	- 3SAT, QAP, MLE-MIMO,...
-- 3 phases
+- 3 project phases
+- collab between HPE, Julich, 1qbit
+- solution: memristor-Hopfield NN
+	- programmable high order interactions between neurons
+	- expandable, adjustable topology
+	- constraint enforcement circuits
+	- versatile annealing
+	- precision boosting and error correction techniques
+	- multi-mode rapid convergence operation
 - 
