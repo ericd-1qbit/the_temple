@@ -1,0 +1,4 @@
+- problem classes:
+	- 3SAT, QAP, MLE-MIMO,...
+- 3 phases
+- 

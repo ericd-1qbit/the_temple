@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/sources.md",
+            "file": "optimisation/DARPA.md",
             "mode": "source",
             "source": false
           }
@@ -49,12 +49,12 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 379.5036334991455
+    "width": 369.5036334991455,
+    "collapsed": true
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/sources.md",
+                "file": "optimisation/DARPA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,6 +99,8 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "optimisation/DARPA.md",
+    "optimisation/overview.md",
     "machine_learning/sources.md",
     "machine_learning/approaches/Deep Learning.md",
     "statistics/overview.md",
@@ -106,8 +108,6 @@
     "project_management/End Of Project Summary.md",
     "project_management/Generic End of Project Template.md",
     "project_management/Executive Summary.md",
-    "project_management/Waterloo IT Project Closure Template.md",
-    "machine_learning/approaches/Time Series.md",
-    "project_management/Allianz DQ End Of Project Summary Example.md"
+    "project_management/Waterloo IT Project Closure Template.md"
   ]
 }
