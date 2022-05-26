@@ -18,3 +18,22 @@ SAT
 - n-SAT: n variables x_1,...x_n
 - 
 
+QAP
+![[Pasted image 20220526114715.png]]
+- nightmare QUBO problem
+
+MLE-MIMO
+![[Pasted image 20220526114859.png]]
+What does MLE have to do with an combinatorial optimisation problem?
+
+MFMC
+![[Pasted image 20220526115304.png]]
+
+MLIP problems:
+run off the mill problems (eg on GUROBI)
+- vehicle routing problem (VRP)
+
+
+Heterogeneous Computing
+
+![[Pasted image 20220526115908.png]]
