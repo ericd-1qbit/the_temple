@@ -1,4 +1,20 @@
 # Diffusion Models
+Relates to: [Generative Models]()
+
+## In short:
+- Kind of generative model relying on Markov chains
+- 2 steps: 
+	- forward diffusion - add random noise to given data
+	- reverse diffusion - reconstruct/generate data from noisy sample
+
+### Forward Diffusion
+
+1. sample datapoint from data distribution $$x_0\sim q(x)$$
+2. Add Gaussian noise to the datasample in $T$ steps. $$z\sim\mathcal{N}(0,1)\rightarrow q(x_t|x_{t-1})=zq(x_{t-1})$$ #TODO verify this
+3. 
+
+
+
 ## Sources
 
 ### Repositories
