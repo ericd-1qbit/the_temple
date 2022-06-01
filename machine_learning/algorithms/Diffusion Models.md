@@ -6,13 +6,17 @@ Relates to: [Generative Models]()
 - 2 steps: 
 	- forward diffusion - add random noise to given data
 	- reverse diffusion - reconstruct/generate data from noisy sample
+![Pasted image 20220601150447.png](app://local/Users/ericdrechsler/codez/the_temple/Pasted%20image%2020220601150447.png?1654121087214)
 
 ### Forward Diffusion
 
 1. sample datapoint from data distribution $$x_0\sim q(x)$$
-2. Add Gaussian noise to the datasample in $T$ steps. $$z\sim\mathcal{N}(0,1)\rightarrow q(x_t|x_{t-1})=zq(x_{t-1})$$ #TODO verify this
-3. 
-
+2. Add Gaussian noise to the datasample in $T$ steps. $$z\sim\mathcal{N}(0,1)\rightarrow q(x_t|x_{t-1})=zq(x_{t-1})$$ #TODO verify this, this is probably not how it works
+3. Produce successively noisier samples $x_0,x_1,...,x_T$ . The amount of noise added at each step is determined by variance schedule $\beta_t\in(0,1)$ . $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
+4. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
+### Reverse Diffusion
+1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
+2. It is hard to estimate $q(x_{t-1}|x_{t})$. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ 
 
 
 ## Sources
