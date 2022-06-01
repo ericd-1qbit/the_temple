@@ -22,7 +22,26 @@ Relates to: [Generative Models]()
 
 ### Loss Function
 Variational Lower Bound:
-$$L_{VLB}=\mathbb{E}()$$
+$$L_{VLB}=\mathbb{E}_q(x_{0:T})\left[\log{\frac{q(x_{1:T|x_0})}{p_\theta(x_{0:T})}}\right]$$
+This can be rewritten as a sum of Kullback-Leibler Divergences of all Markov-Chain terms:
+
+$$\begin{align}
+L_{VLB} &= L_0+\sum_{t=1}^{T-1}L_t+L_T\\
+(L_0) &= -\log{p_\theta(x_0|x_1)}\\
+(L_t) &+ \sum_{t=1}^{T-1} D_{KL}(q(x_t|x_{t+1},x_0)||p_\theta(x_t|x_{t+1}))\\
+(L_T) &+ D_{KL}(q(x_T|x_0)||p_\theta(x_T))
+\end{align}$$
+Simplifications to this loss function are available.
+
+
+### Algorithm
+Denoising Diffusion Probabilistic Models
+https://arxiv.org/abs/2006.11239
+
+![[Pasted image 20220601154435.png]]
+
+
+
 
 
 ## Sources
