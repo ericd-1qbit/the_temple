@@ -16,7 +16,13 @@ Relates to: [Generative Models]()
 4. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
 ### Reverse Diffusion
 1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
-2. It is hard to estimate $q(x_{t-1}|x_{t})$. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ 
+2. It is hard to estimate $q(x_{t-1}|x_{t})$. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ where $$p_\theta(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_\theta(x_t,t),\Sigma_\theta(x_t,t))$$
+3. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and actual probability distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
+4. Calculate Loss function using the same strategy as in a VAE.
+
+### Loss Function
+Variational Lower Bound:
+$$L_{VLB}=\mathbb{E}()$$
 
 
 ## Sources
