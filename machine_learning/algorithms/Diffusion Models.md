@@ -40,6 +40,19 @@ https://arxiv.org/abs/2006.11239
 
 ![[Pasted image 20220601154435.png]]
 
+## Applications
+##### Image Generation
+- Task:
+	- generate synthetic images from specific distributions learned in given dataset 
+- Method:
+	- Reconstruction Loss like MSE and variational lower bound (VLB) $$L_{MSE}+\lambda L_{VLB}$$
+- Datasets: ImageNet, LSUN
+- Benchmarks: Google Open Images, CelebA-HQ
+
+##### Image Segmentation
+- Task:
+	- assign each pixel in image a label to classify if pixel belongs to specific class
+	- used for: object recognition, 
 
 
 ## Sources
