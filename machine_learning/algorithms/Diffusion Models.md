@@ -52,7 +52,58 @@ https://arxiv.org/abs/2006.11239
 ##### Image Segmentation
 - Task:
 	- assign each pixel in image a label to classify if pixel belongs to specific class
-	- used for: object recognition, 
+	- used for: 
+		- object recognition
+		- occlusion boundary estimation
+		- image compression/editing
+- Method:
+	- Diffusion method for image segmentation (Tomer et al., 2021)
+- Datasets: Cityscape, Vaihingen, MoNuSeg
+- Benchmarks: Google open images, SYNTHIA
+
+##### Image-to-Image Translation
+- Task: Transforming an image from one domain to another.
+- Examples: Style transfer, super-resolution and colourization
+- Method: UNpaired Image Translation with Denoising Diffusion Probabilistic Models (UNIT-DDPM) (Sasaki et al., 2021)
+-   Datasets: Facades, Photo-Maps, Summer-Winter, RGB-Thermal
+-   Potential benchmarks: ImageNet (translation between two similar categories)
+
+##### Medical Anomaly Detection
+
+-   Task: To create an anomaly map from input images based on the image-to-image translation (Wolleb et al. ).
+-   Examples: Find anomalies on the medical images.
+-   Method: Generating the image without any pathologies using diffusion models and subtract it from input image in order to create anomaly map.
+-   Datasets: cheXpert, BraTS
+-   Potential benchmarks: OASIS-3, XrAI (Synthesis Health)
+
+##### Audio Generation
+-   Task: Generating raw audio such as speech
+-   Examples: Text-to-speech, music, speech enhancement, voice conversion, creative sound design for music and film.
+-   Method: DiffWave which is a versatile diffusion
+    model for audio synthesis (Kong et al., 2021).
+-   Datasets: LJ speech, Speech Commands
+-   Potential benchmarks: English multi-speaker
+    corpus from CSTR voice cloning toolkit (VCTK)
+###### Text-to-Speech
+• Task: Generating synthesized speech from text.
+• Examples: Helping users with disabilities, banking,
+media, entertainment, health care, home
+automation.
+• Method: InferGrad which improves diffusion
+models for vocoder (Chen et al., 2022)
+• Datasets: LJ Speech dataset
+• Potential benchmarks: LibriTTS
+
+##### Time series forecasting
+
+- Task: generating missing values in a time series based on the observed samples.  
+- Examples: Find missing values in time series, forecasting time series.
+    
+-   ●  Method: Using conditional score based diffusion model.
+    
+-   ●  Datasets: PhysioNet, Air quality
+    
+-   ●  Potential benchmarks: ETT, whether
 
 
 ## Sources
