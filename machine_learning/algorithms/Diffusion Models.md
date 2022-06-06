@@ -121,20 +121,49 @@ models for vocoder (Chen et al., 2022)
 
 
 ## Further Reading
-##### Using different loss function
--   DDPMs require a large number of iterations in inference → slow inference speed
--   ●  InferGrad:
-    
-    -   ○  Incorporates inference process into training → keep quality with reduced number of iterations
-        
-    -   ○  Add another loss term (inference loss) based on the Fourier feature of the input signal
-        
--   ●  VDM:
-    
-    -   ○  Learning noise schedule
-        
-    -   ○  Add Fourier feature of the signal into the noise prediction network.
+##### Changing loss functions
+-  DDPMs require a large number of iterations in inference → slow inference speed
+-  InferGrad:
+    -  Incorporates inference process into training → keep quality with reduced number of iterations
+    -  Add another loss term (inference loss) based on the Fourier feature of the input signal 
+-  VDM:
+    -  Learning noise schedule
+    -  Add Fourier feature of the signal into the noise prediction network.
 
+##### Improving Sampling speed
+- Drawback of the DDPMs → requiring a huge number of refinement steps  
+- Itô-Taylor Sampling Scheme:
+	-  The idea for the proposed solution is based on ideal derivative substitution.
+	-  Second order sampler for existing DDPM models, which enables faster sampling than existing first order counterparts (Euler-Maruyama schemes).
+    Song et al., 2021:  
+    -   Leverage an ODE solver to accelerate the sampling procedure.
+    -   Combining CSDI with this method would likely improve the sampling efficiency
+
+##### Changing noise distribution
+-   A notable property of the diffusion process is a closed-form formulation of the noise
+-  Gamma distribution: 
+    -  The idea for the proposed solution is sum of two distributions that share the scale parameter is a Gamma distribution of the same scale. 
+    - Gamma is better suited to fit the data than a Gaussian distribution.
+    - Gamma can help speed up the convergence of the DDPM.
+    
+##### Diffusion Priors for Variational Autoencoders
+
+-  Variational autoencoders (VAEs) offer scalable amortized posterior inference and fast sampling.
+-  In the original formulation of VAEs, the prior and the posterior distributions over the latent variables are assumed to be Gaussian.
+-  Whenkel and Louppe (2021) improve VAEs by using DDPMs for modelling the prior distribution of the  latent variables.
+    -  Recent advances in DDPM can be incorporated into the prior model.
+    -  Image synthesis with hierarchical VAEs could benefit from the diffusion priors.
+
+##### Distributed ML
+
+-  Distributed machine learning is a multi-node ML system that improves performance, increases accuracy, and scales to larger input data sizes. 
+-  Accelerate the training of the diffusion models by using multi GPU
+-  We implement DDPM with Unet model (here) for noise prediction on CelebA dataset:
+ Single Node: 1 x Tesla T4, 100GB SSD storage, 192GB RAM, 48 vCPU
+	 Runtime for 5000 training steps: 4h 9 min  
+Multi Node: 4 x Tesla T4, 100GB SSD storage, 192GB RAM,
+48 vCPU  
+	Runtime for 5000 training steps: 1h 34 min
 
 ## Sources
 
