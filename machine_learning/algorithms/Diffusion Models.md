@@ -97,13 +97,43 @@ models for vocoder (Chen et al., 2022)
 ##### Time series forecasting
 
 - Task: generating missing values in a time series based on the observed samples.  
-- Examples: Find missing values in time series, forecasting time series.
+- Examples: Find missing values in time series, forecasting time series.  
+- Method: Using conditional score based diffusion model.  
+- Datasets: PhysioNet, Air quality  
+- Potential benchmarks: ETT, whether
+
+##### Attack detection for cyber-physical systems
+
+-   Task: Real-time attack detection based on the historical data.
+-   Examples: Find anomalies on the cybersecurity platforms.
+-   Method: Predicting the pattern based on the historical data using diffusion models. Then, compare it with the observed value in order to detect anomalies.
+-   Datasets: PUMP, SWAT, WADI
+-   Potential benchmarks: KDDCUP
+
+##### Video Generation
+
+-   Task: Stochastic video generation.    
+-   Examples: Stochastic video generation and
+    forecasting is important in various contexts; e.g. model-based reinforcement learning, data-driven weather prediction, and neural video compression.
+-   Method: A denoising process generates residuals to refine the output from autoregressive model for error correction and improves sample quality.
+-   Dataset: BAIR Robot arm, KTH Actions, City scape,a two-dimensional Simulation dataset for turbulent flow
+-   Potential benchmarks: UCF101, Kinetics-600
+
+
+## Further Reading
+##### Using different loss function
+-   DDPMs require a large number of iterations in inference → slow inference speed
+-   ●  InferGrad:
     
--   ●  Method: Using conditional score based diffusion model.
+    -   ○  Incorporates inference process into training → keep quality with reduced number of iterations
+        
+    -   ○  Add another loss term (inference loss) based on the Fourier feature of the input signal
+        
+-   ●  VDM:
     
--   ●  Datasets: PhysioNet, Air quality
-    
--   ●  Potential benchmarks: ETT, whether
+    -   ○  Learning noise schedule
+        
+    -   ○  Add Fourier feature of the signal into the noise prediction network.
 
 
 ## Sources
