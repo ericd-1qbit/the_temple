@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/algorithms/Diffusion Models.md",
+            "file": "machine_learning/architectures/UNET.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/algorithms/Diffusion Models.md",
+                "file": "machine_learning/architectures/UNET.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +98,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "machine_learning/architectures/UNET.md",
     "machine_learning/algorithms/Diffusion Models.md",
     "project_management/Allianz DQ End Of Project Summary Example.md",
     "project_management/Generic End of Project Template.md",
@@ -106,7 +107,6 @@
     "optimisation/overview.md",
     "machine_learning/sources.md",
     "machine_learning/approaches/Deep Learning.md",
-    "statistics/overview.md",
-    "project_management/End Of Project Summary.md"
+    "statistics/overview.md"
   ]
 }
