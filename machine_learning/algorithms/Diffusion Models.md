@@ -1,6 +1,12 @@
 # Diffusion Models
 Relates to: [Generative Models]()
 
+| Term                             | Name              | Explanation                                            |
+| -------------------------------- | ----------------- | ------------------------------------------------------ |
+| $x_0~q(x)$                       | Datapoint         | Real sample of dataset                                 |
+| $\{\beta_t \in (0, 1)\}_{t=1}^t$ | Variance Schedule | Step sizes defining how much noise is added at steps t |
+|                                  |                   |                                                        |
+
 ## In short:
 - Kind of generative model relying on Markov chains
 - 2 steps: 
@@ -13,7 +19,8 @@ Relates to: [Generative Models]()
 1. sample datapoint from data distribution $$x_0\sim q(x)$$
 2. Add Gaussian noise to the datasample in $T$ steps. $$z\sim\mathcal{N}(0,1)\rightarrow q(x_t|x_{t-1})=zq(x_{t-1})$$ #TODO verify this, this is probably not how it works
 3. Produce successively noisier samples $x_0,x_1,...,x_T$ . The amount of noise added at each step is determined by variance schedule $\beta_t\in(0,1)$ . $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
-4. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
+5. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
+   The data sample loses it's distinguishable features with progressive t and for $T\rightarrow\inf$ becomes equivalent to an isotropic Gaussian distribution. 
 ### Reverse Diffusion
 1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
 2. It is hard to estimate $q(x_{t-1}|x_{t})$. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ where $$p_\theta(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_\theta(x_t,t),\Sigma_\theta(x_t,t))$$
