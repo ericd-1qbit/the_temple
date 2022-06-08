@@ -18,10 +18,11 @@ Relates to: [Generative Models]()
 
 1. sample datapoint from data distribution $$x_0\sim q(x)$$
 2. Produce successively noisier samples $x_0,x_1,...,x_T$ . 
-	1.  A single step looks like $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
-	2. The amount of noise added at each step is determined by variance schedule $$\{\beta_t \in (0, 1)\}_{t=1}^T$$
-	3. A random variable $$z_{t-1}\sim\mathcal{N}(0,I)$$ is drawn from a standard normal gaussian.
-	4. With $$\alpha_t = 1 - \beta_t; \bar{\alpha}_t = \prod_{i=1}^T \alpha_i$$ we can sample $x_t$ using the #reparameterization trick like so: $$\begin{aligned}
+	1.  The amount of noise added at each step is determined by variance schedule $$\{\beta_t \in (0, 1)\}_{t=1}^T$$
+	2.  The distribution for a single sample step is therfore given by $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
+3. The #reparameterization Trick can be used to do this sampling, thereby enabling to learn the distributions in backpropagation.
+	1. Draw random variable $$z_{t-1}\sim\mathcal{N}(0,I)$$from standard normal gaussian.
+	2. With $$\alpha_t = 1 - \beta_t; \bar{\alpha}_t = \prod_{i=1}^T \alpha_i$$ we can sample $x_t$ k like so: $$\begin{aligned}
 \mathbf{x}_t 
 &= \sqrt{\alpha_t}\mathbf{x}_{t-1} + \sqrt{1 - \alpha_t}\mathbf{z}_{t-1} & \text{ ;where } \mathbf{z}_{t-1}, \mathbf{z}_{t-2}, \dots \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) \\
 &= \sqrt{\alpha_t \alpha_{t-1}} \mathbf{x}_{t-2} + \sqrt{1 - \alpha_t \alpha_{t-1}} \bar{\mathbf{z}}_{t-2} & \text{ ;where } \bar{\mathbf{z}}_{t-2} \text{ merges two Gaussians (*).} \\
@@ -34,7 +35,7 @@ q(\mathbf{x}_t \vert \mathbf{x}_0) &= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alph
    The data sample loses it's distinguishable features with progressive t and for $T\rightarrow\inf$ becomes equivalent to an isotropic Gaussian distribution. 
 ### Reverse Diffusion
 1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
-2. It is hard to estimate $q(x_{t-1}|x_{t})$. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ where $$p_\theta(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_\theta(x_t,t),\Sigma_\theta(x_t,t))$$
+2. It is hard to estimate $q(x_{t-1}|x_{t})$ true conditional distribution. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ where $$p_\theta(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_\theta(x_t,t),\Sigma_\theta(x_t,t))$$
 3. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and actual probability distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
 4. Calculate Loss function using the same strategy as in a VAE.
 
