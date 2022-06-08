@@ -22,7 +22,7 @@ Relates to: [Generative Models]()
 	2.  The distribution for a single sample step is therfore given by $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
 3. The #reparameterization Trick can be used to do this sampling, thereby enabling to learn the distributions in backpropagation.
 	1. Draw random variable $$z_{t-1}\sim\mathcal{N}(0,I)$$from standard normal gaussian.
-	2. With $$\alpha_t = 1 - \beta_t; \bar{\alpha}_t = \prod_{i=1}^T \alpha_i$$ we can sample $x_t$ k like so: $$\begin{aligned}
+	2. With $$\alpha_t = 1 - \beta_t; \bar{\alpha}_t = \prod_{i=1}^T \alpha_i$$ we can sample $x_t$ like so and construct the conditional posterioir: $$\begin{aligned}
 \mathbf{x}_t 
 &= \sqrt{\alpha_t}\mathbf{x}_{t-1} + \sqrt{1 - \alpha_t}\mathbf{z}_{t-1} & \text{ ;where } \mathbf{z}_{t-1}, \mathbf{z}_{t-2}, \dots \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) \\
 &= \sqrt{\alpha_t \alpha_{t-1}} \mathbf{x}_{t-2} + \sqrt{1 - \alpha_t \alpha_{t-1}} \bar{\mathbf{z}}_{t-2} & \text{ ;where } \bar{\mathbf{z}}_{t-2} \text{ merges two Gaussians (*).} \\
@@ -31,15 +31,20 @@ Relates to: [Generative Models]()
 q(\mathbf{x}_t \vert \mathbf{x}_0) &= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I})
 \end{aligned}$$
 
-3. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
+3. The final noisy sample posterior is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
    The data sample loses it's distinguishable features with progressive t and for $T\rightarrow\inf$ becomes equivalent to an isotropic Gaussian distribution. 
 ### Reverse Diffusion
 1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
 2. It is hard to estimate $q(x_{t-1}|x_{t})$ true conditional distribution. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ where $$p_\theta(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_\theta(x_t,t),\Sigma_\theta(x_t,t))$$
-3. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and true conditional distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
+3. If $q(x_{t-1}|x_{t})$  is also conditioned on $x_0$ it becomes tractable $q(x_{t-1}|x_{t},x_0)$  and can be expressed as $$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_t;\mathbf{\tilde{\mu}}_t(x_t,x_0),\tilde{\beta}\mathbf{I})$$ where $$\begin{aligned}
+\tilde{\boldsymbol{\mu}}_t
+&= {\frac{1}{\sqrt{\alpha_t}} \Big( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \mathbf{z}_t \Big)}\\
+\tilde{\beta}_t &= \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \cdot \beta_t
+\end{aligned}$$This seems to express the reverse distr
+6. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and true conditional distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
 	1. Conditioning the true distr on $x_0$ makes it tractable.
 	2. 
-4. Calculate Loss function using the same strategy as in a VAE.
+7. Calculate Loss function using the same strategy as in a VAE.
 
 ### Loss Function
 Variational Lower Bound:
