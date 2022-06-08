@@ -40,11 +40,10 @@ q(\mathbf{x}_t \vert \mathbf{x}_0) &= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alph
 \tilde{\boldsymbol{\mu}}_t
 &= {\frac{1}{\sqrt{\alpha_t}} \Big( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \mathbf{z}_t \Big)}\\
 \tilde{\beta}_t &= \frac{1 - \bar{\alpha}_{t-1}}{1 - \bar{\alpha}_t} \cdot \beta_t
-\end{aligned}$$This seems to express the reverse distr
+\end{aligned}$$This seems to express the reverse posteriors through parameters of the forward process? #TODO 
 6. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and true conditional distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
-	1. Conditioning the true distr on $x_0$ makes it tractable.
-	2. 
-7. Calculate Loss function using the same strategy as in a VAE.
+
+We are trying to learn $\mu_\theta$ such that we can predict $\tilde{\mu_t}$ . 
 
 ### Loss Function
 Variational Lower Bound:
@@ -57,7 +56,9 @@ L_{VLB} &= L_0+\sum_{t=1}^{T-1}L_t+L_T\\
 (L_t) &+ \sum_{t=1}^{T-1} D_{KL}(q(x_t|x_{t+1},x_0)||p_\theta(x_t|x_{t+1}))\\
 (L_T) &+ D_{KL}(q(x_T|x_0)||p_\theta(x_T))
 \end{align}$$
-Simplifications to this loss function are available.
+- Every term aside from $L_0$ is a comparison of Gaussians
+- $L_T$ is constant and can be ignored in training ($q$ has no learnable parameters; $x_T$ is gaussian noise)
+- $L_0$ can be modelled using separate discrete decoder
 
 
 ### Algorithm
