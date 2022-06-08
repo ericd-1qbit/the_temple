@@ -17,9 +17,20 @@ Relates to: [Generative Models]()
 ### Forward Diffusion
 
 1. sample datapoint from data distribution $$x_0\sim q(x)$$
-2. Add Gaussian noise to the datasample in $T$ steps. $$z\sim\mathcal{N}(0,1)\rightarrow q(x_t|x_{t-1})=zq(x_{t-1})$$ #TODO verify this, this is probably not how it works
-3. Produce successively noisier samples $x_0,x_1,...,x_T$ . The amount of noise added at each step is determined by variance schedule $\beta_t\in(0,1)$ . $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
-5. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
+2. Produce successively noisier samples $x_0,x_1,...,x_T$ . 
+	1.  A single step looks like $$q(x_t|x_{t-1})=\mathcal{N}(x_t;\sqrt{1-\beta_t}x_{t-1},\beta_t)$$
+	2. The amount of noise added at each step is determined by variance schedule $$\{\beta_t \in (0, 1)\}_{t=1}^T$$
+	3. A random variable $$z_{t-1}\sim\mathcal{N}(0,I)$$ is drawn from a standard normal gaussian.
+	4. With $$\alpha_t = 1 - \beta_t; \bar{\alpha}_t = \prod_{i=1}^T \alpha_i$$ we can sample $x_t$ using the #reparameterization trick like so: $$\begin{aligned}
+\mathbf{x}_t 
+&= \sqrt{\alpha_t}\mathbf{x}_{t-1} + \sqrt{1 - \alpha_t}\mathbf{z}_{t-1} & \text{ ;where } \mathbf{z}_{t-1}, \mathbf{z}_{t-2}, \dots \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) \\
+&= \sqrt{\alpha_t \alpha_{t-1}} \mathbf{x}_{t-2} + \sqrt{1 - \alpha_t \alpha_{t-1}} \bar{\mathbf{z}}_{t-2} & \text{ ;where } \bar{\mathbf{z}}_{t-2} \text{ merges two Gaussians (*).} \\
+&= \dots \\
+&= \sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\mathbf{z} \\
+q(\mathbf{x}_t \vert \mathbf{x}_0) &= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I})
+\end{aligned}$$
+
+3. The final noisy sample distribution is thereby given by $$q(x_{1:T}|x_0)=\prod_{t=1}^{T}{q(x_t|x_{t-1})}$$
    The data sample loses it's distinguishable features with progressive t and for $T\rightarrow\inf$ becomes equivalent to an isotropic Gaussian distribution. 
 ### Reverse Diffusion
 1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
