@@ -5,6 +5,9 @@
 - architecture modified - fewer training images required
 
 
+### Main Idea
+- supplement contracting 
+
 
 
 
