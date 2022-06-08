@@ -36,7 +36,9 @@ q(\mathbf{x}_t \vert \mathbf{x}_0) &= \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alph
 ### Reverse Diffusion
 1. Reverse the diffusion steps starting from a noisy sample $$x_T\sim\mathcal{N(0,I)}$$
 2. It is hard to estimate $q(x_{t-1}|x_{t})$ true conditional distribution. Find an approximate conditional distribution $$p_\theta(x_{0:T})=p(x_T)\prod_{t=1}^{T}{p_\theta(x_{t-1}|x_t)}$$ where $$p_\theta(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_\theta(x_t,t),\Sigma_\theta(x_t,t))$$
-3. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and actual probability distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
+3. Use the Kullback-Leibler Divergence $D_{KL}$ to quantify the distance between the approximate and true conditional distribution $$D_{KL}(q(x_{1:T}|x_0)||p_\theta(x_{1:T}|x_0)))$$
+	1. Conditioning the true distr on $x_0$ makes it tractable.
+	2. 
 4. Calculate Loss function using the same strategy as in a VAE.
 
 ### Loss Function
