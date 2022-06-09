@@ -77,6 +77,7 @@ https://arxiv.org/abs/2006.11239
 - Benchmarks: Google Open Images, CelebA-HQ
 
 ##### Image Segmentation
+#imagesegmentation 
 - Task:
 	- assign each pixel in image a label to classify if pixel belongs to specific class
 	- used for: 
