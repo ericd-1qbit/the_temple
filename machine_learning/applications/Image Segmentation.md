@@ -6,7 +6,14 @@
 	- occlusion boundary estimation
 	- image compression/editing
 ### Architectures
-- 
+- fully [[CNN]]
+- encoder-decoder with skip connections
+- [[UNET]]
+- transformer based architecture
+- diffusion based image segmentation model
+	- Diffusion Model with Unet architecture - incrementally improve generation
+	- conditioning of input image: generation of another encoding path; similar to conventional Unet encoder-decoder use
+	- merging of two encoder paths
 
 
 ### Method:
