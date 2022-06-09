@@ -1,5 +1,8 @@
 # Denoising Diffusion Probabilistic Models
 
+https://arxiv.org/abs/2006.11239
+
+![[Pasted image 20220601154435.png]]
 
 We use a U-Net with self-attention;
 

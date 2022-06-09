@@ -60,14 +60,12 @@ L_{VLB} &= L_0+\sum_{t=1}^{T-1}L_t+L_T\\
 - $L_T$ is constant and can be ignored in training ($q$ has no learnable parameters; $x_T$ is gaussian noise)
 - $L_0$ can be modelled using separate discrete decoder
 
-
-### Algorithm
-Denoising Diffusion Probabilistic Models
-https://arxiv.org/abs/2006.11239
-
-![[Pasted image 20220601154435.png]]
-
 ## Applications
+
+##### Denoising Diffusion Probabilistic Models
+See [[Denoising Diffusion Probabilistic Models]]
+
+
 ##### Image Generation
 - Task:
 	- generate synthetic images from specific distributions learned in given dataset 
