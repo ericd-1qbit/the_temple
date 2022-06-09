@@ -3,8 +3,8 @@
 ### Synopsis
 - UNET is a kind of fully convolutional neural network #cnn 
 - architecture modified - fewer training images required
-- used for #imagesegmentation:
-	- 
+- used for [[Image Segmentation]]
+-
 
 ### Main Idea
 - supplement contracting 

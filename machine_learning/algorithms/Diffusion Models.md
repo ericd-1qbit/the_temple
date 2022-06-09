@@ -77,18 +77,7 @@ https://arxiv.org/abs/2006.11239
 - Benchmarks: Google Open Images, CelebA-HQ
 
 ##### Image Segmentation
-#imagesegmentation 
-- Task:
-	- assign each pixel in image a label to classify if pixel belongs to specific class
-	- used for: 
-		- object recognition
-		- occlusion boundary estimation
-		- image compression/editing
-- Method:
-	- Diffusion method for image segmentation (Tomer et al., 2021)
-- Datasets: Cityscape, Vaihingen, MoNuSeg
-- Benchmarks: Google open images, SYNTHIA
-
+See [[Image Segmentation]]
 ##### Image-to-Image Translation
 - Task: Transforming an image from one domain to another.
 - Examples: Style transfer, super-resolution and colourization

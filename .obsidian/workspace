@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/algorithms/Diffusion Models.md",
+            "file": "machine_learning/applications/Image Segmentation.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#imagesegmentation",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/algorithms/Diffusion Models.md",
+                "file": "machine_learning/applications/Image Segmentation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,15 +98,15 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "machine_learning/applications/Image Segmentation.md",
     "machine_learning/algorithms/Diffusion Models.md",
     "machine_learning/architectures/UNET.md",
+    "machine_learning/Common Problems.md",
+    "machine_learning/overview.md",
+    "optimisation/Mixed Integer Programming.md",
+    "optimisation/solvers.md",
+    "machine_learning/algorithms/Image.md",
     "machine_learning/algorithms/Denoising Diffusion Probabilistic Models.md",
-    "machine_learning/algorithms/Variational Autoencoder.md",
-    "machine_learning/approaches/Generative Models.md",
-    "project_management/Allianz DQ End Of Project Summary Example.md",
-    "project_management/Generic End of Project Template.md",
-    "project_management/project_management.md",
-    "optimisation/DARPA.md",
-    "optimisation/overview.md"
+    "machine_learning/algorithms/Variational Autoencoder.md"
   ]
 }
