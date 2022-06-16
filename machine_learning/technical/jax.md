@@ -2,9 +2,9 @@
 Acronym stood for: Just After eXecution. But that's outdated, now JAX is just JAX.
 
 ## Core Ingredients
-- Automatic Differentiation of python and numpy code:
-
+- Automatic Differentiation of python and numpy code based on:
 https://github.com/hips/autograd
+- 
 
 
 
