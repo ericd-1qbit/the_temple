@@ -26,4 +26,12 @@ https://arxiv.org/pdf/1912.03263.pdf
 	- imrpove classifier
 	- generative model as well
 - work done by jeff in the past is on confluence
-- 
+- Langevin sampling or SGLD
+- either maximise log(p(x,y)) or log p(x)
+	- this correpsonds to maximising the probabiloity over the dataset, eg. making the model express the dataset probability distribtuioon best
+- confidence metric
+- what is "calibrated"?
+	- NN output - should correpsond to real world output
+	- calibration is a measure of hacving good representation
+	- if NN is too confident at predicting wrong things and low confident on correct predictions - adjust this!
+	- 
