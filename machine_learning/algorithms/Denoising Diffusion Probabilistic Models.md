@@ -34,4 +34,8 @@ https://arxiv.org/pdf/1912.03263.pdf
 	- NN output - should correpsond to real world output
 	- calibration is a measure of hacving good representation
 	- if NN is too confident at predicting wrong things and low confident on correct predictions - adjust this!
-	- 
+	- conventional log likelihood achieves good prediction
+	- calibration is more about realistic representation
+- Out of distribution detection - is the image in or out of the dataset
+- Robustness - EBMs imporve compared to generic NN
+- 
