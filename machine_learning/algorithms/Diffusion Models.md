@@ -13,6 +13,16 @@ Relates to: [Generative Models]()
 	- forward diffusion - add random noise to given data
 	- reverse diffusion - reconstruct/generate data from noisy sample
 ![Pasted image 20220601150447.png](app://local/Users/ericdrechsler/codez/the_temple/Pasted%20image%2020220601150447.png?1654121087214)
+- Training:
+	- sample data point from real distribution
+	- generate noise, add it to data point
+	- train model that takes noisy point and predicts noise part
+- Sampling:
+	- sample a noise point from a normal distribution at t
+	- ask network to get sample at t-1, calculated by learned mean+variance
+	- repeat until x0
+
+
 
 ### Forward Diffusion
 
