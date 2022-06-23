@@ -13,4 +13,11 @@ Presentation by Ehsan
 - have to train another model on top... not so good
 
 ## Classifier-Free Guidance
-- no 
+- no separate classifier required
+
+## CLIP
+### DALLE 2
+![[Pasted image 20220623104428.png]]
+- train CLIP to gfenerate embedding for image and text
+- once trained, use lower process
+- 
