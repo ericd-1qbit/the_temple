@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/architectures/Transposed Convolutions.md",
+            "file": "project_management/Estimation.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 178.5036334991455,
-    "collapsed": true
+    "width": 178.5036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/architectures/Transposed Convolutions.md",
+                "file": "project_management/Estimation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,6 +98,8 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "project_management/Estimation.md",
+    "project_management/Untitled.md",
     "machine_learning/architectures/Transposed Convolutions.md",
     "machine_learning/architectures/CNN.md",
     "machine_learning/algorithms/DALL-E.md",
@@ -106,8 +107,6 @@
     "machine_learning/algorithms/Denoising Diffusion Probabilistic Models.md",
     "software/Testing.md",
     "machine_learning/technical/jax.md",
-    "machine_learning/applications/Image Segmentation.md",
-    "machine_learning/architectures/UNET.md",
-    "machine_learning/Common Problems.md"
+    "machine_learning/applications/Image Segmentation.md"
   ]
 }
