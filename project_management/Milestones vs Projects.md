@@ -16,4 +16,14 @@ https://www.rubick.com/milestones-not-projects/
 - milestone management instead of project management
 - project estimation notoriously unreliable
 - milestones are more easily manageable and provide inbetween states to take decisions from
-- 
+- project breakdown:
+	- high level plan: milestone breakdown of project
+	- breaking down into technical tasks is too rigid
+- come up with multiple ways to approach a project
+	- consider trade-offs:
+		- when does a product need to be delivered?
+		- what information will be learned when?
+		- when will work be fully integrated?
+		- how much optionality is left open?
+	- 
+	- ![[Pasted image 20220929105826.png]]
