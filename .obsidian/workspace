@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/Estimation.md",
+            "file": "project_management/Milestones vs Projects.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/Estimation.md",
+                "file": "project_management/Milestones vs Projects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +98,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "project_management/Milestones vs Projects.md",
     "project_management/Estimation.md",
     "project_management/Untitled.md",
     "machine_learning/architectures/Transposed Convolutions.md",
@@ -106,7 +107,6 @@
     "machine_learning/algorithms/Diffusion Models.md",
     "machine_learning/algorithms/Denoising Diffusion Probabilistic Models.md",
     "software/Testing.md",
-    "machine_learning/technical/jax.md",
-    "machine_learning/applications/Image Segmentation.md"
+    "machine_learning/technical/jax.md"
   ]
 }
