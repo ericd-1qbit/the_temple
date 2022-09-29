@@ -1,5 +1,10 @@
 https://www.rubick.com/milestones-not-projects/
 
+https://docs.google.com/spreadsheets/d/1PrR9XAZLBSNU4fa44T0ugwwK3q39p3eu4LEaZGV2elU/edit#gid=0
+
+
+
+
 - milestones are:
 	- small:
 		-  (1-3 weeks)
@@ -25,5 +30,5 @@ https://www.rubick.com/milestones-not-projects/
 		- what information will be learned when?
 		- when will work be fully integrated?
 		- how much optionality is left open?
-	- 
-	- ![[Pasted image 20220929105826.png]]
+	
+-![[Pasted image 20220929105826.png]]
