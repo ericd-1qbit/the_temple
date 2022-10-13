@@ -13,4 +13,7 @@
 
 Algorithms:
 - Stacked LSTM 
-- 
+	- simplify this stupidly:
+	- ![[Pasted image 20221013113021.png]]
+	- issues: small time series, simple momentum strategy, ablation study, impossible trades
+- Lopez De Prado: **Advances in Financial Machine Learning**
