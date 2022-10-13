@@ -17,3 +17,6 @@ Algorithms:
 	- ![[Pasted image 20221013113021.png]]
 	- issues: small time series, simple momentum strategy, ablation study, impossible trades
 - Lopez De Prado: **Advances in Financial Machine Learning**
+
+Investigate most common strategies and leverage the knowledge that many people follow the same strategy
+
