@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/applications/ML for Finance.md",
+            "file": "machine_learning/technical/jax.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/applications/ML for Finance.md",
+                "file": "machine_learning/technical/jax.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,17 +96,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0355a875e0446244",
+  "active": "a9256e4c5d6227fd",
   "lastOpenFiles": [
     "machine_learning/technical/Just-In-Time pytorch.md",
+    "machine_learning/Common Problems.md",
+    "machine_learning/technical/jax.md",
+    "machine_learning/applications/ML for Finance.md",
     "project_management/Milestones vs Projects.md",
     "project_management/Estimation.md",
     "project_management/Untitled.md",
     "machine_learning/architectures/Transposed Convolutions.md",
     "machine_learning/architectures/CNN.md",
-    "machine_learning/algorithms/DALL-E.md",
-    "machine_learning/algorithms/Diffusion Models.md",
-    "machine_learning/algorithms/Denoising Diffusion Probabilistic Models.md",
-    "software/Testing.md"
+    "machine_learning/algorithms/DALL-E.md"
   ]
 }
