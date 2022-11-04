@@ -7,13 +7,27 @@ Two sets of objectives have been articulated:
 
 
 - specific to reach seniority in my position
-	-   Mentoring other junior members of the team and provide technical feedback on their daily challenges
-		- I am actively supporting my team members in solving questions around git, python and anything pro
-	-   Show technical ability in understanding complex states-of-the-art generative models, provide fast and reliable prototyping of the existing research
-	-   Contributing and leading the technical work in reproducing the results from the latest generative model research
-	-   Provide technical inputs for training large ML models
-	-   Taking initiative to explore the bottleneck of the existing workflow, coming up with potential solutions, in particular independently create tasks in the backlog and being able to propose concrete timeline to tackle the tasks efficiently
-	
+	The original objectives were formulated as follows:
+	- Mentoring other junior members of the team and provide technical feedback on their daily challenges
+	- Show technical ability in understanding complex states-of-the-art generative models, provide fast and reliable prototyping of the existing research
+	- Contributing and leading the technical work in reproducing the results from the latest generative model research
+	- Provide technical inputs for training large ML models
+	- Taking initiative to explore the bottleneck of the existing workflow, coming up with potential solutions, in particular independently create tasks in the backlog and being able to propose concrete timeline to tackle the tasks efficiently
+
+Mentoring & Project Management
+
+- I am pro-actively supporting my team members in solving questions around git, python, Machine Learning libraries like jax and anything project related. I do this by either chatting with my team members through Zoom or providing write-ups on specific topics in Slack or Confluence.
+- Examples of such feedback include: git merge issues, python design choices, test driven development, project management tools, jax infrastructure and usage.
+		
+ML Research Work
+
+Technical Work
+- The focus of my work complex states-of-the-art generative models next to major contributions to our own framework include quick cross checks with other codebases and reviews of external libraries, coding examples and model implementations.
+- It does not include the in-depth review of relevant scientific papers, the mathematical body or the translation of a mathematical expression to code. 
+- I am constantly trying to share and demonstrate insights on clean coding I acquired through experience or reading 
+- By using our github project board I regularly contribute to the planning and proceedings of our technical work. 
+
+
 
 
 2.If applicable, identify relevant project managers/leaders that can speak to your progress on certain skills/behaviours.
