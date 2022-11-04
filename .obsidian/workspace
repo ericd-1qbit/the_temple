@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/1Qbit Performance Review 2022.md",
+            "file": "project_management/1Qbit Performance Review 2021.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.0036334991455
+    "width": 369.0036334991455,
+    "collapsed": true
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -96,7 +97,38 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0355a875e0446244",
+  "floating": {
+    "id": "7a4813f30934345a",
+    "type": "floating",
+    "children": [
+      {
+        "id": "e5d94b0aa593770f",
+        "type": "window",
+        "children": [
+          {
+            "id": "4a8ea5145d32d6ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "project_management/1Qbit Performance Review 2022.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical",
+        "x": 208,
+        "y": 25,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "4a8ea5145d32d6ec",
   "lastOpenFiles": [
     "project_management/1Qbit Performance Review 2021.md",
     "project_management/1Qbit Performance Review 2022.md",
