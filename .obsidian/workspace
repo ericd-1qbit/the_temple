@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_management/1Qbit Performance Review - 2021.md",
+            "file": "project_management/1Qbit Performance Review 2022.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 481.0036334991455
+    "width": 369.0036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/1Qbit Performance Review - 2021.md",
+                "file": "project_management/1Qbit Performance Review 2022.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +98,8 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "project_management/1Qbit Performance Review 2021.md",
+    "project_management/1Qbit Performance Review 2022.md",
     "machine_learning/technical/Pytorch DistributedDataParallel.md",
     "machine_learning/technical/jax.md",
     "machine_learning/technical/Just-In-Time pytorch.md",
@@ -105,8 +107,6 @@
     "machine_learning/applications/ML for Finance.md",
     "project_management/Milestones vs Projects.md",
     "project_management/Estimation.md",
-    "project_management/Untitled.md",
-    "machine_learning/architectures/Transposed Convolutions.md",
-    "machine_learning/architectures/CNN.md"
+    "project_management/Untitled.md"
   ]
 }

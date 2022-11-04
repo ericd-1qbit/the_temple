@@ -80,7 +80,6 @@ I progressed in my goals by:
 -   receiving & incorporating feedback
 -   reflecting on my week's work
 -   asking colleagues when problems arose
-
   
 
 I feel that I understand the workflow at 1QBit much better than when I started, feel confident to reach out to colleagues and contribute to the company's mission. Much of my learning was hands-on and not shying away from interactions and pushing myself towards new shores.
