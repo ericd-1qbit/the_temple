@@ -1,12 +1,24 @@
 1.Summarize your progress to-date. *
 
+Two sets of objectives have been articulated:
+
+- General (by myself)
 
 
 
-
+- specific to reach seniority in my position
+	-   Mentoring other junior members of the team and provide technical feedback on their daily challenges
+		- I am actively supporting my team members in solving questions around git, python and anything pro
+	-   Show technical ability in understanding complex states-of-the-art generative models, provide fast and reliable prototyping of the existing research
+	-   Contributing and leading the technical work in reproducing the results from the latest generative model research
+	-   Provide technical inputs for training large ML models
+	-   Taking initiative to explore the bottleneck of the existing workflow, coming up with potential solutions, in particular independently create tasks in the backlog and being able to propose concrete timeline to tackle the tasks efficiently
+	
 
 
 2.If applicable, identify relevant project managers/leaders that can speak to your progress on certain skills/behaviours.
+- Ehsan Zahedinjiad
+- Clemens Adolphs
 
 
 3.You're 6 months into the year, what priorities do you need to set (including competencies/skills you want to develop) so that you successfully achieve your objectives by year end? *
@@ -17,22 +29,14 @@
 
 
 # Roadmap to becoming a CEO
-
-The Objectives:
-Define Long-Term Career Goals
-done
-Partake in QuantumBC workshop on Quantum Machine Learning (January)
-
-Advance position within 1Qbit
-ongoing
+## Define Long-Term Career Goals
+- Partake in QuantumBC workshop on Quantum Machine Learning (January)
+- Advance position within 1Qbit ongoing
 
 ## Develop Leadership Skills
 ### Acquire Project Management Tools Overview
-Done
 
 Within the Diffusion Model project I have the chance to setup and maintain a JIRA kanban board at the moment. This is a good practice in using project management tools.
-
-Like
 
 ### Develop & Demonstrate ability to conduct research projects independently
 
@@ -77,18 +81,9 @@ The recent deep dive on Diffusion Models has opened up a lot of new avenues on e
 
 Obstacles at the moment are to actually write up the things I have learned into the Obsidian vault created for this purpose. I will dedicate regular hours to this task.
 
-
 KEY RESULT
 Overview of Machine Learning
-0%
-Eric Drechsler
-Due: October 19, 2022
-KEY RESULT
 Establish and Follow News Feed on Quantum Computing
-0%
-Eric Drechsler
-Due: October 19, 2022
-KEY RESULT
 Overview of Modern Computing Technologies
 
 The recent deep dive on Diffusion Models has opened up a lot of new avenues on energy based models, langevin dynamics etc.
@@ -99,24 +94,10 @@ Obstacles at the moment are to actually write up the things I have learned into 
 ## Deepen Understanding of Business World
 KEY RESULT
 Build Understanding how to get from Idea to Start-up
-0%
-Eric Drechsler
-Due: April 19, 2023
-KEY RESULT
 Investigate what drives business decisions
-0%
-Eric Drechsler
-Due: April 19, 2023
-KEY RESULT
 Illuminate the connection of companies to investors/VC/capital
-0%
-Eric Drechsler
-Due: April 19, 2023
-
 
 In the process of digesting Ray Dalio's book "Principles" which offers a broad perspective on life & work, specifically related to Bridgewater.
-
-Like
 
 
 # Senior Machine Learning Scientist Objectives
