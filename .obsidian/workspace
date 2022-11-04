@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/technical/Pytorch DistributedDataParallel.md",
+            "file": "project_management/1Qbit Performance Review - 2021.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dependency injection",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,12 +49,11 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 178.5036334991455
+    "width": 481.0036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/technical/Pytorch DistributedDataParallel.md",
+                "file": "project_management/1Qbit Performance Review - 2021.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,8 +96,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "71ba0a0f9c91eddb",
+  "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "machine_learning/technical/Pytorch DistributedDataParallel.md",
     "machine_learning/technical/jax.md",
     "machine_learning/technical/Just-In-Time pytorch.md",
     "machine_learning/Common Problems.md",
@@ -107,7 +107,6 @@
     "project_management/Estimation.md",
     "project_management/Untitled.md",
     "machine_learning/architectures/Transposed Convolutions.md",
-    "machine_learning/architectures/CNN.md",
-    "machine_learning/algorithms/DALL-E.md"
+    "machine_learning/architectures/CNN.md"
   ]
 }
