@@ -66,4 +66,5 @@ Furthermore, I feel that I am not following up on my General goals as diligently
 
 4.What is the best way your manager can support you in achieving your objectives? 
 
-I would like to find some
+I would like to create more time for the points mentioned in the above notes. Delegating tasks and reducing the amount of time spent in "rabbit holes" of technical issues will help with this. Support-wise, I would like to feel re-assured that it is welcome for me to follow with the more General tasks (of course, depending on where the project is at). 
+Otherwise, I feel great when work has a good balance between technical, management, research and organising tasks and there is some freedom to think.
