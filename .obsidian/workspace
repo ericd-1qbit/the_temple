@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_management/1Qbit Performance Review 2022.md",
+                "file": "project_management/1Qbit Performance Review 2021.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,41 +97,10 @@
     "width": 300,
     "collapsed": true
   },
-  "floating": {
-    "id": "7a4813f30934345a",
-    "type": "floating",
-    "children": [
-      {
-        "id": "e5d94b0aa593770f",
-        "type": "window",
-        "children": [
-          {
-            "id": "4a8ea5145d32d6ec",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "project_management/1Qbit Performance Review 2022.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "direction": "vertical",
-        "x": 208,
-        "y": 25,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "4a8ea5145d32d6ec",
+  "active": "0355a875e0446244",
   "lastOpenFiles": [
-    "project_management/1Qbit Performance Review 2021.md",
     "project_management/1Qbit Performance Review 2022.md",
+    "project_management/1Qbit Performance Review 2021.md",
     "machine_learning/technical/Pytorch DistributedDataParallel.md",
     "machine_learning/technical/jax.md",
     "machine_learning/technical/Just-In-Time pytorch.md",
