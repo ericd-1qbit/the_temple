@@ -1,30 +1,34 @@
 
-Score-based repo
+
+## Our approach
+### CIFAR 10
+
+transforms.Compose(
+            [
+                transforms.Resize(image_size),
+                transforms.RandomHorizontalFlip()
+                if augment_horizontal_flip
+                else nn.Identity(),
+                transforms.CenterCrop(image_size),
+                transforms.ToTensor(),
+                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+            ]
+        )
+
+Resize to 32x32
+// If size is an int, smaller edge of the image will be matched to this number.
+Crops the given image at the center.
+    If the image is torch Tensor, it is expected
+    to have [..., H, W] shape, where ... means an arbitrary number of leading dimensions.
+    If image size is smaller than output size along any edge, image is padded with 0 and then center cropped.
+
+    Args:
+        size (sequence or int): Desired output size of the crop. If size is an
+            int instead of sequence like (h, w), a square crop (size, size) is
+            made. If provided a sequence of length 1, it will be interpreted as (size[0], size[0]).
+
+## Score-based repo
 https://github.com/yang-song/score_sde_pytorch/blob/ef5cb679a4897a40d20e94d8d0e2124c3a48fb8c/datasets.py#L71
-
-```
-def crop_resize(image, resolution):
-  """Crop and resize an image to the given resolution."""
-  crop = tf.minimum(tf.shape(image)[0], tf.shape(image)[1])
-  h, w = tf.shape(image)[0], tf.shape(image)[1]
-  image = image[(h - crop) // 2:(h + crop) // 2,
-          (w - crop) // 2:(w + crop) // 2]
-  image = tf.image.resize(
-    image,
-    size=(resolution, resolution),
-    antialias=True,
-    method=tf.image.ResizeMethod.BICUBIC)
-  return tf.cast(image, tf.uint8)
-
-
-def resize_small(image, resolution):
-  """Shrink an image to the given resolution."""
-  h, w = image.shape[0], image.shape[1]
-  ratio = resolution / min(h, w)
-  h = tf.round(h * ratio, tf.int32)
-  w = tf.round(w * ratio, tf.int32)
-  return tf.image.resize(image, [h, w], antialias=True)
-```
 
 
 ### CIFAR-10
@@ -88,4 +92,27 @@ config.training.batch_size = 64
 
 
 
-jonathan ho DDPM
+```
+def crop_resize(image, resolution):
+  """Crop and resize an image to the given resolution."""
+  crop = tf.minimum(tf.shape(image)[0], tf.shape(image)[1])
+  h, w = tf.shape(image)[0], tf.shape(image)[1]
+  image = image[(h - crop) // 2:(h + crop) // 2,
+          (w - crop) // 2:(w + crop) // 2]
+  image = tf.image.resize(
+    image,
+    size=(resolution, resolution),
+    antialias=True,
+    method=tf.image.ResizeMethod.BICUBIC)
+  return tf.cast(image, tf.uint8)
+
+
+def resize_small(image, resolution):
+  """Shrink an image to the given resolution."""
+  h, w = image.shape[0], image.shape[1]
+  ratio = resolution / min(h, w)
+  h = tf.round(h * ratio, tf.int32)
+  w = tf.round(w * ratio, tf.int32)
+  return tf.image.resize(image, [h, w], antialias=True)
+```
+
