@@ -51,6 +51,13 @@ config.training.batch_size = 128
     def resize_op(img):
       img = tf.image.convert_image_dtype(img, tf.float32)
       img = central_crop(img, 140)
+      
+	      def central_crop(image, size):
+			  """Crop the center of an image to the given size."""
+			  top = (image.shape[0] - size) // 2
+			  left = (image.shape[1] - size) // 2
+			  return tf.image.crop_to_bounding_box(image, top, left, size, size)
+
       img = resize_small(img, config.data.image_size)
       return img
 
