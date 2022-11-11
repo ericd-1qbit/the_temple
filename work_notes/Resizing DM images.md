@@ -47,6 +47,8 @@ config.training.batch_size = 128
 
 
 ### CELEBA
+https://drive.google.com/drive/folders/0B7EVK8r0v71pWEZsZE9oNnFzTm8?resourcekey=0-5BR16BdXnb8hVj6CNHKzLg
+image size: 178×218
 
     def resize_op(img):
       img = tf.image.convert_image_dtype(img, tf.float32)
