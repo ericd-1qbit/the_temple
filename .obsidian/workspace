@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/Resizing DM images.md",
+            "file": "work_notes/Runtime studies Onboarding.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Resizing DM images.md",
+                "file": "work_notes/Runtime studies Onboarding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,6 +99,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/Resizing DM images.md",
     "work_notes/1qbit General.md",
     "work_notes/exaion.md",
     "project_management/1Qbit Performance Review 2021.md",
@@ -107,7 +108,6 @@
     "machine_learning/technical/jax.md",
     "machine_learning/technical/Just-In-Time pytorch.md",
     "machine_learning/Common Problems.md",
-    "machine_learning/applications/ML for Finance.md",
-    "project_management/Milestones vs Projects.md"
+    "machine_learning/applications/ML for Finance.md"
   ]
 }
