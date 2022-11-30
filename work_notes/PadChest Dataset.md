@@ -21,8 +21,8 @@ Sample size: 160000
 	- 174 radiographic findings
 	- 19 differential diagnoses (TODO)
 	- 104 anatomic locations
-- 27% manually annotated, 73% annoptated using a NN
-
+- 27% manually annotated, 73% annoptated using a DNN trained on the manually annotated (ground truth)
+- standardized labelling language (Unified Medical Language System (UMLS))
 
 Reference work:
 - ChestX-Ray8 - CNN to classify and localize 8 pathologies
