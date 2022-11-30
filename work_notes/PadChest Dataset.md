@@ -39,3 +39,16 @@ Relevant pitfalls:
 - patient position
 - unbalanced presence of entities (like pathologies)
 - dataset sizes, in particular when looking at specific labels
+
+- x-ray projections:
+	- P-A (posterior-anterior - back to front)
+	- A-P (anterior- posterior -  front to back)
+	- supine: lying down
+	- lateral - from the side
+	- lordotic - leaning back, extending lumbar spine
+
+
+- other notes: projection information is highly relevant for diagnosis
+
+GLOSSARY:
+- DICOM - Digital Imaging and Communications in Medicine image standard (*.dcm)
