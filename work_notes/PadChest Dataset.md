@@ -13,4 +13,13 @@ Repositories:
 https://1qbit-intra.atlassian.net/wiki/spaces/MLD/pages/2790522997/PadChest+Preparation
 
 
-lala
+Sample size: 160000
+- 6 different views
+- labels: 
+	- 174 radiographic findings
+	- 19 differential diagnoses (TODO)
+	- 104 anatomic locations
+- 27% manually annotated, 73% annoptated using a NN
+
+
+Reference wirk
