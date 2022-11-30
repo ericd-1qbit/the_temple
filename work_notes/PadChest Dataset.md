@@ -1,4 +1,6 @@
 # PadChest Dataset
+Pathology Detection in Chest radiographs
+
 
 Source:
 https://bimcv.cipf.es/bimcv-projects/padchest/
@@ -22,4 +24,18 @@ Sample size: 160000
 - 27% manually annotated, 73% annoptated using a NN
 
 
-Reference wirk
+Reference work:
+- ChestX-Ray8 - CNN to classify and localize 8 pathologies
+- ChestX-Ray14 - CNN to classify and localize 14 pathologies
+
+Other Datasets:
+- NIH repo (112000 images, all front view, 14 labels)
+- Korean Institute repo - Tubercolisis (10900, 3000 positive tubercolosis)
+- Indiana Uni - 7470 frontal and lateral chest xray images
+
+Relevant pitfalls:
+- presence of artifacts/external features in images: 
+	- tubes, cathethers, life-support devices 
+- patient position
+- unbalanced presence of entities (like pathologies)
+- dataset sizes, in particular when looking at specific labels
