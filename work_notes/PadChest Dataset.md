@@ -16,7 +16,13 @@ https://1qbit-intra.atlassian.net/wiki/spaces/MLD/pages/2790522997/PadChest+Prep
 
 
 Sample size: 160000
-- 6 different views
+- 6 different views:
+	- standard PA
+	- standard L (lateral)
+	- AP vertical or erect
+	- AP horizontal or supine
+	- pediatric
+	- rib views.
 - labels: 
 	- 174 radiographic findings
 	- 19 differential diagnoses (TODO)
@@ -46,9 +52,14 @@ Relevant pitfalls:
 	- supine: lying down
 	- lateral - from the side
 	- lordotic - leaning back, extending lumbar spine
+	- decubit - lying sideways, arm up
+	- 
 
 
-- other notes: projection information is highly relevant for diagnosis
+- other notes: 
+	- projection information is highly relevant for diagnosis
+		- different views might reveal organs, air pockets etc which could be picked up as anomaly
+	- 
 
 GLOSSARY:
 - DICOM - Digital Imaging and Communications in Medicine image standard (*.dcm)
