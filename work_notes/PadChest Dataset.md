@@ -5,6 +5,9 @@ Pathology Detection in Chest radiographs
 Source:
 https://bimcv.cipf.es/bimcv-projects/padchest/
 
+Kaggle Sample:
+https://www.kaggle.com/datasets/raddar/padchest-chest-xrays-sample
+
 Original Paper: 
 https://arxiv.org/abs/1901.07441v1
 
