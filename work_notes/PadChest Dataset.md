@@ -54,7 +54,8 @@ Relevant pitfalls:
 	- lordotic - leaning back, extending lumbar spine
 	- decubit - lying sideways, arm up
 	- 
-
+Preprocessing:
+- 
 
 - other notes: 
 	- projection information is highly relevant for diagnosis
