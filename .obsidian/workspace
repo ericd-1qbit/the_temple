@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/PadChest Dataset.md",
+            "file": "work_notes/Docker MLFlow.md",
             "mode": "source",
             "source": false
           }
@@ -49,11 +49,13 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 369.0036334991455
+    "width": 369.0036334991455,
+    "collapsed": true
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -69,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/PadChest Dataset.md",
+                "file": "work_notes/Docker MLFlow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,16 +95,16 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 254.4,
     "collapsed": true
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/PadChest Dataset.md",
     "work_notes/exaion.md",
     "work_notes/1qbit General.md",
     "work_notes/Resizing DM images.md",
     "work_notes/Runtime studies Onboarding.md",
-    "work_notes/PadChest Dataset.md",
     "project_management/1Qbit Performance Review 2021.md",
     "project_management/1Qbit Performance Review 2022.md",
     "machine_learning/technical/Pytorch DistributedDataParallel.md",
