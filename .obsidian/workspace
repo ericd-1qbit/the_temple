@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/Docker MLFlow.md",
+            "file": "work_notes/exaion.md",
             "mode": "source",
             "source": false
           }
@@ -49,13 +49,11 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 369.0036334991455,
-    "collapsed": true
+    "width": 369.0036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -71,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Docker MLFlow.md",
+                "file": "work_notes/exaion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,6 +98,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/Docker MLFlow.md",
     "work_notes/PadChest Dataset.md",
     "work_notes/exaion.md",
     "work_notes/1qbit General.md",
@@ -108,7 +107,6 @@
     "project_management/1Qbit Performance Review 2021.md",
     "project_management/1Qbit Performance Review 2022.md",
     "machine_learning/technical/Pytorch DistributedDataParallel.md",
-    "machine_learning/technical/jax.md",
-    "machine_learning/technical/Just-In-Time pytorch.md"
+    "machine_learning/technical/jax.md"
   ]
 }
