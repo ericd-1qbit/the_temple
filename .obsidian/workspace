@@ -54,7 +54,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.0036334991455
+    "width": 369.0036334991455,
+    "collapsed": true
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -97,7 +98,7 @@
     "width": 254.4,
     "collapsed": true
   },
-  "active": "71ba0a0f9c91eddb",
+  "active": "0355a875e0446244",
   "lastOpenFiles": [
     "work_notes/Docker MLFlow.md",
     "work_notes/PadChest Dataset.md",
