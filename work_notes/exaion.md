@@ -14,4 +14,6 @@ docker run --gpus 1 --ipc=host --memory=20g -it -v `pwd`:/workspace quay.io/1qbi
 
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
-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
+
+
+git clone https://ericd-1qbit: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@github.com/1QB-Information-Technologies/Diffusion-models.git
