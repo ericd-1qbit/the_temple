@@ -17,3 +17,20 @@ https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/c
 git clone https://github.com/1QB-Information-Technologies/Diffusion-models.git
 Copy & paste PAT as password
 
+add to ssh
+
+```
+Host exaion_a6000
+   HostName exaion_a6000
+
+Host exaion_a6000
+   HostName 163.114.159.73
+   User admsrv
+Port 2222
+
+   IdentityFile ~/.ssh/id_ed25519_1qbit
+
+   IdentitiesOnly yes
+```
+
+mkdir eric
