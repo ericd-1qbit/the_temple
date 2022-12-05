@@ -34,3 +34,5 @@ Port 2222
 ```
 
 mkdir eric
+
+ rsync -avz -P --port=2222 -e "ssh -p 2222 -i $HOME/.ssh/id_rsa" test2 admsrv@163.114.159.73:~/
