@@ -39,3 +39,11 @@ mkdir eric
 
 
 ssh -p 2222 admsrv@163.114.159.73 -i ~/.ssh/id_ed25519_1qbit -L 5000:localhost:5000
+
+docker exec -it b8f22cdf95de bash
+
+make up
+
+ docker ps
+
+
