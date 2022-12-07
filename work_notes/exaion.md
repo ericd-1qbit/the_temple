@@ -46,4 +46,4 @@ python applications/synthetic_image_generation/ddpm_image_generation.py
 make up
 docker ps
 
-
+docker -> mounting shared data directory
