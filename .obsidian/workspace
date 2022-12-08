@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/roentgen.md",
+            "file": "work_notes/anahita.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.0036334991455,
-    "collapsed": true
+    "width": 369.0036334991455
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/roentgen.md",
+                "file": "work_notes/anahita.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,17 +96,73 @@
     "width": 254.4,
     "collapsed": true
   },
-  "active": "0355a875e0446244",
+  "floating": {
+    "id": "a1f2e944d71ddb11",
+    "type": "floating",
+    "children": [
+      {
+        "id": "0c8c19d3a677e000",
+        "type": "window",
+        "children": [
+          {
+            "id": "0ecd2c740c0a0fb8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/eric.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical",
+        "x": 720,
+        "y": 25,
+        "width": 720,
+        "height": 875,
+        "maximize": false,
+        "zoom": 0
+      },
+      {
+        "id": "fc9c6ed41afaa05b",
+        "type": "window",
+        "children": [
+          {
+            "id": "1c8332b7767076c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/anahita.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical",
+        "x": 0,
+        "y": 25,
+        "width": 720,
+        "height": 875,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "1c8332b7767076c3",
   "lastOpenFiles": [
+    "work_notes/eric.md",
+    "work_notes/anahita.md",
+    "work_notes/roentgen.md",
     "work_notes/exaion.md",
     "work_notes/Docker MLFlow.md",
     "work_notes/PadChest Dataset.md",
     "work_notes/1qbit General.md",
     "work_notes/Resizing DM images.md",
     "work_notes/Runtime studies Onboarding.md",
-    "project_management/1Qbit Performance Review 2021.md",
-    "project_management/1Qbit Performance Review 2022.md",
-    "machine_learning/technical/Pytorch DistributedDataParallel.md",
-    "machine_learning/technical/jax.md"
+    "project_management/1Qbit Performance Review 2021.md"
   ]
 }
