@@ -96,37 +96,6 @@
     "width": 254.4,
     "collapsed": true
   },
-  "floating": {
-    "id": "a1f2e944d71ddb11",
-    "type": "floating",
-    "children": [
-      {
-        "id": "0c8c19d3a677e000",
-        "type": "window",
-        "children": [
-          {
-            "id": "0ecd2c740c0a0fb8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/eric.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "direction": "vertical",
-        "x": 720,
-        "y": 25,
-        "width": 720,
-        "height": 875,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
     "work_notes/roentgen.md",
