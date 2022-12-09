@@ -7,4 +7,9 @@ Hints for benchmark:
 	- 100k - observe if loss/fid score are improving
 	- 800k - current reference runs
 - use smoothing for mlflow visualisation
-- might need 4-500k more 
+- might need 400k-500k more trainsteps than tensorflow in pytorch
+- switch off Unet dropout
+- change Omega parameter (used in sampling)
+	- determines the diversity of images (0-1)
+	- see classifier-free guidance for reference
+	- 
