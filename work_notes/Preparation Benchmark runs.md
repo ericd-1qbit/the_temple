@@ -12,4 +12,8 @@ Hints for benchmark:
 - change Omega parameter (used in sampling)
 	- determines the diversity of images (0-1)
 	- see classifier-free guidance for reference
-	- 
+
+
+
+
+save_and_sample_every
