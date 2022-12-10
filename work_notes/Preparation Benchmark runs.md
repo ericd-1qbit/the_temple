@@ -16,4 +16,19 @@ Hints for benchmark:
 
 
 
-save_and_sample_every
+save_and_sample_every?
+
+
+- working on codebase:
+- check 
+	- tests/profiling/padchest_filters_and_analysis.py
+	- configs/dataset/padchest.yaml
+	- preprocessors/datasets.py
+	- preprocessors/padchest_preparation.py (age_filter)
+[preprocessors/padchest_preparation.py](https://github.com/1QB-Information-Technologies/Diffusion-models/pull/618/files/f15e39b857459bf0b4a1bdba40f7a96c44b9d945#diff-c5427a6920793ec2a6438735cbac8b19b0ac2d27c4fad0319b29ae7b396b390a "preprocessors/padchest_preparation.py")
+We can mention here that reduced size is 256*256.
+We can remove line 11.
+
+
+
+
