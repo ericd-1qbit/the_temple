@@ -47,3 +47,5 @@ make up
 docker ps
 
 docker -> mounting shared data directory
+
+ rsync -avz -P --port=2222 -e "ssh -p 2222 -i $HOME/.ssh/id_rsa" admsrv@163.114.159.73:~/data/
