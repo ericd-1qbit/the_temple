@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/Preparation Simplified Benchmark.md",
+            "file": "work_notes/Preparation Benchmark runs.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Preparation Simplified Benchmark.md",
+                "file": "work_notes/Preparation Benchmark runs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +98,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/Preparation Simplified Benchmark.md",
     "work_notes/exaion.md",
     "work_notes/Preparation Benchmark runs.md",
     "work_notes/roentgen.md",
@@ -106,7 +107,6 @@
     "work_notes/Docker MLFlow.md",
     "work_notes/PadChest Dataset.md",
     "work_notes/1qbit General.md",
-    "work_notes/Resizing DM images.md",
-    "work_notes/Runtime studies Onboarding.md"
+    "work_notes/Resizing DM images.md"
   ]
 }
