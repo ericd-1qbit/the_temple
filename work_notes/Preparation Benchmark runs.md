@@ -35,19 +35,31 @@ We can remove line 11.
 
 Jonathan Ho Reading
 
-Our 32 × 32 models use four feature map resolutions (32 × 32 to 4 × 4), and our 256 × 256 models use six.
-All models have two convolutional residual blocks per resolution level and self-attention blocks at the 16 × 16 resolution between the convolutional blocks [6]
+- 32x32 models: four feature maps
+- 256x256 models: six feature maps
+- 16x16 resolution attention blocks
+- CelebA-HQ trained for 500k steps
 
+- T = 1000, β1 = 10−4 to βT = 0.02.
+- dropout rate CELEBA 0
+- random horizontal flips for all datasets except LSUN Bedroom.
+- learning rate to 2 × 10−4 without any sweeping
+	- lowered to 2 × 10−5 for the 256 × 256 images
+
+- batch size 128 (CIFAR10), 64 (rest) 
+- EMA on model parameters with a decay factor of 0.9999
+
+Reference:
 Our CelebA-HQ/LSUN (2562) models train at 2.2 steps per second at batch size 64, and sampling a batch of 128 images takes 300 seconds.
 
-CelebA-HQ for 0.5M steps
+CLASSIFIER-FREE DIFFUSION GUIDANCE
 
-We set T = 1000 without a sweep, and we chose a linear schedule from β1 = 10−4 to βT = 0.02.
+https://arxiv.org/pdf/2207.12598.pdf
+- best FID results with a small amount of guidance 
+	- w = 0.1 or w = 0.3, depending on the dataset)
+- the best IS result with strong guidance (w ≥ 4). 
+- At w = 0.3, our model’s FID score on 128 × 128 ImageNet outperforms the classifier-guided ADM-G, and at w = 4.0, our model outperforms BigGAN-deep at both FID and IS when BigGAN-deep is evaluated its best-IS truncation level.
 
-We set dropout rate on the other datasets to zero without sweeping.
+We find puncond = 0.5 consistently performs worse than puncond ∈ {0.1, 0.2} across the entire IS/FID frontier; puncond ∈ {0.1, 0.2} perform about equally as well as each other.
 
-We also used random horizontal flips for all other datasets except LSUN Bedroom.
-
--   We set the learning rate to 2 × 10−4 without any sweeping, and we lowered it to 2 × 10−5 for the 256 × 256 images,
--   We set the batch size to 128 for CIFAR10 and 64 for larger images
-- -   EMA on model parameters with a decay factor of 0.9999
+T = 256 sampling steps
