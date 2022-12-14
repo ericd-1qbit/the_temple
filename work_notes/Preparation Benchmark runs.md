@@ -63,3 +63,11 @@ https://arxiv.org/pdf/2207.12598.pdf
 We find puncond = 0.5 consistently performs worse than puncond ∈ {0.1, 0.2} across the entire IS/FID frontier; puncond ∈ {0.1, 0.2} perform about equally as well as each other.
 
 T = 256 sampling steps
+
+
+------------------------
+
+input_dimension: 64
+initial_conv_layer_output_channels: 128
+input_channels: 1
+input_image_size: 128
