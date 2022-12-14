@@ -71,3 +71,8 @@ input_dimension: 64
 initial_conv_layer_output_channels: 128
 input_channels: 1
 input_image_size: 128
+
+print(self.mid_block_dim)
+512
+print(self.layers_in_out_dims)
+[(128, 128, 64), (128, 256, 32), (256, 256, 16), (256, 512, 8), (512, 512, 4)]
