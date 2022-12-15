@@ -174,6 +174,9 @@ Mem usage: 17GB / 49GB
 Runtime: 649s
 Steps/second: 4.73
 
+Let's try 400k (24h)
+
+
 
 	12/15 06:21:42 PM (Elapsed: 00:00:00) Loaded model and architecture configurations from 'configs/', successfully.
 	12/15 06:21:47 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 32 and image size 64, successfully.
