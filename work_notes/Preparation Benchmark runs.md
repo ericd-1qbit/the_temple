@@ -104,8 +104,28 @@ CelebA 256x256
 114M parameters
 
 total batch size: 64 
-learning rate: 0.00002
+lr: 0.00002 (2x10^-5)
 
 
 Yang Song
+
 CelebA 64x64
+total batch size: 128
+local batch size: 32
+num_steps: 1.3M
+lr: 0.0002 (2x10^-4)
+
+CelebA 256x256
+total batch size: 64
+local batch size: 16
+num_steps: 2.4M
+lr: 0.00002 (2x10^-5)
+
+
+----
+256 benchmark:
+
+batch size 16
+data_points_per_batch = 769
+world size 4
+epochs 37500
