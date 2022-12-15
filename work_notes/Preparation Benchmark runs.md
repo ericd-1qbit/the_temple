@@ -132,11 +132,37 @@ batch size 16
 world size 4
 epochs 195
 
+
+Parameters: 113670145 (114M)
+Mem usage: 43GB / 49GB
+Runtime: 649s
+Steps/second: 4.73
+
 ### 64x64 benchmark:
 batch size 32
 (num_batches 384)
 world size 4
 epochs 105
+total steps: 3072
 
+Parameters: 109730305 (110M)
 Mem usage: 17GB / 49GB
-Steps/second:  
+Runtime: 649s
+Steps/second: 4.73
+
+
+	12/15 06:21:42 PM (Elapsed: 00:00:00) Loaded model and architecture configurations from 'configs/', successfully.
+	12/15 06:21:47 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 32 and image size 64, successfully.
+	12/15 06:21:49 PM (Elapsed: 00:00:06) Created Unet architecture with input dimension (image size) 64 and depth 6, successfully.
+	12/15 06:21:53 PM (Elapsed: 00:00:10) Created a U-net with 109730305 number of params
+	12/15 06:21:59 PM (Elapsed: 00:00:17) Created Synthetic Image Generation model with Unet architecture, successfully.
+	12/15 06:22:03 PM (Elapsed: 00:00:21) Total number of train_steps 3072 distributed to 4 GPUs.
+	12/15 06:22:03 PM (Elapsed: 00:00:21) Start training for 768 number of train_steps on gpu rank cuda:0
+	12/15 06:22:06 PM Reducer buckets have been rebuilt in this iteration.
+	12/15 06:23:57 PM (Elapsed: 00:02:14) Saved model's data to results/checkpoints/model-1.pt, successfully.
+	12/15 06:23:57 PM (Elapsed: 00:02:14) Saved milestone 1 sample in results/checkpoints/checkpoint-1.pt, successfully.
+	12/15 06:26:56 PM (Elapsed: 00:05:13) Saved model's data to results/checkpoints/model-2.pt, successfully.
+	12/15 06:26:56 PM (Elapsed: 00:05:13) Saved milestone 2 sample in results/checkpoints/checkpoint-2.pt, successfully.
+	12/15 06:29:54 PM (Elapsed: 00:08:11) Saved model's data to results/checkpoints/model-3.pt, successfully.
+	12/15 06:29:54 PM (Elapsed: 00:08:11) Saved milestone 3 sample in results/checkpoints/checkpoint-3.pt, successfully.
+	12/15 06:32:30 PM (Elapsed: 00:10:48) Completed training loops.
