@@ -134,8 +134,33 @@ epochs 195
 
 Parameters: 113670145 (114M)
 Mem usage: 43GB / 49GB
-Runtime: 649s
-Steps/second: 4.73
+Runtime: 6729s
+Steps/second: 0.91
+
+	12/15 06:40:29 PM (Elapsed: 00:00:00) Loaded model and architecture configurations from 'configs/', successfully.
+	12/15 06:40:35 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 16 and image size 256, successfully.
+	12/15 06:40:36 PM (Elapsed: 00:00:06) Created Unet architecture with input dimension (image size) 256 and depth 6, successfully.
+	12/15 06:40:41 PM (Elapsed: 00:00:11) Created a U-net with 113670145 number of params
+	12/15 06:40:48 PM (Elapsed: 00:00:18) Created Synthetic Image Generation model with Unet architecture, successfully.
+	12/15 06:40:51 PM (Elapsed: 00:00:22) Total number of train_steps 6152 distributed to 4 GPUs.
+	12/15 06:40:51 PM (Elapsed: 00:00:22) Start training for 1538 number of train_steps on gpu rank cuda:0
+	12/15 06:40:55 PM Reducer buckets have been rebuilt in this iteration.
+	12/15 06:46:30 PM (Elapsed: 00:06:00) Saved model's data to results/checkpoints/model-1.pt, successfully.
+	12/15 06:46:30 PM (Elapsed: 00:06:00) Saved milestone 1 sample in results/checkpoints/checkpoint-1.pt, successfully.
+	12/15 07:01:57 PM (Elapsed: 00:21:27) Saved model's data to results/checkpoints/model-2.pt, successfully.
+	12/15 07:01:57 PM (Elapsed: 00:21:27) Saved milestone 2 sample in results/checkpoints/checkpoint-2.pt, successfully.
+	12/15 07:17:23 PM (Elapsed: 00:36:53) Saved model's data to results/checkpoints/model-3.pt, successfully.
+	12/15 07:17:23 PM (Elapsed: 00:36:53) Saved milestone 3 sample in results/checkpoints/checkpoint-3.pt, successfully.
+	12/15 07:32:48 PM (Elapsed: 00:52:18) Saved model's data to results/checkpoints/model-4.pt, successfully.
+	12/15 07:32:48 PM (Elapsed: 00:52:18) Saved milestone 4 sample in results/checkpoints/checkpoint-4.pt, successfully.
+	12/15 07:48:14 PM (Elapsed: 01:07:44) Saved model's data to results/checkpoints/model-5.pt, successfully.
+	12/15 07:48:14 PM (Elapsed: 01:07:44) Saved milestone 5 sample in results/checkpoints/checkpoint-5.pt, successfully.
+	12/15 08:03:38 PM (Elapsed: 01:23:08) Saved model's data to results/checkpoints/model-6.pt, successfully.
+	12/15 08:03:38 PM (Elapsed: 01:23:08) Saved milestone 6 sample in results/checkpoints/checkpoint-6.pt, successfully.
+	12/15 08:19:03 PM (Elapsed: 01:38:33) Saved model's data to results/checkpoints/model-7.pt, successfully.
+	12/15 08:19:03 PM (Elapsed: 01:38:33) Saved milestone 7 sample in results/checkpoints/checkpoint-7.pt, successfully.
+	12/15 08:32:38 PM (Elapsed: 01:52:08) Completed training loops.
+	12/15 08:32:39 PM (Elapsed: 01:52:09) Saved model's data to results/checkpoints/model-1538.pt, successfully.
 
 ### 64x64 benchmark:
 batch size 32
