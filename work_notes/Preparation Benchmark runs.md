@@ -94,3 +94,18 @@ simplified v01 w 256 image size
 12/15 05:40:10 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 60 and image size 256, successfully.
 12/15 05:40:11 PM (Elapsed: 00:00:06) Created Unet architecture with input dimension (image size) 256 and depth 6, successfully.
 12/15 05:40:16 PM (Elapsed: 00:00:11) Created a U-net with 113670145 number of params
+
+
+# Summary External Sources
+
+Jonathan Ho:
+
+CelebA 256x256
+114M parameters
+
+total batch size: 64 
+learning rate: 0.00002
+
+
+Yang Song
+CelebA 64x64
