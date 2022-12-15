@@ -123,9 +123,20 @@ lr: 0.00002 (2x10^-5)
 
 
 ----
-256 benchmark:
+12300 data points
 
+
+### 256x256 benchmark:
 batch size 16
-data_points_per_batch = 769
+(num_batches 769)
 world size 4
-epochs 37500
+epochs 195
+
+### 64x64 benchmark:
+batch size 32
+(num_batches 384)
+world size 4
+epochs 105
+
+Mem usage: 17GB / 49GB
+Steps/second:  
