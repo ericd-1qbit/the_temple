@@ -102,7 +102,6 @@ Jonathan Ho:
 
 CelebA 256x256
 114M parameters
-
 total batch size: 64 
 lr: 0.00002 (2x10^-5)
 
