@@ -76,3 +76,21 @@ print(self.mid_block_dim)
 512
 print(self.layers_in_out_dims)
 [(128, 128, 64), (128, 256, 32), (256, 256, 16), (256, 512, 8), (512, 512, 4)]
+
+
+-------------------
+- we set the local batch size per GPU to 60.
+- the num parameters does depend on the image size
+- 
+
+
+Setting simplified v01
+
+2/15 05:37:42 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 60 and image size 128, successfully.
+12/15 05:37:44 PM (Elapsed: 00:00:06) Created Unet architecture with input dimension (image size) 128 and depth 6, successfully.
+12/15 05:37:48 PM (Elapsed: 00:00:10) Created a U-net with 109730305 number of params
+
+simplified v01 w 256 image size
+12/15 05:40:10 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 60 and image size 256, successfully.
+12/15 05:40:11 PM (Elapsed: 00:00:06) Created Unet architecture with input dimension (image size) 256 and depth 6, successfully.
+12/15 05:40:16 PM (Elapsed: 00:00:11) Created a U-net with 113670145 number of params
