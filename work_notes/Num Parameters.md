@@ -23,11 +23,15 @@ Created self with 109730305 number of params
 
 
 
+ [(128, 128, 128), (128, 128, 64), (128, 256, 32), (256, 256, 16), (256, 512, 8), (512, 512, 4)]
 
 
 
+numgpu_benchmark
+[(128, 128, 128), (128, 128, 64), (128, 256, 32), (256, 256, 16), (256, 512, 8), (512, 512, 4)], successfully.
 
-
+input_dim = 256
+[(128, 128, 256), (128, 128, 128), (128, 256, 64), (256, 256, 32), (256, 512, 16), (512, 512, 8)], successfully.
 
 12/16 08:00:31 AM (Elapsed: 00:00:04) Created Unet architecture with input dimension (image size) 64 and depth 6, successfully.
 Created self.initial_conv with 1280 number of params
