@@ -137,6 +137,9 @@ Mem usage: 43GB / 49GB
 Runtime: 6729s
 Steps/second: 0.91
 
+1M steps - 325 epochs?
+
+
 	12/15 06:40:29 PM (Elapsed: 00:00:00) Loaded model and architecture configurations from 'configs/', successfully.
 	12/15 06:40:35 PM (Elapsed: 00:00:05) Created data loader from data/padchest/padchest_reduced_221208 with batch size 16 and image size 256, successfully.
 	12/15 06:40:36 PM (Elapsed: 00:00:06) Created Unet architecture with input dimension (image size) 256 and depth 6, successfully.
