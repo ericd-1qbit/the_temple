@@ -17,3 +17,7 @@ Two general comments 😊
 
 I agree with Shakib's comments.  
 Adding to comment#2, also a separate .py file for `BaseDataset`
+
+
+Change input_dim variable
+https://github.com/1QB-Information-Technologies/Diffusion-models/pull/650#discussion_r1047844007
