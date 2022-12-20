@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/221219 PR reviews.md",
+            "file": "work_notes/exaion.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "group_norm_size",
+                "query": "ssh",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/221219 PR reviews.md",
+                "file": "work_notes/exaion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +99,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/221219 PR reviews.md",
     "work_notes/Preparation Simplified Benchmark.md",
     "work_notes/Preparation Benchmark runs.md",
     "work_notes/Num Parameters.md",
@@ -106,7 +108,6 @@
     "work_notes/exaion.md",
     "work_notes/anahita.md",
     "work_notes/eric.md",
-    "work_notes/Docker MLFlow.md",
-    "work_notes/1qbit General.md"
+    "work_notes/Docker MLFlow.md"
   ]
 }
