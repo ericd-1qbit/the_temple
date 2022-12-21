@@ -9,3 +9,6 @@ Runtime study of tensor.to(non_blocking=True) setting#251
 batch_size dependence on runtime
 
 Investigate memory usage in detail
+
+prepare kevin toy model
+
