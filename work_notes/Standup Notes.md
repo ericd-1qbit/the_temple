@@ -2,5 +2,5 @@
 ------------
 Notes from standup 221221
 - prepare kevin toy model discussion
-- Add images to confluence
+- add 256x256 reference images to confluence page
 - 
