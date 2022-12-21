@@ -51,6 +51,6 @@ docker -> mounting shared data directory
  rsync -avz -P --port=2222 -e "ssh -p 2222 -i $HOME/.ssh/id_rsa" admsrv@163.114.159.73:~/data/padchest_reduced_221208 .
 
 
- rsync -avz -P --port=31122 /home/admsrv/eric/Diffusion-models/model_checkpoints_benchmark_221216_v01_256 admsrv@91.239.56.145:~/data/. 
+rsync -avz -P --port=31122 -e "ssh -p 31122 -i $HOME/.ssh/id_ed25519" /home/admsrv/eric/Diffusion-models/model_checkpoints_benchmark_221216_v01_256 admsrv@91.239.56.145:~/data/. 
 
-ssh -p 31122 admsrv@91.239.56.145 -i ~/.ssh/id_ed25519_1qbit
+ssh -p 31122 "ssh -p 2222 -i $HOME/.ssh/id_ed25519" admsrv@91.239.56.145 -i ~/.ssh/id_ed25519_1qbit
