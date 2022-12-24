@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/Project Board Cleanup Notes.md",
+            "file": "work_notes/Preparation Benchmark runs.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ssh",
+                "query": "diffusion_timesteps",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Project Board Cleanup Notes.md",
+                "file": "work_notes/Preparation Benchmark runs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,8 +98,8 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
-    "work_notes/Standup Notes.md",
     "work_notes/Project Board Cleanup Notes.md",
+    "work_notes/Standup Notes.md",
     "work_notes/exaion.md",
     "work_notes/Docker MLFlow.md",
     "work_notes/Preparation Simplified Benchmark.md",
