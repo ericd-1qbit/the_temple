@@ -46,7 +46,7 @@ Jonathan Ho Reading
 - learning rate to 2 × 10−4 without any sweeping
 	- lowered to 2 × 10−5 for the 256 × 256 images
 
-- batch size 128 (CIFAR10), 64 (rest) 
+ 
 - EMA on model parameters with a decay factor of 0.9999
 
 Reference:
