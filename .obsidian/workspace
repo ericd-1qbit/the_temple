@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/GITHUB PAT.md",
+            "file": "work_notes/Preparation Benchmark runs.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "exec",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/GITHUB PAT.md",
+                "file": "work_notes/Preparation Benchmark runs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,8 +96,9 @@
     "width": 254.4,
     "collapsed": true
   },
-  "active": "71ba0a0f9c91eddb",
+  "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/GITHUB PAT.md",
     "work_notes/exaion.md",
     "work_notes/Runtime studies Onboarding.md",
     "work_notes/Num Parameters.md",
@@ -107,7 +107,6 @@
     "work_notes/Resizing DM images.md",
     "work_notes/roentgen.md",
     "work_notes/anahita.md",
-    "work_notes/230103 Benchmark Result collection.md",
-    "work_notes/221219 PR reviews.md"
+    "work_notes/230103 Benchmark Result collection.md"
   ]
 }
