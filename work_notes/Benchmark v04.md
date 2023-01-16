@@ -1,5 +1,4 @@
-python applications/synthetic_image_generation/ddpm_image_generation.py --config-name=realistic_benchmark_padchest_cardiomega
-ly_256 experiment_tag=realistic_cardiomegaly_256_v04 trainer.epochs=125
+python applications/synthetic_image_generation/ddpm_image_generation.py --config-name=realistic_benchmark_padchest_cardiomegaly_256 experiment_tag=realistic_cardiomegaly_256_v04 trainer.epochs=125
 
 01/14 12:14:02 AM (Elapsed: 00:00:04) Job Configuration:
  general:
