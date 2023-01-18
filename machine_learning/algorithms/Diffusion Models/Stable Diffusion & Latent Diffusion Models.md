@@ -22,3 +22,9 @@ Glossary to check out:
 - GANs
 	- successes have been revealed to be mostly confined to data with comparably limited variability as their adversarial learning procedure does not easily scale to modeling complex, multi-modal distributions.
 
+Follow ups:
+- DDIM?
+- Precision and Recall?
+- 
+
+
