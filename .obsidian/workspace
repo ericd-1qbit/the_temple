@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work_notes/Benchmark v04.md",
+            "file": "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.0036334991455
+    "width": 369.0036334991455,
+    "collapsed": true
   },
   "right": {
     "id": "30df5576b1c2db9c",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Benchmark v04.md",
+                "file": "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +99,7 @@
   },
   "active": "0355a875e0446244",
   "lastOpenFiles": [
+    "work_notes/Benchmark v04.md",
     "work_notes/230112.md",
     "work_notes/220106 Work Notes.md",
     "work_notes/Preparation Benchmark runs.md",
@@ -106,7 +108,6 @@
     "work_notes/GITHUB PAT.md",
     "work_notes/exaion.md",
     "work_notes/Runtime studies Onboarding.md",
-    "work_notes/Num Parameters.md",
-    "work_notes/PadChest Dataset.md"
+    "work_notes/Num Parameters.md"
   ]
 }
