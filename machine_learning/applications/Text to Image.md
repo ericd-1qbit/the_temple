@@ -6,10 +6,9 @@ https://eugeneyan.com/writing/text-to-image/
 	- rapid development in text to image models:
 		- DALL-E, DALL-E 2, Imagen, Stable Diffusion
 ## **Diffusion**: 
-- add Gaussian noise to data gradually and learn how to re-generate original input
+*- add Gaussian noise to data gradually and learn how to re-generate original input*
 
-- first paper
--  **“[Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)**, by Sohl-Dickstein in 2015.
+- first paper **“[Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)**, by Sohl-Dickstein in 2015.
 	- A central problem in machine learning involves modeling complex data-sets using highly flexible families of probability distributions in which learning, sampling, inference, and evaluation are still analytically or computationally tractable. Here, we develop an approach that simultaneously achieves both flexibility and tractability. The essential idea, inspired by non-equilibrium statistical physics, is to systematically and slowly destroy structure in a data distribution through an iterative forward diffusion process. We then learn a reverse diffusion process that restores structure in data, yielding a highly flexible and tractable generative model of the data. This approach allows us to rapidly learn, sample from, and evaluate probabilities in deep generative models with thousands of layers or time steps, as well as to compute conditional and posterior probabilities under the learned model.
 	- Inspired by non-equilibrium thermodynamics
 	- key advantage: provides a generic model to describe complex data which is both flexible AND tractable
@@ -23,10 +22,38 @@ https://eugeneyan.com/writing/text-to-image/
 - p(xt-1|x_t) is intractable. It would need the distribution of all possible images to calculate the probability. 
 	- instead: use a parameterised neural network to learn the distributions
 - As the forward process noise is Gaussian, let's assume the reverse process is too - express the reverse probability distributions as Gaussians with mean and variance
-- 
+
+In layman’s terms, the probability of the less noisy image () given a noisier image () from the previous timestep () is drawn from a Gaussian distribution () where the mean is the mean of  at timestep  and the variance is the variance of  at timestep . Thus, the neural network needs to learn the mean () and variance (). That said, in DDPM, the variance is predefined and the network only has to learn the mean.
+
+![[Pasted image 20230123161858.png]]
+
+Line 1: Start while loop
+Line 2: Sample a random clean image () from the set of images
+Line 3: Sample a noise level () uniformly from 1 to max 
+Line 4: Sample some noise () from a Gaussian and corrupt image with the noise
+Line 5: Train the neural network to predict the noise based on the corrupted image
+Line 6: End while loop when model converges
+
+![[Pasted image 20230123161918.png]]
+-   Line 1: Get a sample noise image (xT) from a Gaussian distribution
+-   Line 2: Iterate from timestep T to timestep 1
+-   Line 3: Sample additional Gaussian noise (z if timestep > 1 else zero, because we just return the clean image at timestep 1)
+-   Line 4: Get the slightly denoised image (xt−1) by subtracting the noise (ϵθ(xt,t)) from the noisy image (xt), and then adding back some noise (z)
+-   Line 5: End iteration
+-   Line 6: Return clean image from timestep 1
+
+
+otice the model predicts all the noise from a noisy image (ϵθ(xt,t)). However, we only subtract a fraction of it, weighted by 1−σt1−σt¯, and then add back noise (z) weighted by σt.
+
+I was curious about these noise removal and addition weights and coded up a [DDPM](https://github.com/eugeneyan/text-to-image/blob/main/the-annotated-diffusion-fashion-mnist-more-epochs.ipynb) to tinker with it. To my surprise, the noise removal weights are as low as 0.01 to 0.02 while the noise addition weights go as high as 0.14. Remember the intuition that estimating small amounts of noise for multiple timesteps is more tractable than estimating all noise via a single timestep? This is how it’s implemented in the algorithm and code.
+
+Via experimenting with the DDPM, I learned that more timesteps had a positive impact on sample quality though it also required more epochs and a large timestep embedding. Larger dimensions for the timestep embedding also improved loss and sample quality. On the other hand, more epochs, different loss functions, and batch size didn’t help. (
 
 ## **Text conditioning**: 
-	- given a text prompt, generate specific image
+- given a text prompt, generate specific image
+
+- good entry point; **[Contrastive Language-Image Pre-training (CLIP; 2021)](https://arxiv.org/abs/2103.00020)**
+	- 
 
 ## **Classifier guidance**: 
 	- "Using classifier gradients to text-increase image alignment" TODO
