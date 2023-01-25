@@ -65,4 +65,4 @@ Via experimenting with the DDPM, I learned that more timesteps had a positive im
 
 ## **Latent space** 
 - embedd images in a lower-dimensional space and run diffusion process in that space
-- See 
+- See #stablediffusion

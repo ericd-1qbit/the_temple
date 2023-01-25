@@ -1,7 +1,31 @@
 # Stable Diffusion & Latent Diffusion Models
-#stablei
+#stablediffusion
 https://arxiv.org/abs/2112.10752
 
+## Summary
+- training on latent space, not pixel space
+- images are compressed/embedded into latent space using a VAE
+- diffusion model learns to generate embedded space samples
+- these are decoded using the VAE decoder part
+- uses CLIP text encoder (details depending on which version one looks at)
+
+### Motivation:
+- most pixels in an image are imperceptible details that are semantically meaningless
+- unnecessary computation and thus costly training and inference in pixel space
+
+### Procedure
+- encode images to latent space via encoder $\varepsilon$
+	- reduction factor 8 
+	- 3 x 512 x 512 image transformed to 6 x 64 x 64
+	- 1/64 memory requirement
+	-
+- feed into Unet
+- decode via decoder $D$
+	- sampling: only use decoder
+
+
+
+## Paper Reading
 - DM - image formation process can be seen as sequential application of denoising AEs
 - guiding mechanisms can be used to control image generation process
 - training and inference computationally expensive, as operations are done in input space (eg on pixels)
@@ -25,6 +49,6 @@ Glossary to check out:
 Follow ups:
 - DDIM?
 - Precision and Recall?
-- 
+
 
 
