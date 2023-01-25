@@ -15,6 +15,11 @@ https://eugeneyan.com/writing/text-to-image/
 	- key idea: systematically, slowly destroy structures in data and learn how to reconstruct them in an incremental manner, each small step retaining tractability
 		- forward diffusion: Markov chain, progressively adding noise
 		- reverse diffusion: diffusion probabilistic model
+
+Stochastic Drift Term:
+	- the expectation 'drifts' toward a value that gets larger and larger (assuming 𝜇μ is positive).
+
+
 - **[Denoising Diffusion Probabilistic Models (DDPM; 2020)](https://arxiv.org/abs/2006.11239)**
 	- Forward diffusion (q) is a predefined process that gradually adds Gaussian noise to the image until it’s pure noise. Reverse diffusion (p) is a learned process that gradually denoises an image starting from pure noise until we get an actual image.
 	- ![[Pasted image 20230123160711.png]]
