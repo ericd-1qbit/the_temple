@@ -1,5 +1,5 @@
 # Stable Diffusion & Latent Diffusion Models
-
+#stablei
 https://arxiv.org/abs/2112.10752
 
 - DM - image formation process can be seen as sequential application of denoising AEs

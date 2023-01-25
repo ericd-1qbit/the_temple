@@ -64,6 +64,5 @@ Via experimenting with the DDPM, I learned that more timesteps had a positive im
 	- "Using classifier gradients to text-increase image alignment" TODO
 
 ## **Latent space** 
-	- embedd images in a lower-dimensional space and run diffusion process in that space
-
--
+- embedd images in a lower-dimensional space and run diffusion process in that space
+- See 
