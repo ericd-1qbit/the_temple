@@ -39,6 +39,19 @@ https://arxiv.org/abs/2112.10752
 	- enable DM to be powerful & flexible generators conditioned on various inputs such as text
 ----------
 
+To increase the accessibility of this powerful model class and at the same time reduce its significant resource con- sumption, a method is needed that reduces the computa- tional complexity for both training and sampling. Reducing the computational demands of DMs without impairing their performance is, therefore, key to enhance their accessibility.
+
+we sep- arate training into two distinct phases: First, we train an autoencoder which provides a lower-dimensional (and thereby efficient) representational space which is perceptu- ally equivalent to the data spac
+
+The reduced complex- ity also provides efficient image generation from the latent space with a single network pass. We dub the resulting model class Latent Diffusion Models (LDMs
+
+A notable advantage of this approach is that we need to train the universal autoencoding stage only once and can therefore reuse it for multiple DM trainings or to explore possibly completely different tasks
+
+n sum, our work makes the following contributions:
+
+(i) In contrast to purely transformer-based approaches [23, 66], our method scales more graceful to higher dimen- sional data and can thus (a) work on a compression level which provides more faithful and detailed reconstructions than previous work (see Fig. 1) and (b) can be efficiently
+
+
 
 Glossary to check out:
 - autoregressive (AR) transformers
