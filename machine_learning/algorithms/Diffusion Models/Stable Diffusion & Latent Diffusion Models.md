@@ -95,7 +95,31 @@ Stable DM:
 They are not only memory efficient compared to the other methods but also produce diverse, highly detailed images which preserve the semantic structure of the data. In short, an _LDM_ is an application of diffusion processes in the latent space instead of pixel space while incorporating the semantic feedback from the _Transformers_.
 
 
-Any generative learning method has two main stages: Perceptual Compression and Semantic Compression.
+Any generative learning method has two main stages: 
+
+Perceptual Compression - remove high-frequency features and embedd data into absract representation - AE/GANs are good at that
+
+Semantic Compression: - learn conceptual relationships between objects in an image and the semantic context, eg. logical/language meaning
+_Transformers_ are good at capturing the semantic structure in text and images. A combination of _Transformers’_ Generalizability and detail preservation ability of the _Diffusion Models_ provides best of both worlds and gives a method ability to generate a fine-grained highly detailed images while preserving the semantic structure in the image.
+
+**Perceptual Loss**
+
+The autoencoder within the LDM is what captures the perceptual structure of the data by projecting the data into latent space. A special loss function is used by authors for training such autoencoder termed, ‘_perceptual loss_’ [4–5]. This loss function ensures that the reconstructions are confined within the image manifold and reduces the blurriness which would otherwise be present when a pixel-space losses are used (e.g., L1/L2 losses).
+
+**Diffusion Loss**
+
+Diffusion models learn a data distribution by gradually removing noise from a normally distributed variable. In other words, DMs employ a reverse _Markov Chain_ of length _T_. This also means that DMs can be modelled as a series of ‘_T’_ denoising autoencoders for time steps _t_ _=1, …,T._ This is represented by the εθ in the following equation. Note that the loss function depends on the latent vector instead the pixel space.
+![[Pasted image 20230126145608.png]]
+
+
+Conditioning:
+n order to get the latent representation of this condition as well, a transformer (e.g. CLIP) is used which embeds the text/image into a latent vector ‘τ’.
+
+**Attention Mechanism**
+
+The backbone of an LDM is a U-Net autoencoder with sparse connections providing a cross-attention mechanism [6]. A _Transformer_ network encodes the condition text/image into a latent embedding which is in turn mapped to the intermediate layers of the U-Net via a cross-attention layer. This cross-attention layer implements the attention (**Q,K,V**) = softmax(**QK**T/✔**d**) **V**. Whereas **Q, K** and **V** are learnable projection matrices [6].
+
+
 ## Paper Reading
 - DM - image formation process can be seen as sequential application of denoising AEs
 - guiding mechanisms can be used to control image generation process
