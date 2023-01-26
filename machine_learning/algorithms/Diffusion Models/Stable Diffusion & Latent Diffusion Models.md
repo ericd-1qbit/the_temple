@@ -119,6 +119,19 @@ n order to get the latent representation of this condition as well, a transforme
 
 The backbone of an LDM is a U-Net autoencoder with sparse connections providing a cross-attention mechanism [6]. A _Transformer_ network encodes the condition text/image into a latent embedding which is in turn mapped to the intermediate layers of the U-Net via a cross-attention layer. This cross-attention layer implements the attention (**Q,K,V**) = softmax(**QK**T/✔**d**) **V**. Whereas **Q, K** and **V** are learnable projection matrices [6].
 
+Text to image and image to image conditioning.
+
+
+Wiki-article
+Stable Diffusion consists of 3 parts: the [variational autoencoder](https://en.wikipedia.org/wiki/Variational_autoencoder "Variational autoencoder") (VAE), [U-Net](https://en.wikipedia.org/wiki/U-Net "U-Net"), and an optional text encoder
+The VAE encoder compresses the image from pixel space to a smaller dimensional [latent space](https://en.wikipedia.org/wiki/Latent_space "Latent space"), capturing a more fundamental semantic meaning of the image.
+he U-Net block, composed of a [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network "Residual neural network") backbone, [denoises](https://en.wikipedia.org/wiki/Noise_reduction "Noise reduction") the output from forward diffusion backwards to obtain latent representation
+ Finally, the VAE decoder generates the final image by converting the representation back into pixel space
+The encoded conditioning data is exposed to denoising U-Nets via a [cross-attention mechanism](https://en.wikipedia.org/wiki/Attention_(machine_learning) "Attention (machine learning)").
+
+
+The model was trained using 256 [Nvidia A100](https://en.wikipedia.org/wiki/Ampere_(microarchitecture) "Ampere (microarchitecture)") GPUs on [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services "Amazon Web Services") for a total of 150,000 GPU-hours, at a cost of $600,000.[[21]](https://en.wikipedia.org/wiki/Stable_Diffusion#cite_note-21)[[22]](https://en.wikipedia.org/wiki/Stable_Diffusion#cite_note-stable-diffusion-model-card-1-4-22)[[23]](https://en.wikipedia.org/wiki/Stable_Diffusion#cite_note-23)
+
 
 ## Paper Reading
 - DM - image formation process can be seen as sequential application of denoising AEs
