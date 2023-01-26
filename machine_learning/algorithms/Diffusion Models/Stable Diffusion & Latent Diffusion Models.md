@@ -26,8 +26,40 @@ https://arxiv.org/abs/2112.10752
 
 
 ## Blog Notes
+
+- excellent blog post: https://medium.com/@steinsfu/stable-diffusion-clearly-explained-ed008044e07e#3608
 - open-source tool
 - reverse diffusion: done through a denoising Unet
+- ![[Pasted image 20230126141503.png]]
+![[Pasted image 20230126141636.png]]
+
+
+![[Pasted image 20230126141719.png]]
+
+
+As you can see, the diffusing (sampling) process iteratively feeds a full-sized image to the U-Net to get the final result. This makes the pure Diffusion model extremely slow when the number of total diffusing steps **_T_** and the image size are large.
+
+Latent diffusion Models
+use encoder to compress full image to latent space
+use decoder to reconstruct full image from compressed latent space data
+
+
+![[Pasted image 20230126141936.png]]
+![[Pasted image 20230126142252.png]]
+
+![[Pasted image 20230126142213.png]]
+
+![[Pasted image 20230126142245.png]]
+The inner diffusion model is turned into a conditional image generator by augmenting its denoising U-Net with the cross-attention mechanism.
+
+𝜏θ  - language model (BERT, CLIP)
+For other spatially aligned inputs (e.g. semantic maps, images, inpainting), the conditioning can be done using concatenation.
+
+![[Pasted image 20230126142850.png]]
+
+
+
+![[Pasted image 20230126142928.png]]
 
 
 ## Paper Reading
