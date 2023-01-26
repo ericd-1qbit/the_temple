@@ -25,6 +25,11 @@ https://arxiv.org/abs/2112.10752
 
 
 
+## Blog Notes
+- open-source tool
+- reverse diffusion: done through a denoising Unet
+
+
 ## Paper Reading
 - DM - image formation process can be seen as sequential application of denoising AEs
 - guiding mechanisms can be used to control image generation process
