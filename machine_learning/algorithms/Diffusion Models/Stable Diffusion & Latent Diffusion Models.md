@@ -60,8 +60,42 @@ For other spatially aligned inputs (e.g. semantic maps, images, inpainting), the
 
 
 ![[Pasted image 20230126142928.png]]
+![[Pasted image 20230126143203.png]]
 
 
+![[Pasted image 20230126143212.png]]
+
+
+### This other blog here
+https://towardsdatascience.com/what-are-stable-diffusion-models-and-why-are-they-a-step-forward-for-image-generation-aa1182801d46
+
+Some of the major bottlenecks of the GANs are:
+
+-   Lack of diversity in Image Generation
+-   Mode Collapse
+-   Problem learning Multimodal distribution
+-   High Training Time
+-   Not Easy to Train due to the Adversarial Nature of the problem formulation
+
+
+DM:These models have also been able to produce more diverse images and proved to not suffer from Mode Collapse. This is due to the ability of the _Diffusion Models_ to preserve the semantic structure of the data
+Computationally expensiveness:  This is due the fact that all Markovian states need to be in memory for prediction all the time which means multiple instances of large Deep-Nets being present in memory all the time.
+
+ training time for such methods also becomes too high (e.g., days to months) because these models tend to get stuck in the fine-grained _imperceptible_ intricacies in the image data - however, this is also one of their strengths!
+ 
+
+_Transformers_. They have been highly successful in the language modelling and building conversational AI tools. In vision applications, _Transformers_ have showed advantage of generalization and adaptivity which makes them suitable for general purpose learning. They capture the semantic structure in text and even in images better than other techniques. However, _Transformers_ require huge amount of data and are also facing a plateau in terms of performance in many vision domains compared to other methods.
+
+
+
+![[Pasted image 20230126143724.png]]
+Stable DM:
+ leverages upon the perceptual power of GANs, the detail preservation ability of the _Diffusion Models_, and the Semantic ability of Transformers by merging all three together
+
+They are not only memory efficient compared to the other methods but also produce diverse, highly detailed images which preserve the semantic structure of the data. In short, an _LDM_ is an application of diffusion processes in the latent space instead of pixel space while incorporating the semantic feedback from the _Transformers_.
+
+
+Any generative learning method has two main stages: Perceptual Compression and Semantic Compression.
 ## Paper Reading
 - DM - image formation process can be seen as sequential application of denoising AEs
 - guiding mechanisms can be used to control image generation process
@@ -110,6 +144,6 @@ Glossary to check out:
 Follow ups:
 - DDIM?
 - Precision and Recall?
-
-
+- check transformer
+- 
 
