@@ -29,4 +29,13 @@ multiple blocks in the ViT encoder and each block consists of three major proces
 
 _MLP_ is a two-layer classification network with GELU (_Gaussian Error Linear Unit_) at the end. The final MLP block, also termed as _MLP head_ is used as an output of the transformer. An application of _softmax_ on this output can provide classification labels
 
-applications of transformers: very generic, 
+applications of transformers: very generic, find them in almost all vision related tasks
+
+**Image Classification (Image -> Label)**'
+- competing with CNN in some aspects
+**Image Captioning (Image -> Sentence)**'
+
+**3.3.** **Contrastive Language-Image Pre-Training (Image <-> Text Snippet)**
+A more advanced application of _ViTs_ is the learning of association that exists between an image and a piece of text. This is the application where the true ability of generalizability is required because it requires an abstract representation of both the text as well as the image. This can be achieved by training two separate transform encoders for text snippet and the image. The encoded image as well as the text features can then be compared for their respective similarity by constructing a cosine-similarity matrix. A relevant implementation for such transformer model is proposed in CLIP (Contrastive Language-Image Pre-Training)
+
+ text snippets as well as the images are encoded into a set of text and image feature vectors respectively by using the pre-trained ViT
