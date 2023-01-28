@@ -12,3 +12,17 @@ attention is a concept borrowed from human cognition
 	- to high level - details of an object, eyes in a face etc.
 	- these are summarised into an abstract representation - the **saliency map**
 - same holds for text attention - building a saliency map of the most descriptive words in a given text.
+
+## Attention in Transformers
+
+Sequence modelling:
+- represent an input sequence - eg. words
+- recover another sequence which semantically maps to the input
+- long been modelled using RNNs, as they can capture semantic relationships between elements of the sequences
+	- disfavoured now, as overcomplicated - high training, mediocre performance
+- Transformers were proposed as a remedy, and they quickly became a standard way to build language models due to their relative efficiency and accuracy
+
+
+#### Self-attention
+- represent the intra relationship of positions of various elements in a sequence to model
+- s
