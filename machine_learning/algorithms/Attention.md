@@ -41,6 +41,30 @@ Transformers use self-attention mechanism alone in order to represent & map the 
 - allows to determine the most salient words and inter-relationship in a sequence
 - depends on:
 	- Q - QUERY
+		- search word for related words in a sequence
+		- the "focus" of the attention
+		- any sample from a set of keys (or a new word, if not present in keys yet)
 	- K - KEY
+		- input vectors to transformer models
 	- V - VALUE
-- 
+		- output vectors of the transformer model
+
+#### Self-Attention
+Self-Attention is a form of attention in which queries, keys, and values are sampled from the same original word sequence which is input to a transformer mode
+Self-Attention is a form of attention in which queries, keys, and values are sampled from the same original word sequence which is input to a transformer mode
+![[Pasted image 20230127162344.png]]
+
+**QK^T** is a pairwise similarity between position embedded word vectors.
+_oftmax_ generates a probability distribution from the similarity scores.
+
+similarity weight matrix when multiplied with the embedded word vectors **V** would work as a mask and highlight only those words which have highest similarity with the respective query vector.
+
+##### Learnable Self-Attention
+- in a NN containing a self-attention mechanism
+-he query, the keys and the values have dedicated layers whereby output of the respective layer is the queries matrix **Q,** keys matrix **K,** and the values matrix **V**.
+he query, the keys and the values have dedicated layers whereby output of the respective layer is the queries matrix **Q,** keys matrix **K,** and the values matrix **V**.
+
+##### **Multi-Head Attention**
+multiple attention modules (called heads)
+ multiple layers of the attention matrix bundle (**Q**,**K**,**V**) along with the respective training weights (**WQ**,**WK**,**WV**) This allows better handling of large text and gives different attention outputs for different heads
+outputs of these attention heads are then concatenated together forming a linear output at the ends
