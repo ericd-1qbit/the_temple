@@ -22,7 +22,25 @@ Sequence modelling:
 	- disfavoured now, as overcomplicated - high training, mediocre performance
 - Transformers were proposed as a remedy, and they quickly became a standard way to build language models due to their relative efficiency and accuracy
 
-
-#### Self-attention
+**Self-attention**
 - represent the intra relationship of positions of various elements in a sequence to model
-- s
+Transformers use self-attention mechanism alone in order to represent & map the input and output sequences
+
+**Vector Embedding** 
+- map input sequences to hyperspace
+- cluster similar words  
+
+**Position Embedding**
+- embed the position of a given word for semantic context
+- use sinusoidal position embedding to reduce memory requirements
+
+**Input embeddings to Transformer:**
+- Combined representation: add vector + position embedding
+
+#### attention creates the semantic power of a transformer
+- allows to determine the most salient words and inter-relationship in a sequence
+- depends on:
+	- Q - QUERY
+	- K - KEY
+	- V - VALUE
+- 
