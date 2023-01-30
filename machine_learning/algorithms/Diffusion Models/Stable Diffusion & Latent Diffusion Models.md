@@ -200,6 +200,7 @@ Summary from LilianWeng Blog
 	- then manipulate/generate semantic concepts with diffusion process on that learned latent
 
 ![[Pasted image 20230130102408.png]]
+Illustrating perceptual and semantic compression: Most bits of a digital image correspond to imperceptible details. While DMs allow to suppress this semantically meaningless information by minimizing the responsible loss term, gradients (during train- ing) and the neural network backbone (training and inference) still need to be evaluated on all pixels, leading to superfluous compu- tations and unnecessarily expensive optimization and inference. We propose latent diffusion models (LDMs) as an effective gener- ative model and a separate mild compression stage that only elim- inates imperceptible details.
 
 
 - perceptual compression - autoencoder model. 
@@ -212,7 +213,10 @@ Summary from LilianWeng Blog
 	- VAE inspired KL-regularisation: - KL penalty towards a standard normal distribution over the learned latent
 	- VectorQuantisation-reg: withing decoder, like [VQVAE](https://lilianweng.github.io/posts/2018-08-12-vae/#vq-vae-and-vq-vae-2) , quantization layer is absorbed by the decoder.
 
-- denoising model is a time-conditioned U-Net:
-	- augmented with the cross-attention mechanism to handle flexible conditioning information for image generation (e.g. class labels, semantic maps, blurred variants of an image).
-
-The design is equivalent to fuse representation of different modality into the model with cross-attention mechanism. Each type of conditioning information is paired with a domain-specific encoder �� to project the conditioning input � to an intermediate representation that can be mapped into cross-attention component, ��(�)∈��×��:
+- denoising model is a time-conditioned U-Net
+- augmention with the cross-attention mechanism:
+	- handle flexible conditioning information for image generation 
+		- (e.g. class labels, semantic maps, blurred variants of an image).
+	- each conditioning type paired with a domain-specific encoder �� 
+	- projecting the conditioning input � to an intermediate representation 
+	- mapped into cross-attention component, ��(�)∈��×��:
