@@ -184,3 +184,35 @@ Follow ups:
 - check transformer
 - 
 
+
+
+
+Summary from LilianWeng Blog
+
+- runs the diffusion process in the latent space instead of pixel space
+	- making training cost lower
+	- inference speed faster. 
+- motivation:
+	- most bits of an image contribute to perceptual details 
+	- semantic and conceptual composition still remains after aggressive compression
+- LDM splits up perceptual compression and semantic compression 
+	- first remove pixel-level redundancy with autoencoder  by compressing into latent space
+	- then manipulate/generate semantic concepts with diffusion process on that learned latent
+
+![[Pasted image 20230130102408.png]]
+
+
+- perceptual compression - autoencoder model. 
+	- An encoder � is used to compress the input image �∈��×�×3 to a smaller 2D latent vector �=�(�)∈�ℎ×�×� , where the downsampling rate �=�/ℎ=�/�=2�,�∈�. 
+	- Then an decoder � reconstructs the images from the latent vector, �~=�(�). 
+
+- explored two types of regularization in autoencoder:
+	- goal of the regularisation - avoid arbitrarily high-variance in the latent spaces during training
+
+	- VAE inspired KL-regularisation: - KL penalty towards a standard normal distribution over the learned latent
+	- VectorQuantisation-reg: withing decoder, like [VQVAE](https://lilianweng.github.io/posts/2018-08-12-vae/#vq-vae-and-vq-vae-2) , quantization layer is absorbed by the decoder.
+
+- denoising model is a time-conditioned U-Net:
+	- augmented with the cross-attention mechanism to handle flexible conditioning information for image generation (e.g. class labels, semantic maps, blurred variants of an image).
+
+The design is equivalent to fuse representation of different modality into the model with cross-attention mechanism. Each type of conditioning information is paired with a domain-specific encoder �� to project the conditioning input � to an intermediate representation that can be mapped into cross-attention component, ��(�)∈��×��:
