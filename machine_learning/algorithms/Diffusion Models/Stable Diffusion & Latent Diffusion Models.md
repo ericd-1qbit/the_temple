@@ -43,7 +43,6 @@ Latent diffusion Models
 use encoder to compress full image to latent space
 use decoder to reconstruct full image from compressed latent space data
 
-
 ![[Pasted image 20230126141936.png]]
 ![[Pasted image 20230126142252.png]]
 
