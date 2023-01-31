@@ -25,7 +25,47 @@ https://arxiv.org/abs/2112.10752
 
 
 ### Results
+
+#### Unconditional Image Synthesis
+
+![[Pasted image 20230131145402.png]]
+Samples from LDMs trained on CelebAHQ [39], FFHQ [41], LSUN-Churches [102], LSUN-Bedrooms [102] and class- conditional ImageNet [12], each with a resolution of 256 × 256. Best viewed when zoomed in. For more samples cf . the supplement.
+
+
+
 ![[Pasted image 20230131144500.png]]
+
+Table 1. Evaluation metrics for unconditional image synthesis. CelebA-HQ results reproduced from [43, 63, 100], FFHQ from [42, 43]. † : N -s refers to N sampling steps with the DDIM [84] sampler. ∗: trained in KL-regularized latent space. Additional re- sults can be found in the supplementary.
+
+We train unconditional models of 2562 images on CelebA-HQ [39], FFHQ [41], LSUN-Churches and -Bedrooms [102] and evaluate the i) sample quality and ii) their coverage of the data manifold using ii) FID [29] and ii) Precision-and-Recall [50]. Tab. 1 summarizes our re- sults. On CelebA-HQ, we report a new state-of-the-art FID of 5.11, outperforming previous likelihood-based models as well as GANs. We also outperform LSGM [93] where a la- tent diffusion model is trained jointly together with the first stage. In contrast, we train diffusion models in a fixed space
+and avoid the difficulty of weighing reconstruction quality against learning the prior over the latent space, see Fig. 1-2. We outperform prior diffusion based approaches on all but the LSUN-Bedrooms dataset, where our score is close to ADM [15], despite utilizing half its parameters and re- quiring 4-times less train resources (see Appendix E.3.5).
+Moreover, LDMs consistently improve upon GAN-based methods in Precision and Recall, thus confirming the ad- vantages of their mode-covering likelihood-based training objective over adversarial approaches. In Fig. 4 we also show qualitative results on each dataset.
+
+
+
+
+#### Conditional Image Synthesis
+##### Text-conditional Image Synthesis
+![[Pasted image 20230131144545.png]]
+Table 2. Evaluation of text-conditional image synthesis on the 256 × 256-sized MS-COCO [51] dataset: with 250 DDIM [84] steps our model is on par with the most recent diffusion [59] and autoregressive [26] methods despite using significantly less pa- rameters. †/∗:Numbers from [109]/ [26]
+
+
+
+##### Semantic Layout Image Synthesis
+To further analyze the flexibility of the cross-attention based conditioning mechanism we also train models to synthesize images based on semantic lay- outs
+
+![[Pasted image 20230131145221.png]]
+
+
+##### Class-conditional Image Synthesis
+
+![[Pasted image 20230131145658.png]]
+![[Pasted image 20230131145311.png]]
+Comparisonofaclass-conditionalImageNetLDMwith recent state-of-the-art methods for class-conditional image gener- ation on ImageNet [12]. A more detailed comparison with addi- tional baselines can be found in D.4, Tab. 10 and F. c.f.g. denotes classifier-free guidance with a scale s as proposed in [32].
+
+
+Lastly, following prior work [3, 15, 21, 23], we evalu- ate our best-performing class-conditional ImageNet mod- els with f ∈ {4,8} from Sec. 4.1 in Tab. 3, Fig. 4 and Sec. D.4. Here we outperform the state of the art diffu- sion model ADM [15] while significantly reducing compu- tational requirements and parameter count, cf . Tab 18.
+
 
 ## Blog Notes
 
