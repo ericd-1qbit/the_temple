@@ -44,7 +44,7 @@ Moreover, LDMs consistently improve upon GAN-based methods in Precision and Reca
 
 
 
-#### Conditional Image Synthesis
+#### Conditional Image Synthesis - Transformer Encoders
 ##### Text-conditional Image Synthesis
 ![[Pasted image 20230131144545.png]]
 Table 2. Evaluation of text-conditional image synthesis on the 256 × 256-sized MS-COCO [51] dataset: with 250 DDIM [84] steps our model is on par with the most recent diffusion [59] and autoregressive [26] methods despite using significantly less pa- rameters. †/∗:Numbers from [109]/ [26]
@@ -67,6 +67,48 @@ Comparisonofaclass-conditionalImageNetLDMwith recent state-of-the-art methods fo
 Lastly, following prior work [3, 15, 21, 23], we evalu- ate our best-performing class-conditional ImageNet mod- els with f ∈ {4,8} from Sec. 4.1 in Tab. 3, Fig. 4 and Sec. D.4. Here we outperform the state of the art diffu- sion model ADM [15] while significantly reducing compu- tational requirements and parameter count, cf . Tab 18.
 
 
+#### Conditional Image Synthesis - Convolutional Sampling
+##### semantic synthesis
+![[Pasted image 20230131150421.png]]
+larger resolution (here: 512×1024) for spatially conditioned tasks such as semantic synthesis of landscape images. See Sec. 4.3.2.
+For semantic synthe- sis, we use images of landscapes paired with semantic maps [23, 61] and concatenate downsampled versions of the se- mantic maps with the latent image representation of a f = 4 model (VQ-reg., see Tab. 8). We train on an input resolution of 2562 (crops from 3842) but find that our model general- izes to larger resolutions and can generate images up to the megapixel regime when evaluated in a convolutional man- ner (see Fig. 9).
+
+
+##### super-resolution
+![[Pasted image 20230131150639.png]]
+ImageNet 64→256 super-resolution on ImageNet-Val. LDM-SR has advantages at rendering realistic textures but SR3 can synthesize more coherent fine structures. See appendix for additional samples and cropouts. SR3 results from
+
+![[Pasted image 20230131150657.png]]
+
+Task 1: Subjects were shown ground truth and generated image and asked for preference. Task 2: Subjects had to decide between two generated images. More details in E.3.6
+
+
+##### inpainting
+
+object removal examples
+![[Pasted image 20230131150738.png]]
+
+ft inpainting model
+
+
+
+
+### Limitations 
+
+While LDMs significantly reduce computa- tional requirements compared to pixel-based approaches, their sequential sampling process is still slower than that of GANs. Moreover, the use of LDMs can be question- able when high precision is required: although the loss of image quality is very small in our f = 4 autoencoding mod- els (see Fig. 1), their reconstruction capability can become a bottleneck for tasks that require fine-grained accuracy in pixel space. We assume that our superresolution models (Sec. 4.4) are already somewhat limited in this respect.
+
+### Societal Impact
+Generative models for media like im- agery are a double-edged sword: On the one hand, they enable various creative applications, and in particular ap- proaches like ours that reduce the cost of training and in- ference have the potential to facilitate access to this tech- nology and democratize its exploration. On the other hand, it also means that it becomes easier to create and dissemi- nate manipulated data or spread misinformation and spam. In particular, the deliberate manipulation of images (“deep fakes”) is a common problem in this context, and women in particular are disproportionately affected by it [13, 24].
+
+Generative models can also reveal their training data [5, 90], which is of great concern when the data contain sensitive or personal information and were collected with- out explicit consent. However, the extent to which this also applies to DMs of images is not yet fully understood.
+
+Finally, deep learning modules tend to reproduce or ex- acerbate biases that are already present in the data [22, 38, 91]. While diffusion models achieve better coverage of the data distribution than e.g. GAN-based approaches, the ex- tent to which our two-stage approach that combines adver- sarial training and a likelihood-based objective misrepre- sents the data remains an important research question.
+
+For a more general, detailed discussion of the ethical considerations of deep generative models, see e.g. [13].
+
+
+1.   Emily Denton. Ethical considerations of generative ai. AI for Content Creation Workshop, CVPR, 2021
+2. 
 ## Blog Notes
 
 - excellent blog post: https://medium.com/@steinsfu/stable-diffusion-clearly-explained-ed008044e07e#3608
