@@ -108,7 +108,27 @@ For a more general, detailed discussion of the ethical considerations of deep ge
 
 
 1.   Emily Denton. Ethical considerations of generative ai. AI for Content Creation Workshop, CVPR, 2021
-2. 
+
+
+
+### Contributions of this work
+
+In sum, our work makes the following contributions:
+
+(i) In contrast to purely transformer-based approaches [23, 66], our method scales more graceful to higher dimen- sional data and can thus (a) work on a compression level which provides more faithful and detailed reconstructions than previous work (see Fig. 1) and (b) can be efficiently
+applied to high-resolution synthesis of megapixel images. (ii) We achieve competitive performance on multiple tasks (unconditional image synthesis, inpainting, stochastic super-resolution) and datasets while significantly lowering computational costs. Compared to pixel-based diffusion ap-
+
+proaches, we also significantly decrease inference costs. (iii) We show that, in contrast to previous work [93] which learns both an encoder/decoder architecture and a score-based prior simultaneously, our approach does not re- quire a delicate weighting of reconstruction and generative abilities. This ensures extremely faithful reconstructions
+
+and requires very little regularization of the latent space. (iv) We find that for densely conditioned tasks such as super-resolution, inpainting and semantic synthesis, our model can be applied in a convolutional fashion and render
+
+large, consistent images of ∼ 10242 px.  
+(v) Moreover, we design a general-purpose conditioning
+
+mechanism based on cross-attention, enabling multi-modal training. We use it to train class-conditional, text-to-image and layout-to-image models.
+
+(vi) Finally, we release pretrained latent diffusion and autoencoding models at https : / / github . com/CompVis/latent-diffusion which might be reusable for a various tasks besides training of DMs [81].
+
 ## Blog Notes
 
 - excellent blog post: https://medium.com/@steinsfu/stable-diffusion-clearly-explained-ed008044e07e#3608
