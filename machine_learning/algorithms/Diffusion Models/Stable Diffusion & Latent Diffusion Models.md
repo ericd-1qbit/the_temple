@@ -24,6 +24,8 @@ https://arxiv.org/abs/2112.10752
 	- sampling: only use decoder
 
 
+### Results
+![[Pasted image 20230131144500.png]]
 
 ## Blog Notes
 
@@ -219,3 +221,6 @@ Illustrating perceptual and semantic compression: Most bits of a digital image c
 	- each conditioning type paired with a domain-specific encoder �� 
 	- projecting the conditioning input � to an intermediate representation 
 	- mapped into cross-attention component, ��(�)∈��×��:
+
+
+
