@@ -13,6 +13,11 @@ https://arxiv.org/abs/2112.10752
 - most pixels in an image are imperceptible details that are semantically meaningless
 - unnecessary computation and thus costly training and inference in pixel space
 
+Computational Costs
+As an example, training the most powerful DMs often takes hundreds of GPU days (e.g. 150 - 1000 V100 days in [15]) and repeated evaluations on a noisy version of the input space render also inference expensive,
+so that producing 50k samples takes approximately 5 days [15] on a single A100 GPU. This has two consequences for the research community and users in general: Firstly, train- ing such a model requires massive computational resources only available to a small fraction of the field, and leaves a huge carbon footprint [65, 86]. Secondly, evaluating an al- ready trained model is also expensive in time and memory, since the same model architecture must run sequentially for a large number of steps (e.g. 25 - 1000 steps in [15]).
+
+
 ### Procedure
 - encode images to latent space via encoder $\varepsilon$
 	- reduction factor 8 
