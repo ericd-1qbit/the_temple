@@ -188,7 +188,6 @@ Some of the major bottlenecks of the GANs are:
 
 DM:These models have also been able to produce more diverse images and proved to not suffer from Mode Collapse. This is due to the ability of the _Diffusion Models_ to preserve the semantic structure of the data
 Computationally expensiveness:  This is due the fact that all Markovian states need to be in memory for prediction all the time which means multiple instances of large Deep-Nets being present in memory all the time.
-
  training time for such methods also becomes too high (e.g., days to months) because these models tend to get stuck in the fine-grained _imperceptible_ intricacies in the image data - however, this is also one of their strengths!
  
 
