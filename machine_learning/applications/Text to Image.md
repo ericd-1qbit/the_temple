@@ -48,12 +48,6 @@ Line 6: End while loop when model converges
 -   Line 6: Return clean image from timestep 1
 
 
-otice the model predicts all the noise from a noisy image (ϵθ(xt,t)). However, we only subtract a fraction of it, weighted by 1−σt1−σt¯, and then add back noise (z) weighted by σt.
-
-I was curious about these noise removal and addition weights and coded up a [DDPM](https://github.com/eugeneyan/text-to-image/blob/main/the-annotated-diffusion-fashion-mnist-more-epochs.ipynb) to tinker with it. To my surprise, the noise removal weights are as low as 0.01 to 0.02 while the noise addition weights go as high as 0.14. Remember the intuition that estimating small amounts of noise for multiple timesteps is more tractable than estimating all noise via a single timestep? This is how it’s implemented in the algorithm and code.
-
-Via experimenting with the DDPM, I learned that more timesteps had a positive impact on sample quality though it also required more epochs and a large timestep embedding. Larger dimensions for the timestep embedding also improved loss and sample quality. On the other hand, more epochs, different loss functions, and batch size didn’t help. (
-
 ## **Text conditioning**: 
 - given a text prompt, generate specific image
 
