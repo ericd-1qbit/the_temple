@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "machine_learning/algorithms/Transformers.md",
+            "file": "machine_learning/algorithms/DALL-E.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Saharia",
+                "query": "condit",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/algorithms/Transformers.md",
+                "file": "machine_learning/algorithms/DALL-E.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,17 +96,17 @@
     "width": 254.4,
     "collapsed": true
   },
-  "active": "71ba0a0f9c91eddb",
+  "active": "0355a875e0446244",
   "lastOpenFiles": [
-    "machine_learning/applications/Text to Image.md",
     "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
+    "machine_learning/applications/Image Segmentation.md",
     "machine_learning/algorithms/Diffusion Models.md",
     "machine_learning/algorithms/DALL-E.md",
     "machine_learning/algorithms/Diffusion Models/Denoising Diffusion Probabilistic Models.md",
+    "machine_learning/algorithms/Transformers.md",
+    "machine_learning/applications/Text to Image.md",
     "machine_learning/algorithms/Attention.md",
     "machine_learning/architectures/UNET.md",
-    "machine_learning/algorithms/Variational Autoencoder.md",
-    "machine_learning/algorithms/Untitled.md",
-    "machine_learning/algorithms/Diffusion Models/Untitled.md"
+    "machine_learning/algorithms/Variational Autoencoder.md"
   ]
 }
