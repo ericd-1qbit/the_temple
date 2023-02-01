@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "condit",
+                "query": "A100",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -96,7 +97,7 @@
     "width": 254.4,
     "collapsed": true
   },
-  "active": "0355a875e0446244",
+  "active": "71ba0a0f9c91eddb",
   "lastOpenFiles": [
     "machine_learning/algorithms/DALL-E.md",
     "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
