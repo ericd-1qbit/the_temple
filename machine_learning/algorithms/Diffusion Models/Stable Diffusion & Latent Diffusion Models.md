@@ -305,7 +305,19 @@ Summary from LilianWeng Blog
 ![[Pasted image 20230130102408.png]]
 Illustrating perceptual and semantic compression: Most bits of a digital image correspond to imperceptible details. While DMs allow to suppress this semantically meaningless information by minimizing the responsible loss term, gradients (during train- ing) and the neural network backbone (training and inference) still need to be evaluated on all pixels, leading to superfluous compu- tations and unnecessarily expensive optimization and inference. We propose latent diffusion models (LDMs) as an effective gener- ative model and a separate mild compression stage that only elim- inates imperceptible details.
 
+The plot for tradeoff between compression rate and distortion, illustrating two-stage compressions - perceptural and semantic comparession.
 
+
+Bits per dimension (bpd) is a measure used in evaluating machine learning models for image synthesis. It quantifies the amount of information required to represent an image in a compact form, such as a binary string. The bpd of an image is defined as the number of bits required to represent it divided by the number of pixels in the image, usually measured in bits per pixel (bpp). Lower bpd values indicate that the image can be represented more compactly, indicating that the image synthesis model has learned to generate images that are highly compressed and hence, efficient. The bpd measure is commonly used in generative models, such as Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and PixelCNN, to evaluate the quality and efficiency of the generated images.
+
+Distortion, specifically Root Mean Squared Error (RMSE), is a measure used in image synthesis to evaluate the similarity between the generated image and the ground truth (real) image. RMSE calculates the average difference between the pixel values of the generated image and the ground truth image.
+The formula for RMSE is:
+RMSE = sqrt(sum((generated_pixel - ground_truth_pixel)^2) / number_of_pixels)
+where generated_pixel and ground_truth_pixel are the pixel values of the generated image and the ground truth image, respectively, and number_of_pixels is the total number of pixels in the image.
+A low RMSE indicates that the generated image is similar to the ground truth image and has low distortion, while a high RMSE indicates that the generated image is dissimilar to the ground truth image and has high distortion.
+RMSE is widely used in image synthesis to evaluate the quality of generated images, as it provides a quantitative measure of the differences between the generated image and the ground truth image.
+
+------------
 - perceptual compression - autoencoder model. 
 	- An encoder � is used to compress the input image �∈��×�×3 to a smaller 2D latent vector �=�(�)∈�ℎ×�×� , where the downsampling rate �=�/ℎ=�/�=2�,�∈�. 
 	- Then an decoder � reconstructs the images from the latent vector, �~=�(�). 
