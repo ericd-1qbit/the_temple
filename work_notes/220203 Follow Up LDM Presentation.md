@@ -15,17 +15,31 @@ A Variational Autoencoder consists of:
 
 The goal of training the VAE is to minimise reconstruction loss, while on the same hand ensuring that the approximate posterior distribution stays as simple as possible (the authors in the LDM paper call this "avoiding high variance latent spaces"). The following expression is the objective of a VAE training:
 
-$${\cal L}\left( {x,\hat x} \right) + \sum\limits_j {KL\left( {{q_{\phi,j}}\left( {z|x} \right)||p\left( z \right)} \right)}
+$${\cal L}\left( {x,\hat x} \right) + KL\left( {q_{\phi}\left( {z|x} \right)||p\left( z \right)} \right)
 $$
 
+In the Vanilla-VAE, the approximate posterior $q_\phi(z|x)$  is modelled using Gaussians with mean $\mu$ an variance $\sigma$ which are the learned output of the encoder. $P(z)$ is the "simple" distribution the appr. posterior is regularised to, eg. a standard Gaussian $\mathcal{N}(0,1)$. (Sidenote: The LDM paper tests another regularisation too - vector quantisation).
+In a Vanilla VAE one would then go ahead and sample $z\sim\mathcal{N}(0,1)$, feed that random noise through the decoder and obtain a synthetic sample.
+
+The deal with the LDM approach is, that they DO NO sample $z\sim\mathcal{N}(0,1)$ but they sample
+
+$$
+z=\mathcal{E}_\mu(x)+\mathcal{E}_\sigma(x)*\varepsilon
+$$
+
+$\mathcal{E}_\mu$, $\mathcal{E}_\sigma$ are the encoder outputs of the learned
 
 
-the mean and the variance of a Gaussian distribution, which defines the distribution of the latent code.
 The information about the input data is stored in the parameters of the encoder and decoder and in the values in the latent space.
+
 The sample can be obtained by sampling from the Gaussian distribution that is defined by the mean and variance values output by the encoder network for a given input. The sample from the latent space is then passed through the decoder network to generate the output, which is a reconstruction of the input data.
 
 From the paper:
-In order to avoid arbitrarily high-variance latent spaces, we experiment with two different kinds of regularizations. The first variant, KL-reg., imposes a slight KL-penalty to- wards a standard normal on the learned latent, similar to a VAE [46, 69], whereas VQ-reg. uses a vector quantization layer [96] within the decoder. This model can be interpreted as a VQGAN [23] but with the quantization layer absorbed by the decoder. Because our subsequent DM is designed to work with the two-dimensional structure of our learned latent space z = E(x), we can use relatively mild compres- sion rates and achieve very good reconstructions. This is in contrast to previous works [23, 66], which relied on an arbitrary 1D ordering of the learned space z to model its distribution autoregressively and thereby ignored much of the inherent structure of z. Hence, our compression model preserves details of x better (see Tab. 8). The full objective and training details can be found in the supplement.
+
+Because our subsequent DM is designed to work with the two-dimensional structure of our learned latent space z = E(x), we can use relatively mild compres- sion rates and achieve very good reconstructions. This is in contrast to previous works [23, 66], which relied on an arbitrary 1D ordering of the learned space z to model its distribution autoregressively and thereby ignored much of the inherent structure of z.
+ence, our compression model preserves details of x better (see Tab. 8). 
+
+The full objective and training details can be found in the supplement.
 
 ![[Pasted image 20230206154611.png]]
 
