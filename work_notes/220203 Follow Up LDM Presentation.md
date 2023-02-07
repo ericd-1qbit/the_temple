@@ -6,6 +6,20 @@ Why is Diffusion needed at all?
 Why are the output images not blurry?
 Does the DM add some kind of detail to the 
 
+
+A Variational Autoencoder consists of:
+
+- true posterior distribution $p_\theta(z|x)$ which is modelled by the approximate posterior distribution $q_\phi(z|x)$ (the encoder network)
+- a prior $p(z)$ 
+- the conditional likelihood distribution $p_\theta(x|z)$ (the decoder network)
+
+The goal of training the VAE is to minimise reconstruction loss, while on the same hand ensuring that the approximate posterior distribution stays as simple as possible (the authors in the LDM paper call this "avoiding high variance latent spaces"). The following expression is the objective of a VAE training:
+
+$${\cal L}\left( {x,\hat x} \right) + \sum\limits_j {KL\left( {{q_{\phi,j}}\left( {z|x} \right)||p\left( z \right)} \right)}
+$$
+
+
+
 the mean and the variance of a Gaussian distribution, which defines the distribution of the latent code.
 The information about the input data is stored in the parameters of the encoder and decoder and in the values in the latent space.
 The sample can be obtained by sampling from the Gaussian distribution that is defined by the mean and variance values output by the encoder network for a given input. The sample from the latent space is then passed through the decoder network to generate the output, which is a reconstruction of the input data.
