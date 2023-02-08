@@ -1,3 +1,7 @@
+Goal for April:
+
+Wrap things up as we have them and provide images to SH.
+
 - Our aim is to check if those labels are representative enough to a classifier
 - predict classes of our synthetic images using pre-trained DenseNet121
 - measure metrics Accuarcy, Precision, AUROC
