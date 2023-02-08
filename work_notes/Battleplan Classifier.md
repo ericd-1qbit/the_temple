@@ -16,3 +16,22 @@ Milestones
 	- Add testing infrastructure to pipeline, where Precision and Accuarcy are calculated on a re-trained Densenet classifier on the various dataset flavours. 
 	- Add data-infrastructure for synthetic and augmented dataset to the training pipeline.
 	- Run a benchmark to create a summary statistics of dataset variants vs Metrics Precision, Accuracy for the STM label.
+
+
+# create the train and test data loaders
+
+test_length = int(classifier_cfg.dataset_test_split * len(dataset))
+
+train_length = len(dataset) - test_length
+
+  
+
+train_dataset, _ = random_split(
+
+dataset=dataset,
+
+lengths=[train_length, test_length],
+
+generator=torch.Generator().manual_seed(classifier_cfg.dataset_split_seed),
+
+)
