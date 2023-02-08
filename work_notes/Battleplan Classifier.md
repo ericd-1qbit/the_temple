@@ -4,20 +4,21 @@ Delivering Synthetic Images to Synthesis Health.
 
 We want to be able to assess the quality of these images by:
 - calculating FID-scores and MS-SSIM metrics on synthetic image datasets generated with NCSN and DDPM models 
-- study whether the augmentation of real dataset with synthetic images improves classifier performance as measured by the metrics Precision, Accuarcy
+- study whether the augmentation of real datasets with synthetic images improves classifier performance on predicting pathology classes as measured by the metrics Precision, Accuarcy
 
 
-Wrap things up as we have them and provide images to SH.
+Milestones
+
+- Calculate Precision and Accuarcy on real dataset using pre-trained DenseNet classifier and 
+- Develop the training pipeline for the DenseNet classifier on the real dataset.
+- Add data-infrastructure for synthetic and augmented dataset to pipeline.
+- 
 
 - Our aim is to check if those labels are representative enough to a classifier
 - predict classes of our synthetic images using pre-trained DenseNet121
-- measure metrics Accuarcy, Precision, AUROC
 - compare metrics to different Dataset flavours - real, synthetic, real+synthetic
 - create a table to show some statistic on the classifier performance on different classes
-  
-Asses the quality of the synthetic images via  
-1- training a classier on combination of real/synthetic images, and,  
-2- investigating the potential improvement in the classier performance through metrics such as Accuarcy, Precision, AUROC, and,  
+
 3- generate statistics to quantify the performance of variant setting of the data size and combinations (R/S) of data for the chosen classes.
 
 
