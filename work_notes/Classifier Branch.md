@@ -83,7 +83,93 @@ raise Exception(f"Unknown dataset scenario {dataset_flavour}.")
   
 
 return dataset
+  
 
+for dataset_flavour in config.evaluator.classifier_perf.dataset_flavours:
+
+dataset = get_dataset(dataset_flavour, config=config)
+
+if not dataset:
+
+logging.warning(
+
+f"Dataset flavour {dataset_flavour} not implemented. Skipping."
+
+)
+
+continue
+
+  
+
+# create the train and test data loaders
+
+test_length = int(classifier_cfg.dataset_test_split * len(dataset))
+
+train_length = len(dataset) - test_length
+
+  
+
+train_dataset, test_dataset = random_split(
+
+dataset=dataset,
+
+lengths=[train_length, test_length],
+
+generator=torch.Generator().manual_seed(classifier_cfg.dataset_split_seed),
+
+)
+
+# TODO use common functionality
+
+# create the train and test data loaders
+
+# train_data_loader, test_data_loader = create_train_test_data_loader(
+
+# world_size=world_size, rank=rank, dataset=dataset, config=config
+
+# )
+
+train_data_loader = create_data_loader_from_dataset(
+
+dataset=train_dataset,
+
+rank=rank,
+
+world_size=world_size,
+
+logging=logging,
+
+**config.dataset,
+
+)
+
+test_data_loader = create_data_loader_from_dataset(
+
+dataset=test_dataset,
+
+rank=rank,
+
+world_size=world_size,
+
+logging=logging,
+
+**config.dataset,
+
+)
+
+# train and test the classifier on the original data set
+
+train_classifier(
+
+is_first_gpu,
+
+classifier,
+
+train_data_loader,
+
+config.evaluator.classifier_perf,
+
+)
 
 
 
