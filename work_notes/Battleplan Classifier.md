@@ -1,5 +1,9 @@
 Goal for April:
 
+Delivering Synthetic Images to Synthesis Health. We want to be able to evaluate the quality of these images by:
+- benchmarking the 
+
+
 Wrap things up as we have them and provide images to SH.
 
 - Our aim is to check if those labels are representative enough to a classifier
