@@ -1,0 +1,141 @@
+{
+  "main": {
+    "id": "d566ef82ee53faf4",
+    "type": "split",
+    "children": [
+      {
+        "id": "e55bbb73dbb56708",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0355a875e0446244",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Battleplan Classifier.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "eef374831a874d34",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.9"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3a4a417feda5e71e",
+    "type": "split",
+    "children": [
+      {
+        "id": "074ab5e297796206",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a9256e4c5d6227fd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "71ba0a0f9c91eddb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "get_dataset_class",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 369.0036334991455
+  },
+  "right": {
+    "id": "30df5576b1c2db9c",
+    "type": "split",
+    "children": [
+      {
+        "id": "17e9d68e92c38537",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "972447551fa6210d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "work_notes/Battleplan Classifier.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5c921d0df55dad69",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 254.4,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "eef374831a874d34",
+  "lastOpenFiles": [
+    "project_management/SMART goals.md",
+    "project_management/Milestones vs Projects.md",
+    "work_notes/Classifier Branch.md",
+    "work_notes/Battleplan Classifier.md",
+    "work_notes/220203 Follow Up LDM Presentation.md",
+    "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
+    "machine_learning/algorithms/Transformers.md",
+    "machine_learning/algorithms/Diffusion Models/Denoising Diffusion Probabilistic Models.md",
+    "machine_learning/algorithms/DALL-E.md",
+    "machine_learning/applications/Image Segmentation.md"
+  ]
+}
