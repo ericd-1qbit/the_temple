@@ -20,12 +20,14 @@
             }
           },
           {
-            "id": "eef374831a874d34",
+            "id": "6aa3cb6bb88c16ca",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.1.9"
+                "file": "work_notes/230216 Metrics.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -88,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Battleplan Classifier.md",
+                "file": "work_notes/230216 Metrics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,12 +127,12 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "eef374831a874d34",
+  "active": "6aa3cb6bb88c16ca",
   "lastOpenFiles": [
+    "work_notes/Battleplan Classifier.md",
     "project_management/SMART goals.md",
     "project_management/Milestones vs Projects.md",
     "work_notes/Classifier Branch.md",
-    "work_notes/Battleplan Classifier.md",
     "work_notes/220203 Follow Up LDM Presentation.md",
     "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
     "machine_learning/algorithms/Transformers.md",
