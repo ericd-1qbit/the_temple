@@ -1,2 +1,2 @@
-- longer iterations
+- longer iterations (2 weeks)
 - 

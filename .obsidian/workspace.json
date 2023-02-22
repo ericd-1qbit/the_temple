@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work_notes/Notes for Ehsan.md",
+                "file": "work_notes/230103 Benchmark Result collection.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Notes for Ehsan.md",
+                "file": "work_notes/230103 Benchmark Result collection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,15 +141,15 @@
   },
   "active": "b1a605a3705fb782",
   "lastOpenFiles": [
+    "work_notes/230112.md",
     "work_notes/230216 Metrics.md",
+    "work_notes/Notes for Ehsan.md",
     "work_notes/Battleplan Classifier.md",
     "project_management/SMART goals.md",
     "project_management/Milestones vs Projects.md",
     "work_notes/Classifier Branch.md",
     "work_notes/220203 Follow Up LDM Presentation.md",
     "machine_learning/algorithms/Diffusion Models/Stable Diffusion & Latent Diffusion Models.md",
-    "machine_learning/algorithms/Transformers.md",
-    "machine_learning/algorithms/Diffusion Models/Denoising Diffusion Probabilistic Models.md",
-    "machine_learning/algorithms/DALL-E.md"
+    "machine_learning/algorithms/Transformers.md"
   ]
 }
