@@ -22,3 +22,20 @@ Timing:
 
 
 Parq Vancouver - Kitsilano Ballroom, 39 Smithe Street, Vancouver, British Columbia, V6B 0R3 Doors open from 7:30pm, with seating at 8pm. Dress: Professional. The Organizing Committee are suggesting "celebration formal" but we'll all be coming from judging the presentations so there's unlikely to be opportunities for costume changes. There will be several speeches over the course of dinner, plus the awards at the end of the evening.
+
+
+**
+
+24 hour case
+
+1QBit: Emerging Opportunities in Diffusion Model Machine Learning
+
+  
+
+Judging note
+
+This judging note is written to complement the 24 hour case. It provides a summary of the main elements that teams should include in their case presentations. As an open-ended case, there is no one clear correct answer. Teams are expected to use information from the case, along with their knowledge and creativity to address the challenges specified at the end of the case.
+
+As a reminder, during the 24 hours of case deliberation, teams are permitted to conduct online research to develop and support their recommendations. Teams may therefore present data from additional sources, make assumptions, and present a wide range of recommendations. **During your deliberation, you should carefully consider the rationale and analysis underpinning these recommendations.**
+
+**
