@@ -8,7 +8,16 @@ Prominent use cases of AI in business:
 - conversational AI - chatbots
 - fraud detection - learn customer patterns and detect unusual behaviour
 - image processing - detection, reconstruction, traffic sensing
-- medical devices - Oct 22: 
+- medical devices - Oct 22: 521 AI-enabled medical devices authorised by FDA
+- recommendation systems - 
+- self-driving cars
+
+
+## MLOPs
+![[Pasted image 20230223113553.png]]
+![[Pasted image 20230223113649.png]]
+- DevOPs replaced by specific MLOps due to different needs in the field
+- 
 
 Clemens is right, it's an international case competition. SFU is hosting it this year. Teams from all over the world will compete in two case competition. The competition is Management Information Systems(MIS) which technically falls under business studies but most of the teams will have students from variety of other areas. The main case this year is being sponsored by 1QBit. **The topic for the case competition is future possibilities of diffusion models.** They need experts from 1QBit to be the judges for our case and thats where we come-in. I have attached information sheet if you wanna take a look. If you need to take a closer look at the actual case, I can get you access to that as well but you won't necessarily need to do that to judge the case.
 

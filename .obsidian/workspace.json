@@ -90,9 +90,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "59fb17a35c60e247",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Responsible AI.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -150,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/SFU CaseIT.md",
+                "file": "work_notes/Responsible AI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,8 +199,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "aa1e076de1944467",
+  "active": "59fb17a35c60e247",
   "lastOpenFiles": [
+    "work_notes/SFU CaseIT.md",
     "work_notes/Note Taking Rooster.md",
     "work_notes/230223.md",
     "work_notes/230222.md",
@@ -197,7 +210,6 @@
     "work_notes/Benchmark v04.md",
     "work_notes/Battleplan Classifier.md",
     "work_notes/230216 Metrics.md",
-    "work_notes/230112.md",
-    "work_notes/230106 Work Notes.md"
+    "work_notes/230112.md"
   ]
 }
