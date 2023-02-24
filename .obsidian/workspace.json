@@ -97,7 +97,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work_notes/Responsible AI.md",
+                "file": "work_notes/Benchmark v04.md",
                 "mode": "source",
                 "source": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "get_dataset_class",
+                "query": "python ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -142,7 +142,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -162,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Responsible AI.md",
+                "file": "work_notes/Benchmark v04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -201,6 +202,7 @@
   },
   "active": "59fb17a35c60e247",
   "lastOpenFiles": [
+    "work_notes/Responsible AI.md",
     "work_notes/SFU CaseIT.md",
     "work_notes/Note Taking Rooster.md",
     "work_notes/230223.md",
@@ -209,7 +211,6 @@
     "work_notes/Classifier Branch.md",
     "work_notes/Benchmark v04.md",
     "work_notes/Battleplan Classifier.md",
-    "work_notes/230216 Metrics.md",
-    "work_notes/230112.md"
+    "work_notes/230216 Metrics.md"
   ]
 }
