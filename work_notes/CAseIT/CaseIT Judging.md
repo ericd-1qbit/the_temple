@@ -37,8 +37,24 @@ Did the team answer the judges’ questions fully, clearly, and directly?
 - **innovative, but feasible, approach** to the situation presented?
 
 
-# Team 1
+# Team 1 - Lumina Consulting
+- automotive market 
+- 
+- quick3d
+- "process optimization" through quantum computing long-term goal of 1qbit
 
+**- what is the connection between diffusion models and process optimisation?**
+
+- came up with ressoruces of company
+- nice way to present use case for 1qbit
+- came up with scores 
+
+**- data availability rated high in the automotive industry - how so? publicly accessible?**
+**- is additional data really the issue with optimisation process?** 
+
+- questions answering - ok
+
+Addressed how to distinct from 
 
 
 # Team 2
