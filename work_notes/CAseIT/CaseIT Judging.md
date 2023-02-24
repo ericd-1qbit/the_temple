@@ -69,8 +69,26 @@ Best speaker: Barney, very confident
 
 
 
-# Team 2
+# Team 2 - Snow Consulting
 
+- personal handshake - nice gesture
+
+
+- 3 use cases discussed
+- nicely laid out how 1qbit is relating to ML
+
+Medical:
+- quality enhancement using "non-contrast" CT
+- enhancing how a detail would look like - so so application of DM
+- Dataset available but easy to use? Ethical consideration?
+
+Self-driving cars:
+- use self-driving car companies
+- not sure what DM would be used for here
+- augment technoglogy
+- 
+
+Best speaker: 
 
 
 # Team 3
