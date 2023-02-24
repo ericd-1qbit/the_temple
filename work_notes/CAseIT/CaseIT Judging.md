@@ -15,4 +15,7 @@ Template:
 
 Rankings finalised Feb 24th 6:25pm
 
+- select best speakers (general)
+- 
+
 

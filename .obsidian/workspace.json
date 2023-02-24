@@ -8,102 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0355a875e0446244",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/Battleplan Classifier.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6aa3cb6bb88c16ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/230216 Metrics.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b1a605a3705fb782",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/Classifier Branch.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aba7297e2ffe2be6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/230222.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "744713984b35c9a5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/230223.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fec61f52b94b9532",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/Note Taking Rooster.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aa1e076de1944467",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/SFU CaseIT.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "59fb17a35c60e247",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work_notes/Benchmark v04.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "ecaf941cd1152aab",
             "type": "leaf",
             "state": {
@@ -115,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 8
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,7 +114,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "a9256e4c5d6227fd",
+  "active": "ecaf941cd1152aab",
   "lastOpenFiles": [
     "work_notes/Benchmark v04.md",
     "work_notes/Responsible AI.md",
