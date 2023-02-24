@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work_notes/CaseIT Judging.md",
+                "file": "work_notes/CAseIT/CaseIT Judging.md",
                 "mode": "source",
                 "source": false
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/CaseIT Judging.md",
+                "file": "work_notes/CAseIT/CaseIT Judging.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +211,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "ecaf941cd1152aab",
+  "active": "a9256e4c5d6227fd",
   "lastOpenFiles": [
     "work_notes/Benchmark v04.md",
     "work_notes/Responsible AI.md",
