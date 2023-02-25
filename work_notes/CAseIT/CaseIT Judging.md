@@ -92,8 +92,7 @@ Aerospace
 - introduced selection criteria clearly
 - showed matrix  to decide
 
-Using CT case with highest score
-
+- Using CT case with highest score
 
 - clear layout of existicing process
 - contrast is the problem
@@ -103,11 +102,8 @@ Using CT case with highest score
 
 - buyers/customers - hostpitals - should be extended
 - Plan is very tight
-- 
 
-- question about DM (training dataset) not correctly answered but it's okay
-- 
-
+- question about DM (training dataset) not correctly answered but it's oka
 
 
 Best speaker: Charlie
