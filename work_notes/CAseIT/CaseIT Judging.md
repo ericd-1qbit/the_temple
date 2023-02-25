@@ -124,8 +124,8 @@ GM RZ
 Speakers:
 - ankles (blonde) Georgy
 - brunette - Mallary
-- tall dude - Leo
-- grey suite -???
+- grey suite -  gillete?
+- tall dude - Rio
 
 
 - blonde is great speaker
@@ -134,10 +134,28 @@ Situation Analysis
 - talking to us in 3rd person
 - strength weakness opportunbities, threats
 	- listed clearly
-	- 
+- ethical 
 
 
-best speaker: blode
+Use Case
+
+- industry relevance stressed
+- 3 use cases picked out of 19
+- really laying out decision making
+- power of diffusion models overestimated 
+
+- tried to explain DM - great!
+- MLOPs approach mentioned
+
+- question about competition
+- nice spin on 23 cyberattacks 
+
+- great answer to Clemens' questio
+
+
+best speaker: blonde
+rio also good
+16min
 
 
 
