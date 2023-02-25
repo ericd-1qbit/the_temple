@@ -211,3 +211,13 @@ Natalija
 Situaonial analysis
 - market analysis
 - not so much focused on 1qbit
+- dope idea!
+
+- use case actuqlly uses Chatgpt among other things...
+-  love the wideness of this scope!
+- 
+
+- amazing visuals addressing my restrictive barrier question
+- 
+
+Best speaker: Robert
