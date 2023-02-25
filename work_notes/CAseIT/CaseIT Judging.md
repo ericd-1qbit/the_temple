@@ -161,6 +161,26 @@ rio also good
 
 # Team 4
 
+- woman started
+
+
+
+- busy slide
+- layin out key considerationjs
+- need of AI in industry
+- energy distribution planning
+- fossil fuels used in peal energy consumptions
+
+
+First men (asian)
+- great visuals
+
+- great use case idea 
+- 
+
+
+Best speaker: asian
+
 
 
 
