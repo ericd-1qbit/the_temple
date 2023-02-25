@@ -176,7 +176,26 @@ First men (asian)
 - great visuals
 
 - great use case idea 
-- 
+- ethical consideration mentioned
+
+
+- empowering customer
+
+- QC question answered from an uninformed stanpoint (but confidently answered)
+
+
+Ian
+Kormag
+
+Risks
+
+
+
+
+
+**data accessible but is it clean?**
+
+
 
 
 Best speaker: asian
