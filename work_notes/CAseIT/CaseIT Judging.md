@@ -41,7 +41,6 @@ Did the team answer the judges’ questions fully, clearly, and directly?
 - automotive market 
 - Driveway is not a second product - having the modelling in house
 	- answered my question correctly
-	- 
 
 - quick3d
 - "process optimization" through quantum computing long-term goal of 1qbit
@@ -57,8 +56,6 @@ Did the team answer the judges’ questions fully, clearly, and directly?
 
 - questions answering - ok so far, sutomer question a bit vague
 - like linking between the two products - DM for automotive process optimisation
-- 
-
 
 - purpose of this project: text-to-3D modelling iwht in-house expertise
 Addressed how to distinct from 
