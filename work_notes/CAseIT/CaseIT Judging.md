@@ -117,8 +117,27 @@ Best speaker: Charlie
 17min
 
 
-# Team 3
+# Team 3 
 
+GM RZ 
+
+Speakers:
+- ankles (blonde) Georgy
+- brunette - Mallary
+- tall dude - Leo
+- grey suite -???
+
+
+- blonde is great speaker
+
+Situation Analysis
+- talking to us in 3rd person
+- strength weakness opportunbities, threats
+	- listed clearly
+	- 
+
+
+best speaker: blode
 
 
 
