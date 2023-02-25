@@ -178,35 +178,36 @@ First men (asian)
 - great use case idea 
 - ethical consideration mentioned
 
-
 - empowering customer
-
 - QC question answered from an uninformed stanpoint (but confidently answered)
-
 
 Ian
 Kormag
 
 Risks
+- good answer on DM input
+ 
+- **data accessible but is it clean?**
+- train & test - know that!
+- well -thought out
 
-
-
-
-
-**data accessible but is it clean?**
-
-
-
-
-Best speaker: asian
+Best speaker: Josh
 
 
 
 
 # Team 5
 
+Falcon consulting
+Leonard
+Robert 
+Ella
+Natalija
 
 
+- great intro
+- PERSONAI
 
-
-
+Situaonial analysis
+- market analysis
+- not so much focused on 1qbit
