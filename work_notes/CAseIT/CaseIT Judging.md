@@ -86,9 +86,35 @@ Self-driving cars:
 - use self-driving car companies
 - not sure what DM would be used for here
 - augment technoglogy
+- extra value of 1qbit acknowledged
+
+Aerospace
+- text to image
+- design of parts
+
+- introduced selection criteria clearly
+- showed matrix  to decide
+
+Using CT case with highest score
+
+
+- clear layout of existicing process
+- contrast is the problem
+- like thiis idea - enhance images by using DM
+- with good example
+- ethical impact: laid out cleairly
+
+- buyers/customers - hostpitals - should be extended
+- Plan is very tight
 - 
 
-Best speaker: 
+- question about DM (training dataset) not correctly answered but it's okay
+- 
+
+
+
+Best speaker: Charlie
+17min
 
 
 # Team 3
