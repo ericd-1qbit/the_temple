@@ -122,11 +122,10 @@ Best speaker: Charlie
 GM RZ 
 
 Speakers:
-- ankles (blonde) Georgy
-- brunette - Mallary
-- grey suite -  gillete?
+- ankles (blonde) Georgina
+- brunette - Melanie
+- grey suite -  Zhilber
 - tall dude - Rio
-
 
 - blonde is great speaker
 
@@ -138,7 +137,6 @@ Situation Analysis
 
 
 Use Case
-
 - industry relevance stressed
 - 3 use cases picked out of 19
 - really laying out decision making
@@ -150,7 +148,9 @@ Use Case
 - question about competition
 - nice spin on 23 cyberattacks 
 
-- great answer to Clemens' questio
+- great answer to Clemens' question about data cleaning
+- team helped each other out in questions
+
 
 
 best speaker: blonde
