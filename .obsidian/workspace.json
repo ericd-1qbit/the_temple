@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e55bbb73dbb56708",
+        "id": "8a39141a86629b80",
         "type": "tabs",
         "children": [
           {
-            "id": "ecaf941cd1152aab",
+            "id": "e44c4c8856e2fba4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work_notes/Classifier Branch.md",
+                "file": "work_notes/Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -57,8 +57,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Classifier Branch.md",
+                "file": "work_notes/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,8 +114,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "ecaf941cd1152aab",
+  "active": "e44c4c8856e2fba4",
   "lastOpenFiles": [
+    "work_notes/Classifier Branch.md",
     "work_notes/CAseIT/CaseIT Judging.md",
     "work_notes/Benchmark v04.md",
     "work_notes/Responsible AI.md",
@@ -125,7 +125,6 @@
     "work_notes/230223.md",
     "work_notes/230222.md",
     "work_notes/Notes for Ehsan.md",
-    "work_notes/Classifier Branch.md",
     "work_notes/Battleplan Classifier.md"
   ]
 }

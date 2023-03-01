@@ -85,9 +85,17 @@ raise Exception(f"Unknown dataset scenario {dataset_flavour}.")
 return dataset
   
 
-for dataset_flavour in config.evaluator.classifier_perf.dataset_flavours:
 
-dataset = get_dataset(dataset_flavour, config=config)
+
+
+
+
+
+
+
+
+
+
 
 if not dataset:
 
