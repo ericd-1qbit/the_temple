@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "793d9e15d6255701",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Transfer Learning.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Untitled.md",
+                "file": "work_notes/Transfer Learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,8 +127,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e44c4c8856e2fba4",
+  "active": "793d9e15d6255701",
   "lastOpenFiles": [
+    "work_notes/Untitled.md",
     "work_notes/Classifier Branch.md",
     "work_notes/CAseIT/CaseIT Judging.md",
     "work_notes/Benchmark v04.md",
@@ -124,7 +138,6 @@
     "work_notes/Note Taking Rooster.md",
     "work_notes/230223.md",
     "work_notes/230222.md",
-    "work_notes/Notes for Ehsan.md",
-    "work_notes/Battleplan Classifier.md"
+    "work_notes/Notes for Ehsan.md"
   ]
 }
