@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "machine_learning/algorithms/Consistency Models.md",
+                "file": "work_notes/exaion.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "machine_learning/algorithms/Consistency Models.md",
+                "file": "work_notes/exaion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,6 +141,7 @@
   },
   "active": "30fa5cc45e093164",
   "lastOpenFiles": [
+    "machine_learning/algorithms/Consistency Models.md",
     "work_notes/Transfer Learning.md",
     "work_notes/Untitled.md",
     "work_notes/Classifier Branch.md",
@@ -149,7 +150,6 @@
     "work_notes/Responsible AI.md",
     "work_notes/SFU CaseIT.md",
     "work_notes/Note Taking Rooster.md",
-    "work_notes/230223.md",
-    "work_notes/230222.md"
+    "work_notes/230223.md"
   ]
 }
