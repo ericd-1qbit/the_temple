@@ -42,9 +42,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "014bb6956262e308",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Configuration renovation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -102,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/exaion.md",
+                "file": "work_notes/Configuration renovation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,8 +151,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "30fa5cc45e093164",
+  "active": "014bb6956262e308",
   "lastOpenFiles": [
+    "work_notes/exaion.md",
     "machine_learning/algorithms/Consistency Models.md",
     "work_notes/Transfer Learning.md",
     "work_notes/Untitled.md",
@@ -149,7 +162,6 @@
     "work_notes/Benchmark v04.md",
     "work_notes/Responsible AI.md",
     "work_notes/SFU CaseIT.md",
-    "work_notes/Note Taking Rooster.md",
-    "work_notes/230223.md"
+    "work_notes/Note Taking Rooster.md"
   ]
 }
