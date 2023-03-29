@@ -1,4 +1,13 @@
-```if use_hyperopt:
+```
+
+if is_first_gpu and configs.general.use_hyperopt and configs.general.use_mlflow:
+
+helpers_hyperopt.save_mlflow_run_id(context_manager.mlflow_run_id)
+
+
+from hyperopt import Trials, fmin, tpe
+
+if use_hyperopt:
 
   
 
