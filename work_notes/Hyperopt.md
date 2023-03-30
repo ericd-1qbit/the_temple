@@ -1,6 +1,6 @@
 ```
 
-  
+
 
 # overwrite parameters from hyperparameters config file (NOTE: names should be the same in train and hyperparameters configs.)
 
@@ -90,7 +90,4 @@ f"The best hyperparameter set for minimizing FID score is: {best_trial}"
 
 )
 
-  
-
-else:
 ```
