@@ -97,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ghp",
+                "query": "user.email",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -164,17 +164,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "71ba0a0f9c91eddb",
+  "active": "5f5b1253a10e4d63",
   "lastOpenFiles": [
+    "work_notes/Untitled.md",
+    "work_notes/GITHUB PAT.md",
     "work_notes/Hyperopt.md",
     "work_notes/Configuration renovation.md",
     "work_notes/exaion.md",
     "machine_learning/algorithms/Consistency Models.md",
     "work_notes/Transfer Learning.md",
-    "work_notes/Untitled.md",
     "work_notes/Classifier Branch.md",
     "work_notes/CAseIT/CaseIT Judging.md",
-    "work_notes/Benchmark v04.md",
-    "work_notes/Responsible AI.md"
+    "work_notes/Benchmark v04.md"
   ]
 }
