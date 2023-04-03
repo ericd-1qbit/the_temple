@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work_notes/Hyperopt.md",
+                "file": "work_notes/GITHUB PAT.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "get_mix",
+                "query": "ghp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -106,7 +106,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -126,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Hyperopt.md",
+                "file": "work_notes/GITHUB PAT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,8 +164,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "5f5b1253a10e4d63",
+  "active": "71ba0a0f9c91eddb",
   "lastOpenFiles": [
+    "work_notes/Hyperopt.md",
     "work_notes/Configuration renovation.md",
     "work_notes/exaion.md",
     "machine_learning/algorithms/Consistency Models.md",
@@ -173,7 +175,6 @@
     "work_notes/Classifier Branch.md",
     "work_notes/CAseIT/CaseIT Judging.md",
     "work_notes/Benchmark v04.md",
-    "work_notes/Responsible AI.md",
-    "work_notes/SFU CaseIT.md"
+    "work_notes/Responsible AI.md"
   ]
 }
