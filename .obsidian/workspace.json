@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "18a5c8a9052fd158",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Jay.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -127,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/GITHUB PAT.md",
+                "file": "work_notes/Jay.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,10 +176,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "5f5b1253a10e4d63",
+  "active": "18a5c8a9052fd158",
   "lastOpenFiles": [
-    "work_notes/Untitled.md",
     "work_notes/GITHUB PAT.md",
+    "work_notes/Untitled.md",
     "work_notes/Hyperopt.md",
     "work_notes/Configuration renovation.md",
     "work_notes/exaion.md",
