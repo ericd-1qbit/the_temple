@@ -78,9 +78,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "76401dbe2b26a357",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Synthetic images.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -118,8 +130,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -139,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/Jay.md",
+                "file": "work_notes/Synthetic images.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,8 +187,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "18a5c8a9052fd158",
+  "active": "76401dbe2b26a357",
   "lastOpenFiles": [
+    "work_notes/Jay.md",
     "work_notes/GITHUB PAT.md",
     "work_notes/Untitled.md",
     "work_notes/Hyperopt.md",
@@ -186,7 +198,6 @@
     "machine_learning/algorithms/Consistency Models.md",
     "work_notes/Transfer Learning.md",
     "work_notes/Classifier Branch.md",
-    "work_notes/CAseIT/CaseIT Judging.md",
-    "work_notes/Benchmark v04.md"
+    "work_notes/CAseIT/CaseIT Judging.md"
   ]
 }
