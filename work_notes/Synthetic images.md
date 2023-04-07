@@ -7,3 +7,12 @@
 
 
 
+
+[100, 250, 500, 1000, 2000, 4000]
+
+
+/home/admsrv/data/synthetic_padchest_subsamples
+
+
+dataset.synthetic.dataset_name="stm_100"\
+dataset.synthetic.dataset_path="./data/padchest/results_benchmark/evaluation-stats/"\
