@@ -1,14 +1,22 @@
 Find names for the a Machine Learning start up which specialises in providing the technology basis for other start up companies.
 
 
-1.  MachineCore
-2.  AI Infrastructure Solutions
-3.  NeuralFoundry
-4.  ModelForge
-5.  TechSeed
-6.  Algorithmic Base
-7.  VentureMachine
+Names with AI:
 
-1.  OneVenture AI
-2. 1.  OneNode Innovations
-1BaseAI
+AIgents
+AImplifier
+AIlchemist
+AIpex
+
+sherp.ai (from Sherpa, fitting our mission.)
+
+ModelForge
+ModelDen
+DataDojo
+DataDriven
+DataDen
+Machinify
+VentureMachine
+StartSmart
+TechSeed
+TechTribe
