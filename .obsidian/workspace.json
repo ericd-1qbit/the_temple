@@ -102,9 +102,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b51ab2b7d5274515",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work_notes/Company.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -162,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work_notes/1qbit resignation.md",
+                "file": "work_notes/Company.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -199,8 +211,9 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "980e6fc4787a0174",
+  "active": "b51ab2b7d5274515",
   "lastOpenFiles": [
+    "work_notes/1qbit resignation.md",
     "work_notes/Synthetic images.md",
     "work_notes/Jay.md",
     "work_notes/GITHUB PAT.md",
@@ -209,7 +222,6 @@
     "work_notes/Configuration renovation.md",
     "work_notes/exaion.md",
     "machine_learning/algorithms/Consistency Models.md",
-    "work_notes/Transfer Learning.md",
-    "work_notes/Classifier Branch.md"
+    "work_notes/Transfer Learning.md"
   ]
 }

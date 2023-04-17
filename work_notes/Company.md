@@ -1,0 +1,1 @@
+Find names for the a Machine Learning start up which specialises in providing technology solutions to seed other start up companies. The name should be inspired by: bit, machine learning, neural, venture, seed, node, solution, models, venture studio, algorithm, incubator
